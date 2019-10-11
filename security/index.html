@@ -121,37 +121,74 @@
       </a>
     
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Klix Developers" class="md-header-nav__button md-logo">
-          
-            <img src="../images/logo.png" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Klix Developers
-            </span>
-            <span class="md-header-nav__topic">
-              
-                Security
-              
-            </span>
-          
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+    <!-- Top-level navigation -->
+    <nav class="md-header-nav md-grid">
+      <div class="md-flex">
+  
+        <!-- Link to home -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href=".."
+              title="Klix Developers"
+              class="md-header-nav__button md-logo">
+            
+              <img src="../images/logo.png" width="64" height="64" />
+            
+          </a>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+  
+        <!-- Button to toggle drawer -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <label class="md-icon md-icon--menu md-header-nav__button"
+              for="__drawer"></label>
+        </div>
+  
+        <!-- Header title -->
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title"
+              data-md-component="title">
+            
+              <span class="md-header-nav__topic">
+                Klix Developers
+              </span>
+              <span class="md-header-nav__topic">
+                
+                  Security
+                
+              </span>
+            
+          </div>
+        </div>
+  
+        <!-- Button to open search dialogue -->
+        <div class="md-flex__cell md-flex__cell--shrink">
           
+            <label class="md-icon md-icon--search md-header-nav__button"
+                for="__search"></label>
+  
+            <!-- Search interface -->
+            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -174,12 +211,14 @@
     </div>
   </div>
 </div>
+          
+        </div>
+  
+        <!-- Repository containing source -->
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
+          <div class="md-flex__cell md-flex__cell--shrink">
+            <div class="md-header-nav__source">
+              
 
 
   
@@ -196,12 +235,12 @@
     klix-app/klix-app.github.io
   </div>
 </a>
+            </div>
           </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
+        
+      </div>
+    </nav>
+  </header>
     
     <div class="md-container">
       
@@ -478,20 +517,20 @@
                 
                 
                 <h1 id="protocol-security">Protocol Security<a class="headerlink" href="#protocol-security" title="Permanent link">&para;</a></h1>
-<p>Every data modification request sent by merchant to KLIX should be signed by merchant private key and validated on KLIX side by merchant public key. It is important to use asymmetric cryptography algorithm to have non-disputable transactions in e-commerce. Especially in pricing and quotes area. Shared keys could be stolen from both parties thus making KLIX liable of potential data and financial losses.</p>
+<p>Every data modification request sent by merchant to Klix should be signed by merchant private key and validated on Klix side by merchant public key. It is important to use asymmetric cryptography algorithm to have non-disputable transactions in e-commerce. Especially in pricing and quotes area. Shared keys could be stolen from both parties thus making Klix liable of potential data and financial losses.</p>
 <h2 id="transport-level-security">Transport-Level Security<a class="headerlink" href="#transport-level-security" title="Permanent link">&para;</a></h2>
-<p>All communication is going via HTTPS TLS 1.2 protocol. KLIX is using trusted certificates from  a well-known certificate authority.</p>
+<p>All communication is going via HTTPS TLS 1.2 protocol. Klix is using trusted certificates from  a well-known certificate authority.</p>
 <p>In addition to TLS IP range limitation and redirect domain control is in place. </p>
 <h2 id="api-key">API Key<a class="headerlink" href="#api-key" title="Permanent link">&para;</a></h2>
 <p>The very first level of Merchant API security is a shared API key. API key is generated for Merchant user and should be sent in HTTP header with every request. It allows identifying that requests are coming from legit user.</p>
 <p>Name of the HTTP header to be used for submitting API Key is '<em>X-KLIX-Api-Key</em>'.</p>
 <h2 id="jws-signature">JWS Signature<a class="headerlink" href="#jws-signature" title="Permanent link">&para;</a></h2>
-<p>Private and public key pairs are issued by KLIX PKI (Public Key Infrastructure) server. It is possible to generate a new RSA 2048 key pair in Merchant Console -&gt; Certificates page. When clicking “GENERATE NEW CERTIFICATE” private key is downloaded to user machine, and public key is kept in KLIX database.</p>
+<p>Private and public key pairs are issued by Klix PKI (Public Key Infrastructure) server. It is possible to generate a new RSA 2048 key pair in Merchant Console -&gt; Certificates page. When clicking “GENERATE NEW CERTIFICATE” private key is downloaded to user machine, and public key is kept in Klix database.</p>
 <p><img alt="alt_text" src="../images/merchant_console_generate_new_certificate.png" title="Generate merchant certificate in Merchant Console" /></p>
 <p>JWS compact should be used for signing all REST API requests. A JSON Web Signature (abbreviated JWS) is an IETF-proposed standard [RFC7515] for signing arbitrary data.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p><img alt="alt_text" src="../images/jws.png" title="JWS" /></p>
 <p><em>“JWS compact serialization represents a signed JWT as a compact URL-safe string. This compact string has three main elements separated by periods (.): the JOSE header, the JWS payload and the JWS signature. If you use compact serialization against a JSON payload (or any payload — even XML), then you can have only a single signature, which is computed over the complete JOSE header and JWS payload.”<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></em></p>
-<p>This is Java code<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> example using Nimbus Jose JWT open source library. It generates an RSA private/public key pair and signs it with JWS signature. In real environment merchant API user would be using a private key generated from KLIX Merchant Console.</p>
+<p>This is Java code<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> example using Nimbus Jose JWT open source library. It generates an RSA private/public key pair and signs it with JWS signature. In real environment merchant API user would be using a private key generated from Klix Merchant Console.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">com.nimbusds.jose.*</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.nimbusds.jose.crypto.*</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.nimbusds.jose.jwk.*</span><span class="o">;</span>
@@ -538,13 +577,13 @@
 <p>Merchant RSA Key Pair generation guidelines:</p>
 <ul>
 <li>Each key pair is assigned a unique identifier in KIiX database;</li>
-<li>Merchant private key is not stored in KLIX and its responsibility of merchant to keep it secure;</li>
-<li>Key could be revoked by the merchant or KLIX admin at any time;</li>
+<li>Merchant private key is not stored in Klix and its responsibility of merchant to keep it secure;</li>
+<li>Key could be revoked by the merchant or Klix admin at any time;</li>
 <li>Multiple keys could be active at the same time. JWS ‘<em>kid</em>’ parameter helps to identify which key is used in a particular request;</li>
 <li>Default Key expiration time is 2 calendar years. This is defined on PKI policies level;</li>
 <li>Notifications about key status changes (as well as expiration reminders) should be sent to merchant email address (and potentially SMS);</li>
 </ul>
-<p>Requests going from KLIX to merchant defined callback URL are also signed digitally using KLIX private key and validated using public key, which is available in Merchant Console.</p>
+<p>Requests going from Klix to merchant defined callback URL are also signed digitally using Klix private key and validated using public key, which is available in Merchant Console.</p>
 <p>JWS signature content could be debugged inside online tool <a href="https://jwt.io/">https://jwt.io/</a>. Do not share your private key content online, since it will be compromised!</p>
 <div class="footnote">
 <hr />
