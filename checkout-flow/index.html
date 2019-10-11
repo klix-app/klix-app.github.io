@@ -121,37 +121,55 @@
       </a>
     
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Klix Developers" class="md-header-nav__button md-logo">
-          
-            <img src="../images/logo.png" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Klix Developers
-            </span>
-            <span class="md-header-nav__topic">
-              
-                Checkout flow
-              
-            </span>
-          
+      <!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+    <!-- Top-level navigation -->
+    <nav class="md-header-nav md-grid">
+      <div class="md-flex">
+  
+        <!-- Link to home -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href=".."
+              title="Klix Developers"
+              class="md-header-nav__button md-logo">
+            
+              <img src="../images/logo.png" width="64" height="64" />
+            
+          </a>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+  
+        <!-- Button to toggle drawer -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <label class="md-icon md-icon--menu md-header-nav__button"
+              for="__drawer"></label>
+        </div>
+  
+        <!-- Header title -->
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title"
+              data-md-component="title">
+            
+              <span class="md-header-nav__topic">
+                Klix Developers
+              </span>
+              <span class="md-header-nav__topic">
+                
+                  Checkout flow
+                
+              </span>
+            
+          </div>
+        </div>
+  
+        <!-- Button to open search dialogue -->
+        <div class="md-flex__cell md-flex__cell--shrink">
           
+            <label class="md-icon md-icon--search md-header-nav__button"
+                for="__search"></label>
+  
+            <!-- Search interface -->
+            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -174,12 +192,14 @@
     </div>
   </div>
 </div>
+          
+        </div>
+  
+        <!-- Repository containing source -->
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
+          <div class="md-flex__cell md-flex__cell--shrink">
+            <div class="md-header-nav__source">
+              
 
 
   
@@ -196,12 +216,12 @@
     klix-app/klix-app.github.io
   </div>
 </a>
+            </div>
           </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
+        
+      </div>
+    </nav>
+  </header>
     
     <div class="md-container">
       
@@ -415,9 +435,9 @@
 <li><strong>Approve order</strong> - order gets approved after inventory and pricing check as well as internal fraud rules if such exist. Items should be marked as unavailable in the internet shop at this moment.</li>
 <li><strong>Decline order</strong> - order gets declined due to item unavailability or price mismatch with shop inventory database. Customer sees decline message on Checkout.</li>
 <li><strong>Order status notification</strong> - order status is presented to the customer in Checkout widget. There is a final approval by customer for final amount.</li>
-<li><strong>Authorize payment</strong> - payment gets authorized by payment method specific way. This could be either 3D Secure with 2FA for payment cards or KLIX Pin or Fingerprint in case of onboarded mobile user.</li>
+<li><strong>Authorize payment</strong> - payment gets authorized by payment method specific way. This could be either 3D Secure with 2FA for payment cards or Klix Pin or Fingerprint in case of onboarded mobile user.</li>
 <li><strong>Payment approval</strong> - payment approval notification is shown to the customer, so the customer knows that funds have been authorized.</li>
-<li><strong>Confirm purchase</strong> - KLIX send notification to merchant about funds availability and order could be dispatched. In case there is no notification in specified time frame (e.g. 10 minutes) order could be expired and reserved items released back to being available for other customers.</li>
+<li><strong>Confirm purchase</strong> - Klix send notification to merchant about funds availability and order could be dispatched. In case there is no notification in specified time frame (e.g. 10 minutes) order could be expired and reserved items released back to being available for other customers.</li>
 </ol>
                 
                   

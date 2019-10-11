@@ -121,37 +121,55 @@
       </a>
     
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Klix Developers" class="md-header-nav__button md-logo">
-          
-            <img src="../images/logo.png" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Klix Developers
-            </span>
-            <span class="md-header-nav__topic">
-              
-                Widget
-              
-            </span>
-          
+      <!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+    <!-- Top-level navigation -->
+    <nav class="md-header-nav md-grid">
+      <div class="md-flex">
+  
+        <!-- Link to home -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href=".."
+              title="Klix Developers"
+              class="md-header-nav__button md-logo">
+            
+              <img src="../images/logo.png" width="64" height="64" />
+            
+          </a>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+  
+        <!-- Button to toggle drawer -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <label class="md-icon md-icon--menu md-header-nav__button"
+              for="__drawer"></label>
+        </div>
+  
+        <!-- Header title -->
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title"
+              data-md-component="title">
+            
+              <span class="md-header-nav__topic">
+                Klix Developers
+              </span>
+              <span class="md-header-nav__topic">
+                
+                  Widget
+                
+              </span>
+            
+          </div>
+        </div>
+  
+        <!-- Button to open search dialogue -->
+        <div class="md-flex__cell md-flex__cell--shrink">
           
+            <label class="md-icon md-icon--search md-header-nav__button"
+                for="__search"></label>
+  
+            <!-- Search interface -->
+            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -174,12 +192,14 @@
     </div>
   </div>
 </div>
+          
+        </div>
+  
+        <!-- Repository containing source -->
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
+          <div class="md-flex__cell md-flex__cell--shrink">
+            <div class="md-header-nav__source">
+              
 
 
   
@@ -196,12 +216,12 @@
     klix-app/klix-app.github.io
   </div>
 </a>
+            </div>
           </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
+        
+      </div>
+    </nav>
+  </header>
     
     <div class="md-container">
       
@@ -587,7 +607,7 @@
                 
                 <h1 id="checkout-js-widget">Checkout JS Widget<a class="headerlink" href="#checkout-js-widget" title="Permanent link">&para;</a></h1>
 <h2 id="checkout-widget-placement">Checkout Widget placement<a class="headerlink" href="#checkout-widget-placement" title="Permanent link">&para;</a></h2>
-<p>Checkout Widget is implemented as embeddable Web Component. In order to show that on merchant website KLIX JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.</p>
+<p>Checkout Widget is implemented as embeddable Web Component. In order to show that on merchant website Klix JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span>
                <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/widget/build/klixwidget.esm.js&quot;</span><span class="p">&gt;</span>
