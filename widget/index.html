@@ -1,0 +1,870 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Klix Developer documentation">
+      
+      
+      
+        <meta name="author" content="Klix Development Team">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Widget - Klix Developers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../stylesheets/klix.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-149580135-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#checkout-js-widget" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Klix Developers" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Klix Developers
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Widget
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/klix-app/klix-app.github.io" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    klix-app/klix-app.github.io
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Klix Developers" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.png" width="48" height="48">
+      
+    </a>
+    Klix Developers
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/klix-app/klix-app.github.io" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    klix-app/klix-app.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../quick-start-guide/" title="Quick start guide" class="md-nav__link">
+      Quick start guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../checkout-flow/" title="Checkout flow" class="md-nav__link">
+      Checkout flow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../client-libraries/" title="Client libraries" class="md-nav__link">
+      Client libraries
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../callbacks/" title="Callbacks" class="md-nav__link">
+      Callbacks
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Widget
+      </label>
+    
+    <a href="./" title="Widget" class="md-nav__link md-nav__link--active">
+      Widget
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checkout-widget-placement" class="md-nav__link">
+    Checkout Widget placement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-configuration" class="md-nav__link">
+    Widget Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instant-fixed-price-widget-type" class="md-nav__link">
+    INSTANT (Fixed Price) Widget Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout-dynamic-price-widget-type" class="md-nav__link">
+    CHECKOUT (Dynamic Price) Widget Type
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-api-for-single-order-item" class="md-nav__link">
+    HTML API for single order item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-api-for-multiple-order-items" class="md-nav__link">
+    HTML API for multiple order items
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    Implementation details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-api-for-single-and-multiple-order-items" class="md-nav__link">
+    JS API for single and multiple order items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-item-attributes" class="md-nav__link">
+    Order Item attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../testing-integration/" title="Testing integration" class="md-nav__link">
+      Testing integration
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checkout-widget-placement" class="md-nav__link">
+    Checkout Widget placement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-configuration" class="md-nav__link">
+    Widget Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instant-fixed-price-widget-type" class="md-nav__link">
+    INSTANT (Fixed Price) Widget Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout-dynamic-price-widget-type" class="md-nav__link">
+    CHECKOUT (Dynamic Price) Widget Type
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-api-for-single-order-item" class="md-nav__link">
+    HTML API for single order item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-api-for-multiple-order-items" class="md-nav__link">
+    HTML API for multiple order items
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    Implementation details
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-api-for-single-and-multiple-order-items" class="md-nav__link">
+    JS API for single and multiple order items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-item-attributes" class="md-nav__link">
+    Order Item attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="checkout-js-widget">Checkout JS Widget<a class="headerlink" href="#checkout-js-widget" title="Permanent link">&para;</a></h1>
+<h2 id="checkout-widget-placement">Checkout Widget placement<a class="headerlink" href="#checkout-widget-placement" title="Permanent link">&para;</a></h2>
+<p>Checkout Widget is implemented as embeddable Web Component. In order to show that on merchant website KLIX JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span>
+               <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/widget/build/klixwidget.esm.js&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">nomodule</span> 
+               <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/widget/build/klixwidget.js&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    KLIX embedded checkout:
+    <span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;604419cc-c313-4e47-93e8-330385669bdb&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Integration code could be accessed and copied from Merchant Console application.</p>
+<h2 id="widget-configuration">Widget Configuration<a class="headerlink" href="#widget-configuration" title="Permanent link">&para;</a></h2>
+<p>Widget entity with according <em>Widget Type</em> should be created and configured in <em>Merchant Console</em> (MC). Generated <em>Widget ID</em> is used later for embedding Web Component into Merchant HTML page.</p>
+<h2 id="instant-fixed-price-widget-type">INSTANT (Fixed Price) Widget Type<a class="headerlink" href="#instant-fixed-price-widget-type" title="Permanent link">&para;</a></h2>
+<p>It is possible to generate a checkout widget for a fixed amount. In this case no validation on merchant side is required - all order items are defined at widget configuration in Merchant Console (MC). They can’t be overwritten by <em>Widget HTML API</em> or <em>Widget JS API</em> (specified later in the document) for security purposes. This type of Widget allows lightweight integration with merchant - no merchant back-end is required for integration.</p>
+<p>Widget language is specified either in page <em><html></em> tag or in according widget tag.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;lv&quot;</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>OR</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+</pre></div>
+
+<h2 id="checkout-dynamic-price-widget-type">CHECKOUT (Dynamic Price) Widget Type<a class="headerlink" href="#checkout-dynamic-price-widget-type" title="Permanent link">&para;</a></h2>
+<p>In case Merchant has Back-end or resources to implement integration via Merchant Back-end (order verification / confirmation <em>REST</em> end-points) it might be more convenient to use this type of widget. One instance (created in <em>MC</em>) should be enough for all Merchant orders.</p>
+<p>Order items should be provided either via <em>Widget HTML API</em> (widget tag attributes) or via <em>Widget JS API</em>. Widget language is defined in the same manner as in <em>Fixed Price Widget</em> type.</p>
+<h3 id="html-api-for-single-order-item">HTML API for single order item<a class="headerlink" href="#html-api-for-single-order-item" title="Permanent link">&para;</a></h3>
+<p>Tax could be defined as rate (0.XX) or percentage (number greater than 1 without ‘%’ symbol). </p>
+<p>Tax rate default value is merchant specific (e.g. for merchants registered in LV it would be "0.21"). Currency default value is merchant specific as well (e.g. for merchants registered in EU it would be "EUR").</p>
+<p>All HTML widgets below are equivalent for merchant registered in LV:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span> <span class="na">tax-rate</span><span class="o">=</span><span class="s">&quot;0.21&quot;</span> <span class="na">count</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">unit</span><span class="o">=</span><span class="s">&quot;PIECE&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span> <span class="na">tax-rate</span><span class="o">=</span><span class="s">&quot;21&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+</pre></div>
+
+<h3 id="html-api-for-multiple-order-items">HTML API for multiple order items<a class="headerlink" href="#html-api-for-multiple-order-items" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&#39;{&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;unit&quot;:&quot;PIECE&quot;,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21},{&quot;amount&quot;:5,&quot;label&quot;:&quot;Piegāde&quot;}]}&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>OR</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;items&amp;quot;:[{&amp;quot;amount&amp;quot;:40,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;count&amp;quot;:2,&amp;quot;label&amp;quot;:&amp;quot;Philips XR3857&amp;quot;,&amp;quot;taxRate&amp;quot;:0.21},{&amp;quot;amount&amp;quot;:5,&amp;quot;label&amp;quot;:&amp;quot;Piegāde&amp;quot;}]}&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Also product name value needs to be properly escaped (e.g. using <code class="codehilite"><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span></code> for <code class="codehilite"><span class="o">&amp;</span></code>, <code class="codehilite"><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span></code> for <code class="codehilite"><span class="o">&lt;</span></code>, <code class="codehilite"><span class="o">&amp;#</span><span class="mi">39</span><span class="p">;</span></code> for <code class="codehilite"><span class="err">&#39;</span></code>, <code class="codehilite"><span class="o">&amp;#</span><span class="mi">34</span><span class="p">;</span></code> for <code class="codehilite"><span class="err">&quot;</span></code>, etc.) to be a valid HTML attribute value.</p>
+<h4 id="implementation-details">Implementation details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="c1">// merchant order</span>
+<span class="kd">let</span> <span class="nx">orderObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;items&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Philips XR3857&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Piegāde&quot;</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;shippingOptions&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;pickup&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;omniva&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;latvijaspasts&quot;</span><span class="p">}]</span>
+<span class="p">};</span>
+
+<span class="c1">// this value goes into widget &#39;order&#39; attribute</span>
+<span class="kd">let</span> <span class="nx">orderAttribute</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">orderObject</span><span class="p">);</span>
+
+<span class="c1">// this value goes into HTML attribute (e.g. client side templating)</span>
+<span class="kd">let</span> <span class="nx">escaped</span> <span class="o">=</span> <span class="nx">orderAttribute</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;amp;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;lt;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;#39;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;#34;&#39;</span><span class="p">);</span>
+
+<span class="c1">// this value is received as widget internal state</span>
+<span class="kd">let</span> <span class="nx">orderObjectInWidget</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">orderAttribute</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="js-api-for-single-and-multiple-order-items">JS API for single and multiple order items<a class="headerlink" href="#js-api-for-single-and-multiple-order-items" title="Permanent link">&para;</a></h3>
+<p>Widget <code class="codehilite"><span class="s1">&#39;lazy&#39;</span></code> attribute is used to delay widget initialization (until configuration via <em>Widget JS API</em> is completed):</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my-checkout-widget&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">lazy</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="kd">let</span> <span class="nx">checkoutWidget</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#my-checkout-widget&#39;</span><span class="p">);</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addOrderItem</span><span class="p">(</span> <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Philips XR3857&quot;</span><span class="p">,</span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="s2">&quot;PIECE&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">});</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addOrderItem</span><span class="p">({</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Piegāde&quot;</span><span class="p">});</span>
+
+  <span class="c1">// pick-up at store, free of charge </span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;pickup&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">});</span>
+
+  <span class="c1">// shipping price is unknown, separate request will be initiated</span>
+  <span class="c1">// for entered (by customer) address via Merchant API</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;latvijaspasts&quot;</span><span class="p">});</span>
+
+  <span class="c1">// shipping price (before tax) and tax rate are known for</span>
+  <span class="c1">// given product/cart (whatever selected address or pickup point)</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;myIdForPickupProvider&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">});</span>
+
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<h3 id="order-item-attributes">Order Item attributes<a class="headerlink" href="#order-item-attributes" title="Permanent link">&para;</a></h3>
+<table>
+  <tr>
+   <td>Name
+   </td>
+   <td>Mandatory
+   </td>
+   <td>Default Value
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td><code>amount</code>
+   </td>
+   <td><strong>Yes</strong>
+   </td>
+   <td>n/a
+   </td>
+   <td>Price per unit
+   </td>
+  </tr>
+  <tr>
+   <td><code>currency</code>
+   </td>
+   <td>No
+   </td>
+   <td>Merchant specific (<code>EUR</code> in Latvia)
+   </td>
+   <td>Alphabetic code ISO 4217
+   </td>
+  </tr>
+  <tr>
+   <td><code>label</code>
+   </td>
+   <td><strong>Yes</strong>
+   </td>
+   <td>n/a
+   </td>
+   <td>Product or service name
+   </td>
+  </tr>
+  <tr>
+   <td><code>count</code>
+   </td>
+   <td>No
+   </td>
+   <td><code>1</code>
+   </td>
+   <td>Quantity
+   </td>
+  </tr>
+  <tr>
+   <td><code>unit</code>
+   </td>
+   <td>No
+   </td>
+   <td><code>PIECE</code>
+   </td>
+   <td>{ PIECE, KILOGRAM, METER, LITRE, HOUR }
+   </td>
+  </tr>
+  <tr>
+   <td><code>taxRate</code>
+   </td>
+   <td>No
+   </td>
+   <td>Merchant specific (<code>0.21</code> in Latvia)
+   </td>
+   <td>VAT
+   </td>
+  </tr>
+  <tr>
+   <td><code>orderItemId</code>
+   </td>
+   <td>No
+   </td>
+   <td><code>null</code>
+   </td>
+   <td>Product ID in merchant system for reference purposes.
+   </td>
+  </tr>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../callbacks/" title="Callbacks" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Callbacks
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../testing-integration/" title="Testing integration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Testing integration
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Klix
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/klix-app" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/klixapp" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://lv.linkedin.com/company/klixapp" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
