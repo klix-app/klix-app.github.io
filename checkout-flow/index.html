@@ -427,6 +427,13 @@
                 <h1 id="checkout-flow">Checkout Flow<a class="headerlink" href="#checkout-flow" title="Permanent link">&para;</a></h1>
 <p>Order placement could be reflected as sequence diagram with three main parties: customer, KLiX system and Merchant eCommerce system.</p>
 <p><img alt="alt_text" src="../images/checkout_flow.png" title="Checkout flow sequence diagram" /></p>
+<div class="codehilite"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">Checkout</span> <span class="n">flow</span> <span class="n">sequence</span> <span class="n">diagram</span>
+<span class="n">Customer</span><span class="o">-&gt;</span><span class="n">Klix</span><span class="o">:</span> <span class="n">Normal</span> <span class="n">line</span>
+<span class="n">Klix</span><span class="o">--&gt;</span><span class="n">Merchant</span><span class="o">:</span> <span class="n">Dashed</span> <span class="n">line</span>
+<span class="n">C</span><span class="o">-&gt;&gt;</span><span class="n">D</span><span class="o">:</span> <span class="n">Open</span> <span class="n">arrow</span>
+<span class="n">D</span><span class="o">--&gt;&gt;</span><span class="n">A</span><span class="o">:</span> <span class="n">Dashed</span> <span class="n">open</span> <span class="n">arrow</span>
+</pre></div>
+
 <ol>
 <li><strong>Place new order</strong> - customer is creating new order in one of merchant sales channels (mobile, recurring payment, checkout widget). </li>
 <li><strong>Notify about new order</strong> - merchant gets notified about new pending order. Merchant gets information about items being requested as well as shipment options and specified shipment address. Merchant is required to make a decision about either approving or declining the submitted order.</li>
