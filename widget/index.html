@@ -470,6 +470,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#javascript-callbacks" class="md-nav__link">
+    Javascript callbacks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-completed-callback" class="md-nav__link">
+    Payment completed callback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -579,6 +599,26 @@
           <li class="md-nav__item">
   <a href="#order-item-attributes" class="md-nav__link">
     Order Item attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-callbacks" class="md-nav__link">
+    Javascript callbacks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-completed-callback" class="md-nav__link">
+    Payment completed callback
   </a>
   
 </li>
@@ -716,86 +756,96 @@
 
 <h3 id="order-item-attributes">Order Item attributes<a class="headerlink" href="#order-item-attributes" title="Permanent link">&para;</a></h3>
 <table>
-  <tr>
-   <td>Name
-   </td>
-   <td>Mandatory
-   </td>
-   <td>Default Value
-   </td>
-   <td>Description
-   </td>
-  </tr>
-  <tr>
-   <td><code>amount</code>
-   </td>
-   <td><strong>Yes</strong>
-   </td>
-   <td>n/a
-   </td>
-   <td>Price per unit
-   </td>
-  </tr>
-  <tr>
-   <td><code>currency</code>
-   </td>
-   <td>No
-   </td>
-   <td>Merchant specific (<code>EUR</code> in Latvia)
-   </td>
-   <td>Alphabetic code ISO 4217
-   </td>
-  </tr>
-  <tr>
-   <td><code>label</code>
-   </td>
-   <td><strong>Yes</strong>
-   </td>
-   <td>n/a
-   </td>
-   <td>Product or service name
-   </td>
-  </tr>
-  <tr>
-   <td><code>count</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>1</code>
-   </td>
-   <td>Quantity
-   </td>
-  </tr>
-  <tr>
-   <td><code>unit</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>PIECE</code>
-   </td>
-   <td>{ PIECE, KILOGRAM, METER, LITRE, HOUR }
-   </td>
-  </tr>
-  <tr>
-   <td><code>taxRate</code>
-   </td>
-   <td>No
-   </td>
-   <td>Merchant specific (<code>0.21</code> in Latvia)
-   </td>
-   <td>VAT
-   </td>
-  </tr>
-  <tr>
-   <td><code>orderItemId</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>null</code>
-   </td>
-   <td>Product ID in merchant system for reference purposes.
-   </td>
-  </tr>
+<thead>
+<tr>
+<th>Name</th>
+<th>Mandatory</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>n/a</td>
+<td>Price per unit</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>No</td>
+<td>Merchant specific (EUR in Latvia)</td>
+<td>Alphabetic code ISO 4217</td>
+</tr>
+<tr>
+<td>label</td>
+<td>Yes</td>
+<td>n/a</td>
+<td>Product or service name</td>
+</tr>
+<tr>
+<td>count</td>
+<td>No</td>
+<td>1</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>No</td>
+<td>PIECE</td>
+<td>{PIECE, KILOGRAM, METER, LITRE, HOUR}</td>
+</tr>
+<tr>
+<td>taxRate</td>
+<td>No</td>
+<td>Merchant specific (0.21 in Latvia)</td>
+<td>VAT</td>
+</tr>
+<tr>
+<td>orderItemId</td>
+<td>No</td>
+<td>null</td>
+<td>Product ID in merchant system for reference purposes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="javascript-callbacks">Javascript callbacks<a class="headerlink" href="#javascript-callbacks" title="Permanent link">&para;</a></h2>
+<p>Klix widget uses <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events">Custom DOM events</a> to communicate with merchant page. In order to listen specifc Klix widget event appropriate event listener should be registered first.</p>
+<h3 id="payment-completed-callback">Payment completed callback<a class="headerlink" href="#payment-completed-callback" title="Permanent link">&para;</a></h3>
+<p>Event with type <code class="codehilite"><span class="n">paymentCompleted</span></code> is published in case of successfull or failed payment right before payment status screen is shown to customer.</p>
+<p><img alt="Klix widget payment status screen" src="../images/widget_payment_status.png" title="Klix widget payment status screen" /></p>
+<p>Event handler can be used to dynamically update merchant page contents according to payment processing result.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kr">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
+    <span class="nx">checkoutElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;paymentCompleted&#39;</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Order with id &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;orderId&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; payment succeeded -&gt; &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;paymentSucceeded&quot;</span><span class="p">];</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Following event properties can be used:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event.detail["orderId"]</td>
+<td>string</td>
+<td>Completed payment order identifier</td>
+</tr>
+<tr>
+<td>event.detail["paymentSucceeded"]</td>
+<td>boolean</td>
+<td>Indicates if payment succeeded or failed</td>
+</tr>
+</tbody>
 </table>
                 
                   
