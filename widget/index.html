@@ -35,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../images/logo.png">
+      <link rel="shortcut icon" href="../images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
@@ -121,37 +121,55 @@
       </a>
     
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Klix Developers" class="md-header-nav__button md-logo">
-          
-            <img src="../images/logo.png" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Klix Developers
-            </span>
-            <span class="md-header-nav__topic">
-              
-                Widget
-              
-            </span>
-          
+      <!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+    <!-- Top-level navigation -->
+    <nav class="md-header-nav md-grid">
+      <div class="md-flex">
+  
+        <!-- Link to home -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href=".."
+              title="Klix Developers"
+              class="md-header-nav__button md-logo">
+            
+              <img src="../images/logo.png" width="64" height="64" />
+            
+          </a>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+  
+        <!-- Button to toggle drawer -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <label class="md-icon md-icon--menu md-header-nav__button"
+              for="__drawer"></label>
+        </div>
+  
+        <!-- Header title -->
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title"
+              data-md-component="title">
+            
+              <span class="md-header-nav__topic">
+                Klix Developers
+              </span>
+              <span class="md-header-nav__topic">
+                
+                  Widget
+                
+              </span>
+            
+          </div>
+        </div>
+  
+        <!-- Button to open search dialogue -->
+        <div class="md-flex__cell md-flex__cell--shrink">
           
+            <label class="md-icon md-icon--search md-header-nav__button"
+                for="__search"></label>
+  
+            <!-- Search interface -->
+            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -174,17 +192,19 @@
     </div>
   </div>
 </div>
+          
+        </div>
+  
+        <!-- Repository containing source -->
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
+          <div class="md-flex__cell md-flex__cell--shrink">
+            <div class="md-header-nav__source">
+              
 
 
   
 
-<a href="https://github.com/klix-app/klix-app.github.io" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/klix-app/klix-developer-documentation-website" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -193,15 +213,15 @@
     </div>
   
   <div class="md-source__repository">
-    klix-app/klix-app.github.io
+    klix-app/klix-developer-documentation-website
   </div>
 </a>
+            </div>
           </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
+        
+      </div>
+    </nav>
+  </header>
     
     <div class="md-container">
       
@@ -231,7 +251,7 @@
 
   
 
-<a href="https://github.com/klix-app/klix-app.github.io" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/klix-app/klix-developer-documentation-website" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -240,7 +260,7 @@
     </div>
   
   <div class="md-source__repository">
-    klix-app/klix-app.github.io
+    klix-app/klix-developer-documentation-website
   </div>
 </a>
     </div>
@@ -450,6 +470,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#prefilling-klix-widget-form-data" class="md-nav__link">
+    Prefilling Klix widget form data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-callbacks" class="md-nav__link">
+    Javascript callbacks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-completed-callback" class="md-nav__link">
+    Payment completed callback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -568,6 +615,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#prefilling-klix-widget-form-data" class="md-nav__link">
+    Prefilling Klix widget form data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-callbacks" class="md-nav__link">
+    Javascript callbacks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-completed-callback" class="md-nav__link">
+    Payment completed callback
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -587,7 +661,11 @@
                 
                 <h1 id="checkout-js-widget">Checkout JS Widget<a class="headerlink" href="#checkout-js-widget" title="Permanent link">&para;</a></h1>
 <h2 id="checkout-widget-placement">Checkout Widget placement<a class="headerlink" href="#checkout-widget-placement" title="Permanent link">&para;</a></h2>
-<p>Checkout Widget is implemented as embeddable Web Component. In order to show that on merchant website KLIX JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.</p>
+<p>Checkout Widget is implemented as embeddable Web Component. In order to show Klix checkout widget on a merchant website widget JavaScript should be included in the page and custom HTML tag to be placed in the required location. See the example below for integration code.</p>
+<div class="admonition warning">
+<p class="admonition-title">Widget scripts</p>
+<p>Please note that Klix Widget JavaScript source should be loaded from different destination in case of production and test environment. Production environment Klix Widget JavaScript base path is  <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">klix</span><span class="p">.</span><span class="nb">blob</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="k">public</span><span class="o">/</span><span class="n">widget</span><span class="o">/</span><span class="n">build</span><span class="o">/</span></code>. Production environment Klix Widget JavaScript base path is <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">klix</span><span class="p">.</span><span class="nb">blob</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">stage</span><span class="o">/</span><span class="n">widget</span><span class="o">/</span><span class="n">build</span><span class="o">/</span></code>.</p>
+</div>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span>
                <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/widget/build/klixwidget.esm.js&quot;</span><span class="p">&gt;</span>
@@ -696,86 +774,108 @@
 
 <h3 id="order-item-attributes">Order Item attributes<a class="headerlink" href="#order-item-attributes" title="Permanent link">&para;</a></h3>
 <table>
-  <tr>
-   <td>Name
-   </td>
-   <td>Mandatory
-   </td>
-   <td>Default Value
-   </td>
-   <td>Description
-   </td>
-  </tr>
-  <tr>
-   <td><code>amount</code>
-   </td>
-   <td><strong>Yes</strong>
-   </td>
-   <td>n/a
-   </td>
-   <td>Price per unit
-   </td>
-  </tr>
-  <tr>
-   <td><code>currency</code>
-   </td>
-   <td>No
-   </td>
-   <td>Merchant specific (<code>EUR</code> in Latvia)
-   </td>
-   <td>Alphabetic code ISO 4217
-   </td>
-  </tr>
-  <tr>
-   <td><code>label</code>
-   </td>
-   <td><strong>Yes</strong>
-   </td>
-   <td>n/a
-   </td>
-   <td>Product or service name
-   </td>
-  </tr>
-  <tr>
-   <td><code>count</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>1</code>
-   </td>
-   <td>Quantity
-   </td>
-  </tr>
-  <tr>
-   <td><code>unit</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>PIECE</code>
-   </td>
-   <td>{ PIECE, KILOGRAM, METER, LITRE, HOUR }
-   </td>
-  </tr>
-  <tr>
-   <td><code>taxRate</code>
-   </td>
-   <td>No
-   </td>
-   <td>Merchant specific (<code>0.21</code> in Latvia)
-   </td>
-   <td>VAT
-   </td>
-  </tr>
-  <tr>
-   <td><code>orderItemId</code>
-   </td>
-   <td>No
-   </td>
-   <td><code>null</code>
-   </td>
-   <td>Product ID in merchant system for reference purposes.
-   </td>
-  </tr>
+<thead>
+<tr>
+<th>Name</th>
+<th>Mandatory</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>n/a</td>
+<td>Price per unit</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>No</td>
+<td>Merchant specific (EUR in Latvia)</td>
+<td>Alphabetic code ISO 4217</td>
+</tr>
+<tr>
+<td>label</td>
+<td>Yes</td>
+<td>n/a</td>
+<td>Product or service name</td>
+</tr>
+<tr>
+<td>count</td>
+<td>No</td>
+<td>1</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>No</td>
+<td>PIECE</td>
+<td>{PIECE, KILOGRAM, METER, LITRE, HOUR}</td>
+</tr>
+<tr>
+<td>taxRate</td>
+<td>No</td>
+<td>Merchant specific (0.21 in Latvia)</td>
+<td>VAT</td>
+</tr>
+<tr>
+<td>orderItemId</td>
+<td>No</td>
+<td>null</td>
+<td>Product ID in merchant system for reference purposes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prefilling-klix-widget-form-data">Prefilling Klix widget form data<a class="headerlink" href="#prefilling-klix-widget-form-data" title="Permanent link">&para;</a></h2>
+<p>Klix widget form data prefilling allows to reduce amount of fields that needs to be entred by customer in Klix form in situations where some or all of required customer information was previously entered in merchant's webpage e.g. in case if Klix form is presented to exsiting merchant's customer or customer needs to fill specific form on merchant's page before continuing with Klix form.</p>
+<p>Klix widget supports prefilling form with customer data specified as Klix widget attributes. Customer phone number, e-mail, first name and last name can be passed to widget:</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">email</span><span class="o">=</span><span class="s">&quot;john.doe@klix.app&quot;</span> <span class="na">phone</span><span class="o">=</span><span class="s">&quot;37120000000&quot;</span> <span class="na">first-name</span><span class="o">=</span><span class="s">&quot;John&quot;</span> <span class="na">last-name</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hydrated&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Note that partial data prefill is supported i.e. if only firstname and last name of customer is passed to Klix widget it will be prefilled after non existing Klix customer enters his mobile phone number.</p>
+<p>In case there's no Klix customer with specified mobile phone number Klix widget form will be prefilled with specified data.</p>
+<p><img alt="New customer data prefilled in widget" src="../images/widget_new_customer_data_prefilled.png" title="New customer data prefilled in widget" /></p>
+<p>Otherwise Klix widget data autofill is triggered automatically so that customer receives autofill notifcation in his mobile phone.</p>
+<p><img alt="Existing customer data prefilled in widget" src="../images/widget_existing_customer_data_prefilled.png" title="Existing customer data prefilled in widget" /></p>
+<h2 id="javascript-callbacks">Javascript callbacks<a class="headerlink" href="#javascript-callbacks" title="Permanent link">&para;</a></h2>
+<p>Klix widget uses <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events">Custom DOM events</a> to communicate with merchant page. In order to listen specifc Klix widget event appropriate event listener should be registered first.</p>
+<h3 id="payment-completed-callback">Payment completed callback<a class="headerlink" href="#payment-completed-callback" title="Permanent link">&para;</a></h3>
+<p>Event with type <code class="codehilite"><span class="n">paymentCompleted</span></code> is published in case of successfull or failed payment right before payment status screen is shown to customer.</p>
+<p><img alt="Klix widget payment status screen" src="../images/widget_payment_status.png" title="Klix widget payment status screen" /></p>
+<p>Event handler can be used to dynamically update merchant page contents according to payment processing result.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kr">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
+    <span class="nx">checkoutElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;paymentCompleted&#39;</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Order with id &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;orderId&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; payment succeeded -&gt; &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;paymentSucceeded&quot;</span><span class="p">];</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Following event properties can be used:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event.detail["orderId"]</td>
+<td>string</td>
+<td>Completed payment order identifier</td>
+</tr>
+<tr>
+<td>event.detail["paymentSucceeded"]</td>
+<td>boolean</td>
+<td>Indicates if payment succeeded or failed</td>
+</tr>
+</tbody>
 </table>
                 
                   
