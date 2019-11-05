@@ -529,7 +529,7 @@
 <tr>
 <td>Merchant Callback URL</td>
 <td>https://merchant.com/callbacks</td>
-<td>HTTP OPTIONS request is sent from Klix backend to check if HTTP connection can be established. This end-point should return HTTP status 200.</td>
+<td>HTTP OPTIONS request is sent from Klix backend to check if HTTP connection can be established. This end-point should return HTTP status 200 and header Access-Control-Allow-Methods should contain POST method.</td>
 </tr>
 <tr>
 <td>Order verification URL</td>
