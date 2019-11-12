@@ -35,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../images/favicon.png">
+      <link rel="shortcut icon" href="../images/logo.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
@@ -121,55 +121,37 @@
       </a>
     
     
-      <!-- Application header -->
-<header class="md-header" data-md-component="header">
-
-    <!-- Top-level navigation -->
-    <nav class="md-header-nav md-grid">
-      <div class="md-flex">
-  
-        <!-- Link to home -->
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <a href=".."
-              title="Klix Developers"
-              class="md-header-nav__button md-logo">
-            
-              <img src="../images/logo.png" width="64" height="64" />
-            
-          </a>
-        </div>
-  
-        <!-- Button to toggle drawer -->
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <label class="md-icon md-icon--menu md-header-nav__button"
-              for="__drawer"></label>
-        </div>
-  
-        <!-- Header title -->
-        <div class="md-flex__cell md-flex__cell--stretch">
-          <div class="md-flex__ellipsis md-header-nav__title"
-              data-md-component="title">
-            
-              <span class="md-header-nav__topic">
-                Klix Developers
-              </span>
-              <span class="md-header-nav__topic">
-                
-                  Configuration
-                
-              </span>
-            
-          </div>
-        </div>
-  
-        <!-- Button to open search dialogue -->
-        <div class="md-flex__cell md-flex__cell--shrink">
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Klix Developers" class="md-header-nav__button md-logo">
           
-            <label class="md-icon md-icon--search md-header-nav__button"
-                for="__search"></label>
-  
-            <!-- Search interface -->
-            
+            <img src="../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Klix Developers
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Configuration
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -192,19 +174,17 @@
     </div>
   </div>
 </div>
-          
-        </div>
-  
-        <!-- Repository containing source -->
         
-          <div class="md-flex__cell md-flex__cell--shrink">
-            <div class="md-header-nav__source">
-              
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
 
 
   
 
-<a href="https://github.com/klix-app/klix-developer-documentation-website" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/klix-app/klix-app.github.io" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -213,15 +193,15 @@
     </div>
   
   <div class="md-source__repository">
-    klix-app/klix-developer-documentation-website
+    klix-app/klix-app.github.io
   </div>
 </a>
-            </div>
           </div>
-        
-      </div>
-    </nav>
-  </header>
+        </div>
+      
+    </div>
+  </nav>
+</header>
     
     <div class="md-container">
       
@@ -251,7 +231,7 @@
 
   
 
-<a href="https://github.com/klix-app/klix-developer-documentation-website" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/klix-app/klix-app.github.io" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -260,7 +240,7 @@
     </div>
   
   <div class="md-source__repository">
-    klix-app/klix-developer-documentation-website
+    klix-app/klix-app.github.io
   </div>
 </a>
     </div>
@@ -532,19 +512,15 @@
 <p><img alt="Fill in merchant data in Business Profile view" src="../images/merchant_console_business_profile.png" title="Merchant business profile" /></p>
 <h2 id="2-download-klix-public-key">2. Download Klix public key<a class="headerlink" href="#2-download-klix-public-key" title="Permanent link">&para;</a></h2>
 <p>Head to Certificates page and copy public key contents from "Service Provider Certificate info" section. Store public key contents in file and use this key to validate the Klix callback payload.</p>
-<div class="admonition warning">
-<p class="admonition-title">Callback payload validation</p>
-<p>Merchant is obligated to perform JWS validation of Klix callback payload using Klix public key in order to ensure request payload integrity and authenticity.</p>
-</div>
 <p><img alt="Download Klix public key" src="../images/merchant_console_certificates.png" title="Klix public key" /></p>
 <h2 id="3-store-api-key">3. Store API key<a class="headerlink" href="#3-store-api-key" title="Permanent link">&para;</a></h2>
-<p>For each HTTP request sent to Klix header called <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">KLIX</span><span class="o">-</span><span class="n">Api</span><span class="o">-</span><span class="k">Key</span></code> should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section's field "Api key".</p>
+<p>For each HTTP request sent to Klix header called <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">KLIX</span><span class="o">-</span><span class="n">Api</span><span class="o">-</span><span class="k">Key</span></code> should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section.</p>
 <p><img alt="Add Klix API key to HTTP request headers" src="../images/merchant_console_api_key.png" title="Klix API key" /></p>
 <h2 id="4-generate-certificate-for-signing-the-api-requests">4. Generate certificate for signing the API requests<a class="headerlink" href="#4-generate-certificate-for-signing-the-api-requests" title="Permanent link">&para;</a></h2>
-<p>Generate certificate and download private key file. All data modification requests sent to Klix should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a request JWS header <code class="codehilite"><span class="n">kid</span></code> value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".</p>
-<div class="admonition security notice">
-<p class="admonition-title">Security</p>
-<p>Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload. Note that in such case JWS header <code class="codehilite"><span class="n">kid</span></code> value should match new certificate's name.</p>
+<p>Generate certificate and download private key file. Data modification requests sent to Klix should be signed using this key.</p>
+<div class="admonition warning">
+<p class="admonition-title">Please note</p>
+<p>Field <code class="codehilite"><span class="n">API</span> <span class="k">Key</span></code> value should be specified as JWS header <code class="codehilite"><span class="n">kid</span></code> value.</p>
 </div>
 <p><img alt="Create new merchant certificate" src="../images/merchant_console_certificate_created.png" title="New merchant certificate creation" /></p>
 <h2 id="5-create-a-widget">5. Create a widget<a class="headerlink" href="#5-create-a-widget" title="Permanent link">&para;</a></h2>
