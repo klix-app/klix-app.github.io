@@ -532,15 +532,19 @@
 <p><img alt="Fill in merchant data in Business Profile view" src="../images/merchant_console_business_profile.png" title="Merchant business profile" /></p>
 <h2 id="2-download-klix-public-key">2. Download Klix public key<a class="headerlink" href="#2-download-klix-public-key" title="Permanent link">&para;</a></h2>
 <p>Head to Certificates page and copy public key contents from "Service Provider Certificate info" section. Store public key contents in file and use this key to validate the Klix callback payload.</p>
+<div class="admonition warning">
+<p class="admonition-title">Callback payload validation</p>
+<p>Merchant is obligated to perform JWS validation of Klix callback payload using Klix public key in order to ensure request payload integrity and authenticity.</p>
+</div>
 <p><img alt="Download Klix public key" src="../images/merchant_console_certificates.png" title="Klix public key" /></p>
 <h2 id="3-store-api-key">3. Store API key<a class="headerlink" href="#3-store-api-key" title="Permanent link">&para;</a></h2>
-<p>For each HTTP request sent to Klix header called <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">KLIX</span><span class="o">-</span><span class="n">Api</span><span class="o">-</span><span class="k">Key</span></code> should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section.</p>
+<p>For each HTTP request sent to Klix header called <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">KLIX</span><span class="o">-</span><span class="n">Api</span><span class="o">-</span><span class="k">Key</span></code> should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section's field "Api key".</p>
 <p><img alt="Add Klix API key to HTTP request headers" src="../images/merchant_console_api_key.png" title="Klix API key" /></p>
 <h2 id="4-generate-certificate-for-signing-the-api-requests">4. Generate certificate for signing the API requests<a class="headerlink" href="#4-generate-certificate-for-signing-the-api-requests" title="Permanent link">&para;</a></h2>
-<p>Generate certificate and download private key file. Data modification requests sent to Klix should be signed using this key.</p>
-<div class="admonition warning">
-<p class="admonition-title">Please note</p>
-<p>Field <code class="codehilite"><span class="n">API</span> <span class="k">Key</span></code> value should be specified as JWS header <code class="codehilite"><span class="n">kid</span></code> value.</p>
+<p>Generate certificate and download private key file. All data modification requests sent to Klix should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a request JWS header <code class="codehilite"><span class="n">kid</span></code> value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".</p>
+<div class="admonition security notice">
+<p class="admonition-title">Security</p>
+<p>Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload. Note that in such case JWS header <code class="codehilite"><span class="n">kid</span></code> value should match new certificate's name.</p>
 </div>
 <p><img alt="Create new merchant certificate" src="../images/merchant_console_certificate_created.png" title="New merchant certificate creation" /></p>
 <h2 id="5-create-a-widget">5. Create a widget<a class="headerlink" href="#5-create-a-widget" title="Permanent link">&para;</a></h2>
