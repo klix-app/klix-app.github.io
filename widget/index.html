@@ -497,6 +497,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limiting-accepted-cards" class="md-nav__link">
+    Limiting accepted cards
+  </a>
+  
+</li>
+      
       
       
       
@@ -642,6 +649,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limiting-accepted-cards" class="md-nav__link">
+    Limiting accepted cards
+  </a>
+  
+</li>
+      
       
       
       
@@ -670,8 +684,7 @@
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span>
                <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/widget/build/klixwidget.esm.js&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">nomodule</span> 
-               <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/widget/build/klixwidget.js&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">nomodule</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/widget/build/klixwidget.js&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -877,6 +890,37 @@
 </tr>
 </tbody>
 </table>
+<h2 id="limiting-accepted-cards">Limiting accepted cards<a class="headerlink" href="#limiting-accepted-cards" title="Permanent link">&para;</a></h2>
+<p>By default all cards issued by Mastercard and VISA are accepted by Klix however following constraints can be imposed via order configuration if needed:</p>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Configuration example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accepted card issuer</td>
+<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;issuer&quot;</span><span class="p">:</span> <span class="ss">&quot;Citadele&quot;</span><span class="err">}</span></code></td>
+<td>Only cards issued by Citadele bank are accepted for this payment</td>
+</tr>
+<tr>
+<td>Accepted card brand</td>
+<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;brand&quot;</span><span class="p">:</span> <span class="ss">&quot;X karte&quot;</span><span class="err">}</span></code></td>
+<td>Only Citadele "X karte" brand cards are accepted for this payment</td>
+</tr>
+<tr>
+<td>Accepted card payment scheme</td>
+<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;paymentScheme&quot;</span><span class="p">:</span> <span class="ss">&quot;VISA&quot;</span><span class="err">}</span></code></td>
+<td>Only VISA cards are accepted for this payment</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">checkout-widget</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;constraints&amp;quot;:{&amp;quot;issuer&amp;quot;:&amp;quot;Citadele&amp;quot;},&amp;quot;items&amp;quot;:[{&amp;quot;amount&amp;quot;:40,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;count&amp;quot;:2,&amp;quot;label&amp;quot;:&amp;quot;Philips XR3857&amp;quot;,&amp;quot;taxRate&amp;quot;:0.21}]}&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">checkout-widget</span><span class="p">&gt;</span>
+</pre></div>
                 
                   
                 
