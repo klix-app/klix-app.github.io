@@ -378,15 +378,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-callback-urls" class="md-nav__link">
-    Updating callback URLs
+  <a href="#callback-payload-signature-validation" class="md-nav__link">
+    Callback payload signature validation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#callback-payload-signature-validation" class="md-nav__link">
-    Callback payload signature validation
+  <a href="#updating-callback-urls" class="md-nav__link">
+    Updating callback URLs
   </a>
   
 </li>
@@ -510,15 +510,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-callback-urls" class="md-nav__link">
-    Updating callback URLs
+  <a href="#callback-payload-signature-validation" class="md-nav__link">
+    Callback payload signature validation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#callback-payload-signature-validation" class="md-nav__link">
-    Callback payload signature validation
+  <a href="#updating-callback-urls" class="md-nav__link">
+    Updating callback URLs
   </a>
   
 </li>
@@ -584,9 +584,81 @@
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 curl -x POST https://your.site/payment-notifications <span class="se">\</span>
     -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
-    -H <span class="s1">&#39;X-Klix-Signature: TODO&#39;</span> <span class="se">\</span>
+    -H <span class="s1">&#39;X-Klix-Signature: W80ryKJcG8K3LPp438k+AVfZmi2S6DmH8GkQraAa+D+2N/f2DlCgT42cuIkCMJS1MouMbcbVoxdnXZMm74dD2ThXdiFRCdgb2HWc25OQXZpZgZe+EJ4uWOJJSum2vMP25Pr/IoyHrjQ4/I0ddJs63/nlxhOODkN/kudYTndloMq9tgCGuxBS+6AIet5SUq2kC/uEgZEIBBI+IPxuji506T0XhT2e+u7nUJA+DApmulNamjhaccXQBfpYeVrSG8vhDyyan1s7F2vzlTir76cTN2LxncPW0xJ3UlBGpyMP0rT9PPypwW7N+7AYzYM5zoICm9rr6Y6VyIhOiIJ9jcOlLA==&#39;</span> <span class="se">\</span>
     -d <span class="s1">&#39;{</span>
-<span class="s1">        &quot;TODO&quot;: &quot;Example here&quot;</span>
+<span class="s1">        &quot;id&quot;:&quot;246c4390-a711-4b9b-8c4a-86349e6a15db&quot;,</span>
+<span class="s1">        &quot;status&quot;:&quot;VERIFIED&quot;,</span>
+<span class="s1">        &quot;customer&quot;:{</span>
+<span class="s1">            &quot;first_name&quot;:&quot;John&quot;,</span>
+<span class="s1">            &quot;last_name&quot;:&quot;Doe&quot;,</span>
+<span class="s1">            &quot;email&quot;:&quot;john.doe@klix.app&quot;,</span>
+<span class="s1">            &quot;phone_number&quot;:&quot;37126000000&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;payment&quot;:{</span>
+<span class="s1">            &quot;accountStatementReference&quot;:&quot;731583191&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;tax_amount&quot;:18.53,</span>
+<span class="s1">        &quot;total_amount&quot;:108.78,</span>
+<span class="s1">        &quot;items&quot;:[</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;amount&quot;:72.73,</span>
+<span class="s1">                &quot;label&quot;:&quot;Vacuum cleaner TP-3&quot;,</span>
+<span class="s1">                &quot;tax_amount&quot;:15.27,</span>
+<span class="s1">                &quot;total_amount&quot;:88.00,</span>
+<span class="s1">                &quot;tax_rate&quot;:0.21,</span>
+<span class="s1">                &quot;order_item_id&quot;:&quot;12345&quot;,</span>
+<span class="s1">                &quot;quantity&quot;:1.000,</span>
+<span class="s1">                &quot;unit&quot;:&quot;PIECE&quot;,</span>
+<span class="s1">                &quot;type&quot;:&quot;UNKNOWN&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;amount&quot;:6.13,</span>
+<span class="s1">                &quot;label&quot;:&quot;TP-3 HEPA filter&quot;,</span>
+<span class="s1">                &quot;tax_amount&quot;:3.26,</span>
+<span class="s1">                &quot;total_amount&quot;:18.78,</span>
+<span class="s1">                &quot;tax_rate&quot;:0.21,</span>
+<span class="s1">                &quot;quantity&quot;:2.000,</span>
+<span class="s1">                &quot;unit&quot;:&quot;PIECE&quot;,</span>
+<span class="s1">                &quot;type&quot;:&quot;UNKNOWN&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;amount&quot;:2.00,</span>
+<span class="s1">                &quot;label&quot;:&quot;Piegāde&quot;,</span>
+<span class="s1">                &quot;tax_amount&quot;:0.00,</span>
+<span class="s1">                &quot;total_amount&quot;:2.00,</span>
+<span class="s1">                &quot;tax_rate&quot;:0.00,</span>
+<span class="s1">                &quot;quantity&quot;:1.000,</span>
+<span class="s1">                &quot;unit&quot;:&quot;PIECE&quot;,</span>
+<span class="s1">                &quot;type&quot;:&quot;SHIPPING&quot;</span>
+<span class="s1">            }</span>
+<span class="s1">        ],</span>
+<span class="s1">        &quot;currency&quot;:&quot;EUR&quot;,</span>
+<span class="s1">        &quot;merchant_urls&quot;:{</span>
+<span class="s1">            &quot;confirmation&quot;:&quot;https://webhook.site/#!/6ddabff9-49af-4d4d-b221-7b607ffed276&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;shipping&quot;:{</span>
+<span class="s1">            &quot;type&quot;:&quot;PICKUP_POINT&quot;,</span>
+<span class="s1">            &quot;address&quot;:{</span>
+<span class="s1">                &quot;country&quot;:&quot;Latvia&quot;,</span>
+<span class="s1">                &quot;city&quot;:&quot;Rīga&quot;,</span>
+<span class="s1">                &quot;street&quot;:&quot;Āzenes iela 5&quot;,</span>
+<span class="s1">                &quot;latitude&quot;:24.08128,</span>
+<span class="s1">                &quot;longitude&quot;:56.949924,</span>
+<span class="s1">                &quot;postal_code&quot;:&quot;9934&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;method&quot;:{</span>
+<span class="s1">                &quot;id&quot;:&quot;omniva&quot;,</span>
+<span class="s1">                &quot;name&quot;:&quot;Omniva&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;contact_phone&quot;:&quot;37126000000&quot;,</span>
+<span class="s1">            &quot;pickup_point&quot;:{</span>
+<span class="s1">                &quot;name&quot;:&quot;Rīgas T/C Olimpia pakomāts&quot;,</span>
+<span class="s1">                &quot;comments&quot;:&quot;Blakus iebrauktuvei pazemes autostāvvietā&quot;,</span>
+<span class="s1">                &quot;external_id&quot;:&quot;9934&quot;,</span>
+<span class="s1">                &quot;service_hours&quot;:&quot;P-Pk.piegāde 10:00, izņemšana 17:00 Sestdienās piegāde 14:00,izņemšana 14:00&quot;</span>
+<span class="s1">            }</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;effective_amount&quot;:108.78</span>
 <span class="s1">    }&#39;</span>
 </pre></div>
 
@@ -623,9 +695,6 @@ curl -x POST https://your.site/shipping-cost-calculations <span class="se">\</sp
 <span class="s1">    }&#39;</span>
 </pre></div>
 
-<h2 id="updating-callback-urls">Updating callback URLs<a class="headerlink" href="#updating-callback-urls" title="Permanent link">&para;</a></h2>
-<p>URLs can be set in Merchant Console settings.</p>
-<p><img alt="alt_text" src="../images/callback_urls.png" title="Callback URLs configuration in Merchant Console" /></p>
 <h2 id="callback-payload-signature-validation">Callback payload signature validation<a class="headerlink" href="#callback-payload-signature-validation" title="Permanent link">&para;</a></h2>
 <p>First thing upon receiving purchase completed HTTP request you should verify request signature in order to ensure that request was sent by Klix server. Signature is sent as HTTP header <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">Klix</span><span class="o">-</span><span class="n">Signature</span></code> value and should be verified using <code class="codehilite"><span class="n">SHA256WithRSA</span></code> algorithm and Klix public key that can be downloaded from Merchant Console. Example signature validation code:</p>
 <div class="superfences-tabs">
@@ -716,6 +785,9 @@ curl -x POST https://your.site/shipping-cost-calculations <span class="se">\</sp
 <span class="o">}</span>
 </pre></div></div>
 </div>
+<h2 id="updating-callback-urls">Updating callback URLs<a class="headerlink" href="#updating-callback-urls" title="Permanent link">&para;</a></h2>
+<p>URLs can be set in Merchant Console settings.</p>
+<p><img alt="alt_text" src="../images/callback_urls.png" title="Callback URLs configuration in Merchant Console" /></p>
                 
                   
                 
