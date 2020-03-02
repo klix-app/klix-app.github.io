@@ -724,14 +724,14 @@ curl -x POST https://your.site/shipping-cost-calculations <span class="se">\</sp
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div></div>
 <input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">PHP_library</label>
+<label for="__tab_1_1">Klix PHP library</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="k">use</span> <span class="nx">Klix\Callback\ProviderSignatureValidator</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Klix\Callback\ProviderCallbackRequestDecoder</span><span class="p">;</span>
 
 <span class="nv">$validator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProviderSignatureValidator</span><span class="p">(</span><span class="nv">$apiConfiguration</span><span class="p">);</span>
 <span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">(</span><span class="nx">payload</span><span class="p">,</span> <span class="nx">signature_header_value</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div></div>
 <input name="__tabs_1" type="radio" id="__tab_1_2" />
 <label for="__tab_1_2">Java</label>
