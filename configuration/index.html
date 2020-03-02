@@ -98,6 +98,9 @@
       
     
     
+<script type="module" src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.esm.js"></script>
+<script nomodule src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.js"></script>
+
   </head>
   
     
@@ -297,8 +300,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../security/" title="Security" class="md-nav__link">
-      Security
+    <a href="../step-by-step/" title="Step by step instructions" class="md-nav__link">
+      Step by step instructions
     </a>
   </li>
 
@@ -350,22 +353,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-store-api-key" class="md-nav__link">
-    3. Store API key
+  <a href="#3-generate-privatepublic-key-pair-for-signing-the-api-requests" class="md-nav__link">
+    3. Generate private/public key pair for signing the API requests
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-generate-certificate-for-signing-the-api-requests" class="md-nav__link">
-    4. Generate certificate for signing the API requests
+  <a href="#4-create-a-widget" class="md-nav__link">
+    4. Create a widget
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-create-a-widget" class="md-nav__link">
-    5. Create a widget
+  <a href="#5-store-api-key" class="md-nav__link">
+    5. Store API key
   </a>
   
 </li>
@@ -387,44 +390,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../checkout-flow/" title="Checkout flow" class="md-nav__link">
-      Checkout flow
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../api/" title="API" class="md-nav__link">
-      API
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../client-libraries/" title="Client libraries" class="md-nav__link">
-      Client libraries
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../callbacks/" title="Callbacks" class="md-nav__link">
       Callbacks
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
     </a>
   </li>
 
@@ -447,8 +426,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../client-libraries/" title="Client libraries" class="md-nav__link">
+      Client libraries
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../testing-integration/" title="Testing integration" class="md-nav__link">
       Testing integration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
     </a>
   </li>
 
@@ -488,22 +491,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-store-api-key" class="md-nav__link">
-    3. Store API key
+  <a href="#3-generate-privatepublic-key-pair-for-signing-the-api-requests" class="md-nav__link">
+    3. Generate private/public key pair for signing the API requests
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-generate-certificate-for-signing-the-api-requests" class="md-nav__link">
-    4. Generate certificate for signing the API requests
+  <a href="#4-create-a-widget" class="md-nav__link">
+    4. Create a widget
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-create-a-widget" class="md-nav__link">
-    5. Create a widget
+  <a href="#5-store-api-key" class="md-nav__link">
+    5. Store API key
   </a>
   
 </li>
@@ -531,29 +534,31 @@
 <p>Fill in merchant data in "Business Profile view". Specify URL to merchant's terms &amp; conditions. Specify <a href="../callbacks/">callback URLs</a> in case advanced integration (API &amp; callbacks based) is used.</p>
 <p><img alt="Fill in merchant data in Business Profile view" src="../images/merchant_console_business_profile.png" title="Merchant business profile" /></p>
 <h2 id="2-download-klix-public-key">2. Download Klix public key<a class="headerlink" href="#2-download-klix-public-key" title="Permanent link">&para;</a></h2>
-<p>Head to Certificates page and copy public key contents from "Service Provider Certificate info" section. Store public key contents in file and use this key to validate the Klix callback payload.</p>
+<p>Head to Certificates page and copy public key contents from "Service Provider Certificate info" section.</p>
+<p><img alt="Copy Klix public key" src="../images/merchant_console_certificates.png" title="Klix public key" /></p>
+<p>Store public key contents in file and use this key to <a href="../callbacks/#callback-payload-signature-validation">validate</a> the Klix callback payload signature.</p>
 <div class="admonition warning">
-<p class="admonition-title">Callback payload validation</p>
-<p>Merchant is obligated to perform JWS validation of Klix callback payload using Klix public key in order to ensure request payload integrity and authenticity.</p>
+<p class="admonition-title">Callback payload signature validation</p>
+<p>Merchant is obligated to perform Klix callback payload signature validation using Klix public key in order to ensure request payload integrity and authenticity.</p>
 </div>
-<p><img alt="Download Klix public key" src="../images/merchant_console_certificates.png" title="Klix public key" /></p>
-<h2 id="3-store-api-key">3. Store API key<a class="headerlink" href="#3-store-api-key" title="Permanent link">&para;</a></h2>
-<p>For each HTTP request sent to Klix header called <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">KLIX</span><span class="o">-</span><span class="n">Api</span><span class="o">-</span><span class="k">Key</span></code> should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section's field "Api key".</p>
-<p><img alt="Add Klix API key to HTTP request headers" src="../images/merchant_console_api_key.png" title="Klix API key" /></p>
-<h2 id="4-generate-certificate-for-signing-the-api-requests">4. Generate certificate for signing the API requests<a class="headerlink" href="#4-generate-certificate-for-signing-the-api-requests" title="Permanent link">&para;</a></h2>
-<p>Generate certificate and download private key file. All data modification requests sent to Klix should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a request JWS header <code class="codehilite"><span class="n">kid</span></code> value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".</p>
-<div class="admonition security notice">
-<p class="admonition-title">Security</p>
-<p>Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload. Note that in such case JWS header <code class="codehilite"><span class="n">kid</span></code> value should match new certificate's name.</p>
+<h2 id="3-generate-privatepublic-key-pair-for-signing-the-api-requests">3. Generate private/public key pair for signing the API requests<a class="headerlink" href="#3-generate-privatepublic-key-pair-for-signing-the-api-requests" title="Permanent link">&para;</a></h2>
+<p>Generate private/public key pair and download private key file. Merchant order details passed as Klix widget attributes and all data modification requests sent to Klix API e.g. payment refund should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a HTTP request payload HTTP header <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">Klix</span><span class="o">-</span><span class="k">Key</span><span class="o">-</span><span class="n">ID</span></code> value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".</p>
+<div class="admonition warning">
+<p class="admonition-title">Security notice</p>
+<p>Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload and widget attrributes. Note that in such case HTTP header <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">Klix</span><span class="o">-</span><span class="k">Key</span><span class="o">-</span><span class="n">ID</span></code> value and Klix widget attribute <code class="codehilite"><span class="n">certificate</span><span class="o">-</span><span class="n">name</span></code> should match new certificate's name.</p>
 </div>
 <p><img alt="Create new merchant certificate" src="../images/merchant_console_certificate_created.png" title="New merchant certificate creation" /></p>
-<h2 id="5-create-a-widget">5. Create a widget<a class="headerlink" href="#5-create-a-widget" title="Permanent link">&para;</a></h2>
-<p>Head to Widgets section to create a new widget. Klix widget is Klix form configuration representation that is identifiable by it's id. There are two types of widgets:</p>
+<h2 id="4-create-a-widget">4. Create a widget<a class="headerlink" href="#4-create-a-widget" title="Permanent link">&para;</a></h2>
+<p>Head to Widgets section to create a new widget. Klix widget is Klix form configuration representation that is identifiable by it's id. There are tree types of widgets:</p>
 <ul>
 <li>Static widget</li>
-<li>Dynamic widget</li>
+<li>Klix Pay widget</li>
+<li>Klix Checkout widget</li>
 </ul>
 <p>See <a href="../widget/">Widget</a> section for more detailed description of widget types amd configuration.</p>
+<h2 id="5-store-api-key">5. Store API key<a class="headerlink" href="#5-store-api-key" title="Permanent link">&para;</a></h2>
+<p>Note that Klix standard checkout flow doesn't require a merchant to invoke Klix API. More advanced use cases like refunding an order can be handled both in Merchant Console or via Klix API. For each HTTP request sent to Klix API HTTP header called <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">KLIX</span><span class="o">-</span><span class="n">Api</span><span class="o">-</span><span class="k">Key</span></code> should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section's field "Api key".</p>
+<p><img alt="Add Klix API key to HTTP request headers" src="../images/merchant_console_api_key.png" title="Klix API key" /></p>
                 
                   
                 
@@ -574,7 +579,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../security/" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../step-by-step/" title="Step by step instructions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -583,19 +588,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Security
+                Step by step instructions
               </span>
             </div>
           </a>
         
         
-          <a href="../checkout-flow/" title="Checkout flow" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../callbacks/" title="Callbacks" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Checkout flow
+                Callbacks
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

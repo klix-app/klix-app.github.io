@@ -98,6 +98,9 @@
       
     
     
+<script type="module" src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.esm.js"></script>
+<script nomodule src="https://klix.blob.core.windows.net/stage/widget/build/klixwidget.js"></script>
+
   </head>
   
     
@@ -297,8 +300,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../security/" title="Security" class="md-nav__link">
-      Security
+    <a href="../step-by-step/" title="Step by step instructions" class="md-nav__link">
+      Step by step instructions
     </a>
   </li>
 
@@ -311,42 +314,6 @@
   <li class="md-nav__item">
     <a href="../configuration/" title="Configuration" class="md-nav__link">
       Configuration
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../checkout-flow/" title="Checkout flow" class="md-nav__link">
-      Checkout flow
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../api/" title="API" class="md-nav__link">
-      API
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../client-libraries/" title="Client libraries" class="md-nav__link">
-      Client libraries
     </a>
   </li>
 
@@ -392,14 +359,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#shipping-cost-calculation-request-jws-payload-example" class="md-nav__link">
-    Shipping cost calculation request JWS payload example
+  <a href="#purchase-notification-request-example" class="md-nav__link">
+    Purchase notification request example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipping-cost-calculation-request-example" class="md-nav__link">
+    Shipping cost calculation request example
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callback-payload-signature-validation" class="md-nav__link">
+    Callback payload signature validation
+  </a>
   
 </li>
       
@@ -427,6 +408,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../widget/" title="Widget" class="md-nav__link">
       Widget
     </a>
@@ -439,8 +432,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../client-libraries/" title="Client libraries" class="md-nav__link">
+      Client libraries
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../testing-integration/" title="Testing integration" class="md-nav__link">
       Testing integration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
     </a>
   </li>
 
@@ -474,14 +491,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#shipping-cost-calculation-request-jws-payload-example" class="md-nav__link">
-    Shipping cost calculation request JWS payload example
+  <a href="#purchase-notification-request-example" class="md-nav__link">
+    Purchase notification request example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipping-cost-calculation-request-example" class="md-nav__link">
+    Shipping cost calculation request example
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callback-payload-signature-validation" class="md-nav__link">
+    Callback payload signature validation
+  </a>
   
 </li>
       
@@ -524,59 +555,236 @@
 <tr>
 <td>Terms &amp; Conditions URL</td>
 <td>https://merchant.com/terms.html</td>
-<td>HTTP GET request is sent from user device (browser or mobile) to check merchant legally binding agreement text.</td>
+<td>HTTP GET request is sent from user device (browser or mobile) to retrieve merchant legally binding agreement text.</td>
 </tr>
 <tr>
 <td>Merchant Callback URL</td>
 <td>https://merchant.com/callbacks</td>
-<td>HTTP OPTIONS request is sent from Klix backend to check if HTTP connection can be established. This end-point should return HTTP status 200 and header Access-Control-Allow-Methods should contain POST method.</td>
+<td>Connection test end-point. HTTP OPTIONS request is sent from Klix backend to check if HTTP connection to merchant server can be established. This end-point should return HTTP status 200 and header Access-Control-Allow-Methods should contain POST method.</td>
 </tr>
 <tr>
 <td>Order verification URL</td>
 <td>https://merchant.com/orders</td>
-<td>HTTP POST request is sent from Klix backend to this end-point whenever a customer submits an order in the checkout form. Merchant store should validate order data (check if selected product/service price is valid and is available in stock etc.) and either approve or reject an order. Note that Klix does not send full order information in notification request body. Only order identifier is sent as a JWS payload. You should check JWS signature, Base64 decode request payload to extract order identifier and use Klix API to retrieve order data by order identifier. Example JWS sent as a notification body: <code class="codehilite"><span class="n">eyJraWQiOiJNUGF5IiwiYWxnIjoiUlMyNTYifQ</span><span class="p">.</span><span class="n">eyJvcmRlcklkIjoiMWE2YTUzNjgtZTc5OS00OTY3LWI3NDItNjdhZGMxNmFlYzhhIn0</span><span class="p">.</span><span class="n">OZQU_2nPKUWl93U8YJJ9GjzZlLmmKS7ffuVu1WSZ5Y4JSU65LJxYs3kj0a460abXsBLkkVGX1Hi89fxNJ8CMsQ</span></code>. Base64 decoding middle part of this JWS token will lead to following JSON document <code class="codehilite"><span class="err">{</span><span class="ss">&quot;orderId&quot;</span><span class="p">:</span><span class="ss">&quot;1a6a5368-e799-4967-b742-67adc16aec8a&quot;</span><span class="err">}</span></code>.</td>
+<td>Deprecated - used only in case of Klix widgets with valiation type <code class="codehilite"><span class="n">CALLBACK</span></code>. HTTP POST request is sent from Klix backend to this end-point whenever a customer submits an order in the checkout form. Merchant store should validate order data (check if selected product/service price is valid and is available in stock etc.) and either approve or reject an order. Note that Klix does not send full order information in notification request body. Only order identifier is sent as a JWS payload. You should check JWS signature, Base64 decode request payload to extract order identifier and use Klix API to retrieve order data by order identifier. Example JWS sent as a notification body: <code class="codehilite"><span class="n">eyJraWQiOiJNUGF5IiwiYWxnIjoiUlMyNTYifQ</span><span class="p">.</span><span class="n">eyJvcmRlcklkIjoiMWE2YTUzNjgtZTc5OS00OTY3LWI3NDItNjdhZGMxNmFlYzhhIn0</span><span class="p">.</span><span class="n">OZQU_2nPKUWl93U8YJJ9GjzZlLmmKS7ffuVu1WSZ5Y4JSU65LJxYs3kj0a460abXsBLkkVGX1Hi89fxNJ8CMsQ</span></code>. Base64 decoding middle part of this JWS token will lead to following JSON document <code class="codehilite"><span class="err">{</span><span class="ss">&quot;orderId&quot;</span><span class="p">:</span><span class="ss">&quot;1a6a5368-e799-4967-b742-67adc16aec8a&quot;</span><span class="p">,</span><span class="ss">&quot;externalOrderId&quot;</span><span class="p">:</span><span class="ss">&quot;1233456789&quot;</span><span class="err">}</span></code>, where <code class="codehilite"><span class="n">orderId</span></code> is Klix order identifier and <code class="codehilite"><span class="n">externalOrderId</span></code> is order identifier in merchant's system.</td>
 </tr>
 <tr>
 <td>Purchase notification URL</td>
 <td>https://merchant.com/purchases</td>
-<td>HTTP POST request is sent from Klix backend to confirm that payment has either been collected successfully on behalf of the merchant or either payment has been cancelled. JWS payload contains both order identifier and status e.g. <code class="codehilite"><span class="err">{</span><span class="ss">&quot;status&quot;</span><span class="p">:</span><span class="ss">&quot;PAYMENT_APPROVED&quot;</span><span class="p">,</span><span class="ss">&quot;orderId&quot;</span><span class="p">:</span><span class="ss">&quot;dfe50808-1771-4015-98bd-dac1f16fa6c3&quot;</span><span class="err">}</span></code> in case of successful payment or <code class="codehilite"><span class="err">{</span><span class="ss">&quot;status&quot;</span><span class="p">:</span><span class="ss">&quot;PAYMENT_REJECTED&quot;</span><span class="p">,</span><span class="ss">&quot;orderId&quot;</span><span class="p">:</span><span class="ss">&quot;dfe50808-1771-4015-98bd-dac1f16fa6c3&quot;</span><span class="err">}</span></code> in case of failed or cancelled payment.</td>
+<td>HTTP POST request is sent from Klix backend to confirm that payment has either been collected successfully on behalf of the merchant or either payment has failed/was cancelled. Note that error code and message might not be present even in case of failed payment. See <a href="#purchase-notification-request-example">Purchase notification request example</a>.</td>
 </tr>
 <tr>
 <td>Shipping cost calculation URL</td>
 <td>https://merchant.com/shipping-cost</td>
-<td>HTTP POST request is sent from Klix backend in order to calculate shipping costs for certain order. Note that this end-point should be implemented only in case merchant supports dynamic pricing delivery i.e. delivery price can be determined only after Klix client has entered delivery address. Otherwise different delivery option cost can be passed as Klix <a href="../widget/">Widget</a> parameter. See <a href="#shipping-cost-calculation-request-jws-payload-example">Shipping cost calculation request JWS payload example</a></td>
+<td>HTTP POST request is sent from Klix backend in order to calculate shipping costs for certain order. Note that this end-point should be implemented only in case merchant supports dynamic pricing delivery i.e. delivery price can be determined only after Klix client has entered delivery address. Otherwise different delivery option cost can be passed as Klix <a href="../widget/">Widget</a> parameter. See <a href="#shipping-cost-calculation-request-jws-payload-example">Shipping cost calculation request example</a>.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="shipping-cost-calculation-request-jws-payload-example">Shipping cost calculation request JWS payload example<a class="headerlink" href="#shipping-cost-calculation-request-jws-payload-example" title="Permanent link">&para;</a></h3>
-<p>Note that <code class="codehilite"><span class="n">pickup_point</span></code> is present only if customer has selected a delivery to pickup point, <code class="codehilite"><span class="n">address</span></code> is present both in case of delivery to address specified by customer and delivery to pickup point.</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>  
-    <span class="s2">&quot;order_id&quot;</span><span class="o">:</span> <span class="s2">&quot;05957e7f-803f-46f0-9100-1c3e10199b43&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;order_items&quot;</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;reference&quot;</span><span class="o">:</span> <span class="s2">&quot;QZT-213&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;quantity&quot;</span><span class="o">:</span> <span class="mf">2.000</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;reference&quot;</span><span class="o">:</span> <span class="s2">&quot;TP-LNK-3840&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;quantity&quot;</span><span class="o">:</span> <span class="mf">1.000</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;shipping_method_id&quot;</span><span class="o">:</span> <span class="s2">&quot;omniva&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;address&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;city&quot;</span><span class="o">:</span> <span class="s2">&quot;Rīga&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;address&quot;</span><span class="o">:</span> <span class="s2">&quot;K.Valdemāra 62, Rīga&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;postal_code&quot;</span><span class="o">:</span> <span class="s2">&quot;LV-1013&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;pickup_point&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;external_id&quot;</span><span class="o">:</span> <span class="s2">&quot;9111&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Rīgas Briāna ielas Rimi pakomāts&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;comments&quot;</span><span class="o">:</span> <span class="s2">&quot;Pa labi no galvenās ieejas&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;service_hours&quot;</span><span class="o">:</span> <span class="s2">&quot;P-Pk.piegāde 10:00, izņemšana 17:00 Sestdienās piegāde 14:00,izņemšana 14:00&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<h3 id="purchase-notification-request-example">Purchase notification request example<a class="headerlink" href="#purchase-notification-request-example" title="Permanent link">&para;</a></h3>
+<p>HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to <a href="#Callback-payload-signature-validation">check request signature</a>.</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+curl -x POST https://your.site/payment-notifications <span class="se">\</span>
+    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+    -H <span class="s1">&#39;X-Klix-Signature: W80ryKJcG8K3LPp438k+AVfZmi2S6DmH8GkQraAa+D+2N/f2DlCgT42cuIkCMJS1MouMbcbVoxdnXZMm74dD2ThXdiFRCdgb2HWc25OQXZpZgZe+EJ4uWOJJSum2vMP25Pr/IoyHrjQ4/I0ddJs63/nlxhOODkN/kudYTndloMq9tgCGuxBS+6AIet5SUq2kC/uEgZEIBBI+IPxuji506T0XhT2e+u7nUJA+DApmulNamjhaccXQBfpYeVrSG8vhDyyan1s7F2vzlTir76cTN2LxncPW0xJ3UlBGpyMP0rT9PPypwW7N+7AYzYM5zoICm9rr6Y6VyIhOiIJ9jcOlLA==&#39;</span> <span class="se">\</span>
+    -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;id&quot;:&quot;246c4390-a711-4b9b-8c4a-86349e6a15db&quot;,</span>
+<span class="s1">        &quot;status&quot;:&quot;VERIFIED&quot;,</span>
+<span class="s1">        &quot;customer&quot;:{</span>
+<span class="s1">            &quot;first_name&quot;:&quot;John&quot;,</span>
+<span class="s1">            &quot;last_name&quot;:&quot;Doe&quot;,</span>
+<span class="s1">            &quot;email&quot;:&quot;john.doe@klix.app&quot;,</span>
+<span class="s1">            &quot;phone_number&quot;:&quot;37126000000&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;payment&quot;:{</span>
+<span class="s1">            &quot;accountStatementReference&quot;:&quot;731583191&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;tax_amount&quot;:18.53,</span>
+<span class="s1">        &quot;total_amount&quot;:108.78,</span>
+<span class="s1">        &quot;items&quot;:[</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;amount&quot;:72.73,</span>
+<span class="s1">                &quot;label&quot;:&quot;Vacuum cleaner TP-3&quot;,</span>
+<span class="s1">                &quot;tax_amount&quot;:15.27,</span>
+<span class="s1">                &quot;total_amount&quot;:88.00,</span>
+<span class="s1">                &quot;tax_rate&quot;:0.21,</span>
+<span class="s1">                &quot;order_item_id&quot;:&quot;12345&quot;,</span>
+<span class="s1">                &quot;quantity&quot;:1.000,</span>
+<span class="s1">                &quot;unit&quot;:&quot;PIECE&quot;,</span>
+<span class="s1">                &quot;type&quot;:&quot;UNKNOWN&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;amount&quot;:6.13,</span>
+<span class="s1">                &quot;label&quot;:&quot;TP-3 HEPA filter&quot;,</span>
+<span class="s1">                &quot;tax_amount&quot;:3.26,</span>
+<span class="s1">                &quot;total_amount&quot;:18.78,</span>
+<span class="s1">                &quot;tax_rate&quot;:0.21,</span>
+<span class="s1">                &quot;quantity&quot;:2.000,</span>
+<span class="s1">                &quot;unit&quot;:&quot;PIECE&quot;,</span>
+<span class="s1">                &quot;type&quot;:&quot;UNKNOWN&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;amount&quot;:2.00,</span>
+<span class="s1">                &quot;label&quot;:&quot;Piegāde&quot;,</span>
+<span class="s1">                &quot;tax_amount&quot;:0.00,</span>
+<span class="s1">                &quot;total_amount&quot;:2.00,</span>
+<span class="s1">                &quot;tax_rate&quot;:0.00,</span>
+<span class="s1">                &quot;quantity&quot;:1.000,</span>
+<span class="s1">                &quot;unit&quot;:&quot;PIECE&quot;,</span>
+<span class="s1">                &quot;type&quot;:&quot;SHIPPING&quot;</span>
+<span class="s1">            }</span>
+<span class="s1">        ],</span>
+<span class="s1">        &quot;currency&quot;:&quot;EUR&quot;,</span>
+<span class="s1">        &quot;merchant_urls&quot;:{</span>
+<span class="s1">            &quot;confirmation&quot;:&quot;https://webhook.site/#!/6ddabff9-49af-4d4d-b221-7b607ffed276&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;shipping&quot;:{</span>
+<span class="s1">            &quot;type&quot;:&quot;PICKUP_POINT&quot;,</span>
+<span class="s1">            &quot;address&quot;:{</span>
+<span class="s1">                &quot;country&quot;:&quot;Latvia&quot;,</span>
+<span class="s1">                &quot;city&quot;:&quot;Rīga&quot;,</span>
+<span class="s1">                &quot;street&quot;:&quot;Āzenes iela 5&quot;,</span>
+<span class="s1">                &quot;latitude&quot;:24.08128,</span>
+<span class="s1">                &quot;longitude&quot;:56.949924,</span>
+<span class="s1">                &quot;postal_code&quot;:&quot;9934&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;method&quot;:{</span>
+<span class="s1">                &quot;id&quot;:&quot;omniva&quot;,</span>
+<span class="s1">                &quot;name&quot;:&quot;Omniva&quot;</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;contact_phone&quot;:&quot;37126000000&quot;,</span>
+<span class="s1">            &quot;pickup_point&quot;:{</span>
+<span class="s1">                &quot;name&quot;:&quot;Rīgas T/C Olimpia pakomāts&quot;,</span>
+<span class="s1">                &quot;comments&quot;:&quot;Blakus iebrauktuvei pazemes autostāvvietā&quot;,</span>
+<span class="s1">                &quot;external_id&quot;:&quot;9934&quot;,</span>
+<span class="s1">                &quot;service_hours&quot;:&quot;P-Pk.piegāde 10:00, izņemšana 17:00 Sestdienās piegāde 14:00,izņemšana 14:00&quot;</span>
+<span class="s1">            }</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;effective_amount&quot;:108.78</span>
+<span class="s1">    }&#39;</span>
 </pre></div>
 
+<h3 id="shipping-cost-calculation-request-example">Shipping cost calculation request example<a class="headerlink" href="#shipping-cost-calculation-request-example" title="Permanent link">&para;</a></h3>
+<p>Note that <code class="codehilite"><span class="n">pickup_point</span></code> is present only if customer has selected a delivery to pickup point, <code class="codehilite"><span class="n">address</span></code> is present both in case of delivery to address specified by customer and delivery to pickup point.</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+curl -x POST https://your.site/shipping-cost-calculations <span class="se">\</span>
+    -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+    -H <span class="s1">&#39;X-Klix-Signature: TODO&#39;</span> <span class="se">\</span>
+    -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;order_id&quot;: &quot;05957e7f-803f-46f0-9100-1c3e10199b43&quot;,</span>
+<span class="s1">        &quot;order_items&quot;: [</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;reference&quot;: &quot;QZT-213&quot;,</span>
+<span class="s1">                &quot;quantity&quot;: 2.000</span>
+<span class="s1">            },</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;reference&quot;: &quot;TP-LNK-3840&quot;,</span>
+<span class="s1">                &quot;quantity&quot;: 1.000</span>
+<span class="s1">            }</span>
+<span class="s1">        ],</span>
+<span class="s1">        &quot;shipping_method_id&quot;: &quot;omniva&quot;,</span>
+<span class="s1">        &quot;address&quot;: {</span>
+<span class="s1">            &quot;city&quot;: &quot;Rīga&quot;,</span>
+<span class="s1">            &quot;address&quot;: &quot;K.Valdemāra 62, Rīga&quot;,</span>
+<span class="s1">            &quot;postal_code&quot;: &quot;LV-1013&quot;</span>
+<span class="s1">        },</span>
+<span class="s1">        &quot;pickup_point&quot;: {</span>
+<span class="s1">            &quot;external_id&quot;: &quot;9111&quot;,</span>
+<span class="s1">            &quot;name&quot;: &quot;Rīgas Briāna ielas Rimi pakomāts&quot;,</span>
+<span class="s1">            &quot;comments&quot;: &quot;Pa labi no galvenās ieejas&quot;,</span>
+<span class="s1">            &quot;service_hours&quot;: &quot;P-Pk. piegāde 10:00, iznemšana 17:00 Sestdienas piegāde 14:00, iznemšana 14:00&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+
+<h2 id="callback-payload-signature-validation">Callback payload signature validation<a class="headerlink" href="#callback-payload-signature-validation" title="Permanent link">&para;</a></h2>
+<p>First thing upon receiving purchase completed HTTP request you should verify request signature in order to ensure that request was sent by Klix server. Signature is sent as HTTP header <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">Klix</span><span class="o">-</span><span class="n">Signature</span></code> value and should be verified using <code class="codehilite"><span class="n">SHA256WithRSA</span></code> algorithm and Klix public key that can be downloaded from Merchant Console. Example signature validation code:</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">PHP</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">is_signature_valid</span><span class="p">(</span><span class="nv">$payload</span><span class="p">,</span> <span class="nv">$signature_header_value</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+    <span class="nv">$klix_public_key</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;</span><span class="dl">EOD</span><span class="s"></span>
+<span class="s">-----BEGIN CERTIFICATE-----</span>
+<span class="s">MIIB5TCCAY+gAwIBAgIENkY2rzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJM</span>
+<span class="s">VjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMI</span>
+<span class="s">Q2l0YWRlbGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wHhcN</span>
+<span class="s">MTgwNjEyMTMzNjM4WhcNMjgwNjA5MTMzNjM4WjBoMQswCQYDVQQGEwJMVjEQMA4G</span>
+<span class="s">A1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMIQ2l0YWRl</span>
+<span class="s">bGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wXDANBgkqhkiG</span>
+<span class="s">9w0BAQEFAANLADBIAkEAqAUyLiFAd4hxAh3LrbBrbqk+lmGPVFgS3996vTCQ/L/h</span>
+<span class="s">L9WnA+EPnxMV5LFyd49xsf5bbspaLrXnVmwkuvUC9wIDAQABoyEwHzAdBgNVHQ4E</span>
+<span class="s">FgQUzbA4JwE+SOUOJEd25iwpd9cajJMwDQYJKoZIhvcNAQELBQADQQBDtypgN8O3</span>
+<span class="s">AZ+H4CjH5Ihq+V5i/a3pL6nj8Dg502wejDN8fXZJjJvdu0VxRzf4k41xeRg3lO7I</span>
+<span class="s">IrWkkFCW0LSH</span>
+<span class="s">-----END CERTIFICATE-----</span>
+<span class="dl">EOD</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nb">openssl_verify</span><span class="p">(</span><span class="nv">$payload</span><span class="p">,</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$signature_header_value</span><span class="p">),</span> 
+        <span class="nv">$klix_public_key</span><span class="p">,</span> <span class="nx">OPENSSL_ALGO_SHA256</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">Java</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.ByteArrayInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.charset.StandardCharsets</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.InvalidKeyException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.NoSuchAlgorithmException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.PublicKey</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.Signature</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.SignatureException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.cert.CertificateException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.cert.CertificateFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.cert.X509Certificate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Base64</span><span class="o">;</span>
+
+<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isSignatureValid</span><span class="o">(</span><span class="n">String</span> <span class="n">payload</span><span class="o">,</span> <span class="n">String</span> <span class="n">signatureHeaderValue</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">byte</span><span class="o">[]</span> <span class="n">decodedSignatureHeaderValue</span> <span class="o">=</span> <span class="n">Base64</span><span class="o">.</span><span class="na">getDecoder</span><span class="o">().</span><span class="na">decode</span><span class="o">(</span><span class="n">signatureHeaderValue</span><span class="o">);</span>
+    <span class="n">Signature</span> <span class="n">signature</span> <span class="o">=</span> <span class="n">getSignature</span><span class="o">(</span><span class="n">payload</span><span class="o">);</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">signature</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">decodedSignatureHeaderValue</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SignatureException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="n">Signature</span> <span class="nf">getSignature</span><span class="o">(</span><span class="n">String</span> <span class="n">payload</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">PublicKey</span> <span class="n">publicKey</span> <span class="o">=</span> <span class="n">loadPublicKey</span><span class="o">();</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">Signature</span> <span class="n">signature</span> <span class="o">=</span> <span class="n">Signature</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;SHA256withRSA&quot;</span><span class="o">);</span>
+        <span class="n">signature</span><span class="o">.</span><span class="na">initVerify</span><span class="o">(</span><span class="n">publicKey</span><span class="o">);</span>
+        <span class="n">signature</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">payload</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
+        <span class="k">return</span> <span class="n">signature</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NoSuchAlgorithmException</span> <span class="o">|</span> <span class="n">InvalidKeyException</span> <span class="o">|</span> <span class="n">SignatureException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="n">PublicKey</span> <span class="nf">loadPublicKey</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">klixPublicKey</span> <span class="o">=</span> <span class="s">&quot;-----BEGIN CERTIFICATE-----\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;MIIB5TCCAY+gAwIBAgIENkY2rzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJM\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;VjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMI\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;Q2l0YWRlbGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wHhcN\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;MTgwNjEyMTMzNjM4WhcNMjgwNjA5MTMzNjM4WjBoMQswCQYDVQQGEwJMVjEQMA4G\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;A1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMIQ2l0YWRl\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;bGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wXDANBgkqhkiG\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;9w0BAQEFAANLADBIAkEAqAUyLiFAd4hxAh3LrbBrbqk+lmGPVFgS3996vTCQ/L/h\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;L9WnA+EPnxMV5LFyd49xsf5bbspaLrXnVmwkuvUC9wIDAQABoyEwHzAdBgNVHQ4E\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;FgQUzbA4JwE+SOUOJEd25iwpd9cajJMwDQYJKoZIhvcNAQELBQADQQBDtypgN8O3\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;AZ+H4CjH5Ihq+V5i/a3pL6nj8Dg502wejDN8fXZJjJvdu0VxRzf4k41xeRg3lO7I\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;IrWkkFCW0LSH\n&quot;</span> <span class="o">+</span>
+            <span class="s">&quot;-----END CERTIFICATE-----&quot;</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">(</span><span class="n">InputStream</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayInputStream</span><span class="o">(</span><span class="n">klixPublicKey</span><span class="o">.</span><span class="na">getBytes</span><span class="o">()))</span> <span class="o">{</span>
+        <span class="n">CertificateFactory</span> <span class="n">fact</span> <span class="o">=</span> <span class="n">CertificateFactory</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;X.509&quot;</span><span class="o">);</span>
+        <span class="n">X509Certificate</span> <span class="n">certificate</span> <span class="o">=</span> <span class="o">(</span><span class="n">X509Certificate</span><span class="o">)</span> <span class="n">fact</span><span class="o">.</span><span class="na">generateCertificate</span><span class="o">(</span><span class="n">inputStream</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">certificate</span><span class="o">.</span><span class="na">getPublicKey</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="o">|</span> <span class="n">CertificateException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div></div>
+</div>
 <h2 id="updating-callback-urls">Updating callback URLs<a class="headerlink" href="#updating-callback-urls" title="Permanent link">&para;</a></h2>
 <p>URLs can be set in Merchant Console settings.</p>
 <p><img alt="alt_text" src="../images/callback_urls.png" title="Callback URLs configuration in Merchant Console" /></p>
@@ -600,7 +808,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../client-libraries/" title="Client libraries" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../configuration/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -609,19 +817,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Client libraries
+                Configuration
               </span>
             </div>
           </a>
         
         
-          <a href="../widget/" title="Widget" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../security/" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Widget
+                Security
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
