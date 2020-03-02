@@ -718,8 +718,7 @@ curl -x POST https://your.site/shipping-cost-calculations <span class="se">\</sp
 <span class="s">-----END CERTIFICATE-----</span>
 <span class="dl">EOD</span><span class="p">;</span>
 
-    <span class="k">return</span> <span class="nb">openssl_verify</span><span class="p">(</span><span class="nv">$payload</span><span class="p">,</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$signature_header_value</span><span class="p">),</span> 
-        <span class="nv">$klix_public_key</span><span class="p">,</span> <span class="nx">OPENSSL_ALGO_SHA256</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">openssl_verify</span><span class="p">(</span><span class="nv">$payload</span><span class="p">,</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$signature_header_value</span><span class="p">),</span> <span class="nv">$klix_public_key</span><span class="p">,</span> <span class="nx">OPENSSL_ALGO_SHA256</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div></div>
