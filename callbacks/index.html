@@ -561,33 +561,39 @@
 <tr>
 <th>URL Type</th>
 <th>Example</th>
+<th>Optional</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>Purchase notification URL</td>
+<td>https://merchant.com/purchases</td>
+<td>false</td>
+<td>HTTP POST request is sent from Klix backend to confirm that payment has either been collected successfully on behalf of the merchant or either payment has failed/was cancelled. Note that error code and message might not be present even in case of failed payment. See <a href="#purchase-notification-request-example">Purchase notification request example</a>.</td>
+</tr>
+<tr>
 <td>Terms &amp; Conditions URL</td>
 <td>https://merchant.com/terms.html</td>
+<td>false</td>
 <td>HTTP GET request is sent from user device (browser or mobile) to retrieve merchant legally binding agreement text.</td>
 </tr>
 <tr>
-<td>Merchant Callback URL</td>
+<td>Merchant Callback URL *</td>
 <td>https://merchant.com/callbacks</td>
+<td>true</td>
 <td>Connection test end-point. HTTP OPTIONS request is sent from Klix backend to check if HTTP connection to merchant server can be established. This end-point should return HTTP status 200 and header Access-Control-Allow-Methods should contain POST method.</td>
 </tr>
 <tr>
 <td>Order verification URL</td>
 <td>https://merchant.com/orders</td>
-<td>Deprecated - used only in case of Klix widgets with valiation type <code class="codehilite"><span class="n">CALLBACK</span></code>. HTTP POST request is sent from Klix backend to this end-point whenever a customer submits an order in the checkout form. Merchant store should validate order data (check if selected product/service price is valid and is available in stock etc.) and either approve or reject an order. Note that Klix does not send full order information in notification request body. Only order identifier is sent as a JWS payload. You should check JWS signature, Base64 decode request payload to extract order identifier and use Klix API to retrieve order data by order identifier. Example JWS sent as a notification body: <code class="codehilite"><span class="n">eyJraWQiOiJNUGF5IiwiYWxnIjoiUlMyNTYifQ</span><span class="p">.</span><span class="n">eyJvcmRlcklkIjoiMWE2YTUzNjgtZTc5OS00OTY3LWI3NDItNjdhZGMxNmFlYzhhIn0</span><span class="p">.</span><span class="n">OZQU_2nPKUWl93U8YJJ9GjzZlLmmKS7ffuVu1WSZ5Y4JSU65LJxYs3kj0a460abXsBLkkVGX1Hi89fxNJ8CMsQ</span></code>. Base64 decoding middle part of this JWS token will lead to following JSON document <code class="codehilite"><span class="err">{</span><span class="ss">&quot;orderId&quot;</span><span class="p">:</span><span class="ss">&quot;1a6a5368-e799-4967-b742-67adc16aec8a&quot;</span><span class="p">,</span><span class="ss">&quot;externalOrderId&quot;</span><span class="p">:</span><span class="ss">&quot;1233456789&quot;</span><span class="err">}</span></code>, where <code class="codehilite"><span class="n">orderId</span></code> is Klix order identifier and <code class="codehilite"><span class="n">externalOrderId</span></code> is order identifier in merchant's system.</td>
-</tr>
-<tr>
-<td>Purchase notification URL</td>
-<td>https://merchant.com/purchases</td>
-<td>HTTP POST request is sent from Klix backend to confirm that payment has either been collected successfully on behalf of the merchant or either payment has failed/was cancelled. Note that error code and message might not be present even in case of failed payment. See <a href="#purchase-notification-request-example">Purchase notification request example</a>.</td>
+<td>true</td>
+<td>Deprecated in favour of <a href="../security/#signing-order">order signing</a>. Used only in case of Klix widgets with valiation type <code class="codehilite"><span class="n">CALLBACK</span></code>. HTTP POST request is sent from Klix backend to this end-point whenever a customer submits an order in the checkout form. Merchant store should validate order data (check if selected product/service price is valid and is available in stock etc.) and either approve or reject an order. Note that Klix does not send full order information in notification request body. Only order identifier is sent as a JWS payload. You should check JWS signature, Base64 decode request payload to extract order identifier and use Klix API to retrieve order data by order identifier. Example JWS sent as a notification body: <code class="codehilite"><span class="n">eyJraWQiOiJNUGF5IiwiYWxnIjoiUlMyNTYifQ</span><span class="p">.</span><span class="n">eyJvcmRlcklkIjoiMWE2YTUzNjgtZTc5OS00OTY3LWI3NDItNjdhZGMxNmFlYzhhIn0</span><span class="p">.</span><span class="n">OZQU_2nPKUWl93U8YJJ9GjzZlLmmKS7ffuVu1WSZ5Y4JSU65LJxYs3kj0a460abXsBLkkVGX1Hi89fxNJ8CMsQ</span></code>. Base64 decoding middle part of this JWS token will lead to following JSON document <code class="codehilite"><span class="err">{</span><span class="ss">&quot;orderId&quot;</span><span class="p">:</span><span class="ss">&quot;1a6a5368-e799-4967-b742-67adc16aec8a&quot;</span><span class="p">,</span><span class="ss">&quot;externalOrderId&quot;</span><span class="p">:</span><span class="ss">&quot;1233456789&quot;</span><span class="err">}</span></code>, where <code class="codehilite"><span class="n">orderId</span></code> is Klix order identifier and <code class="codehilite"><span class="n">externalOrderId</span></code> is order identifier in merchant's system.</td>
 </tr>
 <tr>
 <td>Shipping cost calculation URL</td>
 <td>https://merchant.com/shipping-cost</td>
+<td>true</td>
 <td>HTTP POST request is sent from Klix backend in order to calculate shipping costs for certain order. Note that this end-point should be implemented only in case merchant supports dynamic pricing delivery i.e. delivery price can be determined only after Klix client has entered delivery address. Otherwise different delivery option cost can be passed as Klix <a href="../widget/">Widget</a> parameter. See <a href="#shipping-cost-calculation-request-jws-payload-example">Shipping cost calculation request example</a>.</td>
 </tr>
 </tbody>

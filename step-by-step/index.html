@@ -356,22 +356,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-implement-callbacks-end-point" class="md-nav__link">
-    5. Implement callbacks end-point
+  <a href="#5-implement-purchase-completed-callback-end-point" class="md-nav__link">
+    5. Implement purchase completed callback end-point
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-test-integration" class="md-nav__link">
-    6. Test integration
+  <a href="#6-implement-callbacks-to-navigate-back-to-payment-method-selection-page-or-display-additional-message-in-case-of-successfull-payment" class="md-nav__link">
+    6. Implement callbacks to navigate back to payment method selection page or display additional message in case of successfull payment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-sign-agreement-and-request-access-to-production-environment" class="md-nav__link">
-    7. Sign agreement and request access to production environment
+  <a href="#7-test-integration" class="md-nav__link">
+    7. Test integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-sign-agreement-and-request-access-to-production-environment" class="md-nav__link">
+    8. Sign agreement and request access to production environment
   </a>
   
 </li>
@@ -532,22 +539,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-implement-callbacks-end-point" class="md-nav__link">
-    5. Implement callbacks end-point
+  <a href="#5-implement-purchase-completed-callback-end-point" class="md-nav__link">
+    5. Implement purchase completed callback end-point
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-test-integration" class="md-nav__link">
-    6. Test integration
+  <a href="#6-implement-callbacks-to-navigate-back-to-payment-method-selection-page-or-display-additional-message-in-case-of-successfull-payment" class="md-nav__link">
+    6. Implement callbacks to navigate back to payment method selection page or display additional message in case of successfull payment
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-sign-agreement-and-request-access-to-production-environment" class="md-nav__link">
-    7. Sign agreement and request access to production environment
+  <a href="#7-test-integration" class="md-nav__link">
+    7. Test integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-sign-agreement-and-request-access-to-production-environment" class="md-nav__link">
+    8. Sign agreement and request access to production environment
   </a>
   
 </li>
@@ -604,11 +618,14 @@ Make sure to specify IP address from which Klix solution will be accessed and e-
 <p>Follow registration link in Merchant Console invitation e-mail and specify new password. After registration follow <a href="../configuration/">these steps</a> to configure integration.</p>
 <h2 id="4-add-widget-html-code-to-your-web-page">4. Add widget HTML code to your web-page<a class="headerlink" href="#4-add-widget-html-code-to-your-web-page" title="Permanent link">&para;</a></h2>
 <p>Add Klix widget HTML code to your product or checkout page depending on a type of used widget (instant, checkout, payment) and your webshop specifics. More information about widget configuration can be found on <a href="../widget/">Widget</a> page.</p>
-<h2 id="5-implement-callbacks-end-point">5. Implement callbacks end-point<a class="headerlink" href="#5-implement-callbacks-end-point" title="Permanent link">&para;</a></h2>
-<p><a href="../callbacks/">Callback</a> end-points should be implemented in case if Klix Pay or Klix Checkout Widget is used.</p>
-<h2 id="6-test-integration">6. Test integration<a class="headerlink" href="#6-test-integration" title="Permanent link">&para;</a></h2>
+<h2 id="5-implement-purchase-completed-callback-end-point">5. Implement purchase completed callback end-point<a class="headerlink" href="#5-implement-purchase-completed-callback-end-point" title="Permanent link">&para;</a></h2>
+<p><a href="../callbacks/">Callback</a> end-point should be implemented so that Klix can send payment status to merchant.</p>
+<h2 id="6-implement-callbacks-to-navigate-back-to-payment-method-selection-page-or-display-additional-message-in-case-of-successfull-payment">6. Implement callbacks to navigate back to payment method selection page or display additional message in case of successfull payment<a class="headerlink" href="#6-implement-callbacks-to-navigate-back-to-payment-method-selection-page-or-display-additional-message-in-case-of-successfull-payment" title="Permanent link">&para;</a></h2>
+<p>JavaScript <a href="../widget/#navigate-back-to-payment-method-selection-shopping-cart-page">callaback</a> should be implemented in order to allow customer to navigate back to payment method selection page or checkout page in case of failed or cancelled Klix payment.
+Additional <a href="..widget/#payment-completed-callback">callback</a> can be implemented in order to adjust payment status page depending on a payment result.</p>
+<h2 id="7-test-integration">7. Test integration<a class="headerlink" href="#7-test-integration" title="Permanent link">&para;</a></h2>
 <p>Klix provides fully functional test environment that can be used to perform end to end <a href="../testing-integration/">integration implementation testing</a>.</p>
-<h2 id="7-sign-agreement-and-request-access-to-production-environment">7. Sign agreement and request access to production environment<a class="headerlink" href="#7-sign-agreement-and-request-access-to-production-environment" title="Permanent link">&para;</a></h2>
+<h2 id="8-sign-agreement-and-request-access-to-production-environment">8. Sign agreement and request access to production environment<a class="headerlink" href="#8-sign-agreement-and-request-access-to-production-environment" title="Permanent link">&para;</a></h2>
 <p>After integration has been successfully tested on test environment you can proceed with creadentials request for production.</p>
                 
                   
