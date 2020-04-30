@@ -960,7 +960,12 @@
 </table>
 <h3 id="navigate-back-to-payment-method-selection-shopping-cart-page">Navigate back to payment method selection / shopping cart page<a class="headerlink" href="#navigate-back-to-payment-method-selection-shopping-cart-page" title="Permanent link">&para;</a></h3>
 <p>Event with type <code class="codehilite"><span class="n">navigateBackToCart</span></code> is published in case if customer presses "Back to merchant store" button on cancelled/failed payment Klix widget form.</p>
-<p><img alt="Failed/cancelled payment screen" src="../images/widget_failed_payment.png" title="Failed/cancelled payment screen" /></p>
+<!-- markdownlint-disable MD033 -->
+
+<p style="text-align: center;">
+  <img src="../images/widget_failed_payment.png" width="500" alt="Failed/cancelled payment screen" />
+</p>
+
 <p>Event handler should point browser to checkout or payment method selection page so that customer can use another payment method if available.</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
