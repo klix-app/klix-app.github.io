@@ -485,6 +485,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#navigate-back-to-payment-method-selection-shopping-cart-page" class="md-nav__link">
+    Navigate back to payment method selection / shopping cart page
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -682,6 +689,13 @@
           <li class="md-nav__item">
   <a href="#payment-completed-callback" class="md-nav__link">
     Payment completed callback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigate-back-to-payment-method-selection-shopping-cart-page" class="md-nav__link">
+    Navigate back to payment method selection / shopping cart page
   </a>
   
 </li>
@@ -910,6 +924,14 @@
     <span class="nx">checkoutElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;paymentCompleted&#39;</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Order with id &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;orderId&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; payment succeeded -&gt; &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;paymentSucceeded&quot;</span><span class="p">];</span>
         <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+        <span class="c1">// Note that this callback can be used to hide Klix default payment success screen and show your own instead</span>
+        <span class="cm">/*</span>
+<span class="cm">        if (event.detail[&quot;paymentSucceeded&quot;]) {</span>
+<span class="cm">          checkoutElement.remove();  </span>
+<span class="cm">          // display your own payment success message</span>
+<span class="cm">        }</span>
+<span class="cm">        */</span>
+
     <span class="p">});</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
@@ -936,6 +958,19 @@
 </tr>
 </tbody>
 </table>
+<h3 id="navigate-back-to-payment-method-selection-shopping-cart-page">Navigate back to payment method selection / shopping cart page<a class="headerlink" href="#navigate-back-to-payment-method-selection-shopping-cart-page" title="Permanent link">&para;</a></h3>
+<p>Event with type <code class="codehilite"><span class="n">navigateBackToCart</span></code> is published in case if customer presses "Back to merchant store" button on cancelled/failed payment Klix widget form.</p>
+<p><img alt="Failed/cancelled payment screen" src="../images/widget_failed_payment.png" title="Failed/cancelled payment screen" /></p>
+<p>Event handler should point browser to checkout or payment method selection page so that customer can use another payment method if available.</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kr">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
+    <span class="nx">checkoutElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;navigateBackToCart&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">=</span> <span class="s1">&#39;/shopping-cart&#39;</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
 <h2 id="limiting-accepted-cards">Limiting accepted cards<a class="headerlink" href="#limiting-accepted-cards" title="Permanent link">&para;</a></h2>
 <p>By default all cards issued by Mastercard and VISA are accepted by Klix however following constraints can be imposed via order configuration if needed:</p>
 <table>
