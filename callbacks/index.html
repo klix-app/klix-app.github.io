@@ -570,7 +570,7 @@
 <td>Purchase notification URL</td>
 <td>https://merchant.com/purchases</td>
 <td>false</td>
-<td>HTTP POST request is sent from Klix backend to confirm that payment has either been collected successfully on behalf of the merchant or either payment has failed/was cancelled. Note that error code and message might not be present even in case of failed payment. See <a href="#purchase-notification-request-example">Purchase notification request example</a>.</td>
+<td>HTTP PUT request is sent from Klix backend to confirm that payment has either been collected successfully on behalf of the merchant or either payment has failed/was cancelled. Note that error code and message might not be present even in case of failed payment. See <a href="#purchase-notification-request-example">Purchase notification request example</a>.</td>
 </tr>
 <tr>
 <td>Terms &amp; Conditions URL</td>
@@ -601,7 +601,7 @@
 <h3 id="purchase-notification-request-example">Purchase notification request example<a class="headerlink" href="#purchase-notification-request-example" title="Permanent link">&para;</a></h3>
 <p>HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to <a href="#Callback-payload-signature-validation">check request signature</a>.</p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
-curl -x POST https://your.site/payment-notifications <span class="se">\</span>
+curl -x PUT https://your.site/payment-notifications <span class="se">\</span>
     -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
     -H <span class="s1">&#39;X-Klix-Signature: MKqXr7siOkC6TYENeHUcy5ofFDiWpqMt+ow5iWJqnIYWU71W50fZFHfy3BVrehEGCvf+TufZK6DPymdM1e2G0w==&#39;</span> <span class="se">\</span>
     -d <span class="s1">&#39;{</span>
