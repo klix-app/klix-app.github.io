@@ -570,7 +570,7 @@
 <td>Purchase notification URL</td>
 <td>https://merchant.com/purchases</td>
 <td>false</td>
-<td>HTTP PUT request is sent from Klix backend to confirm that payment has either been collected successfully on behalf of the merchant or either payment has failed/was cancelled. Note that error code and message might not be present even in case of failed payment. See <a href="#purchase-notification-request-example">Purchase notification request example</a>.</td>
+<td>HTTP PUT request is sent from Klix backend to confirm that a payment has either been collected successfully on behalf of the merchant or either payment has failed/was cancelled. Note that error code and message might not be present even in case of failed payment. See <a href="#purchase-notification-request-example">Purchase notification request example</a>.</td>
 </tr>
 <tr>
 <td>Terms &amp; Conditions URL</td>
@@ -599,7 +599,7 @@
 </tbody>
 </table>
 <h3 id="purchase-notification-request-example">Purchase notification request example<a class="headerlink" href="#purchase-notification-request-example" title="Permanent link">&para;</a></h3>
-<p>HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to <a href="#Callback-payload-signature-validation">check request signature</a>.</p>
+<p>HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to <a href="#Callback-payload-signature-validation">check request signature</a>. In case of successfull payment <code class="codehilite"><span class="ss">&quot;status&quot;</span></code> field value is <code class="codehilite"><span class="ss">&quot;PAID&quot;</span></code> and order in merchant web shop can be marked as paid.</p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 curl -x PUT https://your.site/payment-notifications <span class="se">\</span>
     -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
@@ -614,7 +614,13 @@ curl -x PUT https://your.site/payment-notifications <span class="se">\</span>
 <span class="s1">            &quot;phone_number&quot;:&quot;37120000000&quot;</span>
 <span class="s1">        },</span>
 <span class="s1">        &quot;payment&quot;:{</span>
-<span class="s1">            &quot;accountStatementReference&quot;:&quot;731589767&quot;</span>
+<span class="s1">            &quot;accountStatementReference&quot;:&quot;731589767&quot;,</span>
+<span class="s1">            &quot;method&quot;: &quot;CARD&quot;,</span>
+<span class="s1">            &quot;status&quot;: &quot;FAILED&quot;,</span>
+<span class="s1">            &quot;error&quot;: {</span>
+<span class="s1">                &quot;code&quot;: &quot;129&quot;,</span>
+<span class="s1">                &quot;message&quot;: &quot;Decline, suspected counterfeit card&quot;</span>
+<span class="s1">            }</span>
 <span class="s1">        },</span>
 <span class="s1">        &quot;tax_amount&quot;:18.53,</span>
 <span class="s1">        &quot;total_amount&quot;:108.78,</span>
