@@ -556,6 +556,10 @@
                 <h1 id="callbacks">Callbacks<a class="headerlink" href="#callbacks" title="Permanent link">&para;</a></h1>
 <h2 id="callback-urls">Callback URLs<a class="headerlink" href="#callback-urls" title="Permanent link">&para;</a></h2>
 <p>During order lifecycle Klix invokes API end-points implemented by merchant store. All URLs should be implemented and accessible via HTTPS in order to be callable by Klix.</p>
+<div class="admonition warning">
+<p class="admonition-title">Exposing you API via HTTPS on development environment</p>
+<p>If you have trouble to expose your API via HTTPS on a development environment you can use <a href="https://ngrok.com">ngrok</a>.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -599,7 +603,7 @@
 </tbody>
 </table>
 <h3 id="purchase-notification-request-example">Purchase notification request example<a class="headerlink" href="#purchase-notification-request-example" title="Permanent link">&para;</a></h3>
-<p>HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to <a href="#Callback-payload-signature-validation">check request signature</a>. In case of successfull payment <code class="codehilite"><span class="ss">&quot;status&quot;</span></code> field value is <code class="codehilite"><span class="ss">&quot;PAID&quot;</span></code> and order in merchant web shop can be marked as paid.</p>
+<p>HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to <a href="#Callback-payload-signature-validation">check a request signature</a>. In case of a successfull payment <code class="codehilite"><span class="ss">&quot;status&quot;</span></code> field value is <code class="codehilite"><span class="ss">&quot;PAID&quot;</span></code> and order in merchant web shop can be marked as paid.</p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 curl -x PUT https://your.site/payment-notifications <span class="se">\</span>
     -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
