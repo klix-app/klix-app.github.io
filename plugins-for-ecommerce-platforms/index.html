@@ -587,7 +587,30 @@
 </ol>
 <h2 id="ecommerce-plartforms">eCommerce plartforms<a class="headerlink" href="#ecommerce-plartforms" title="Permanent link">&para;</a></h2>
 <h3 id="magento">Magento<a class="headerlink" href="#magento" title="Permanent link">&para;</a></h3>
+<p>Compatible versions: 2.0+</p>
+<p>Installation instructions:</p>
+<ol>
+<li>Connect to Magento server terminal.</li>
+<li>Create and navigate to a directory <code class="codehilite"><span class="n">app</span><span class="o">/</span><span class="n">code</span><span class="o">/</span></code> in your Magento root directory if does not exist already.</li>
+<li>Download Klix Magento plugin: <code class="codehilite"><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">portal</span><span class="p">.</span><span class="n">klix</span><span class="p">.</span><span class="n">app</span><span class="o">/</span><span class="n">ecommerce_modules</span><span class="o">/</span><span class="n">magento</span><span class="o">-</span><span class="n">v2</span><span class="p">.</span><span class="mi">0</span><span class="o">+</span><span class="p">.</span><span class="n">zip</span> <span class="c1">--output magento-v2.0+.zip</span></code></li>
+<li>Extract Klix Magento plugin archive contents to <code class="codehilite"><span class="n">app</span><span class="o">/</span><span class="n">code</span><span class="o">/</span></code> directory so that there's <code class="codehilite"><span class="n">app</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">SpellPayment</span><span class="o">/</span><span class="n">Magento2Module</span></code> directory structure after that: <code class="codehilite"><span class="n">unzip</span> <span class="o">-</span><span class="n">q</span> <span class="n">magento</span><span class="o">-</span><span class="n">v2</span><span class="p">.</span><span class="mi">0</span><span class="o">+</span><span class="p">.</span><span class="n">zip</span> <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="n">magento</span><span class="o">-</span><span class="n">v2</span><span class="p">.</span><span class="mi">0</span><span class="o">+</span><span class="p">.</span><span class="n">zip</span></code></li>
+<li>Navigate to Magento root directory and run <code class="codehilite"><span class="n">php</span> <span class="n">bin</span><span class="o">/</span><span class="n">magento</span> <span class="n">module</span><span class="p">:</span><span class="n">enable</span> <span class="n">SpellPayment_Magento2Module</span> <span class="c1">--clear-static-content</span></code></li>
+<li>Run <code class="codehilite"><span class="n">php</span> <span class="n">bin</span><span class="o">/</span><span class="n">magento</span> <span class="n">setup</span><span class="p">:</span><span class="n">upgrade</span></code></li>
+<li>Run <code class="codehilite"><span class="n">php</span> <span class="n">bin</span><span class="o">/</span><span class="n">magento</span> <span class="n">setup</span><span class="p">:</span><span class="k">static</span><span class="o">-</span><span class="n">content</span><span class="p">:</span><span class="n">deploy</span></code> (note that message "Manual static content deployment is not required in "default" and "developer" modes" can be ignored).
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/magento/1_run_commands.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Terminal screen" title="Run Klix plugin installation commands in terminal" />
+</div>
+<!-- markdownlint-disable MD033 --></li>
+<li>Log in to your Magento store admin panel.
+<!-- markdownlint-disable MD033 -->
+<div>
+    <img src="../images/ecommerce-platforms/magento/2_login.png" style="display:block;margin-left:auto;margin-right:auto;width:50%;margin-top:5px;margin-bottom:10px;" alt="Magento admin panel login screen" title="Log in to your Magento admin panel" />
+</div>
+<!-- markdownlint-disable MD033 --></li>
+</ol>
 <h3 id="opencart">OpenCart<a class="headerlink" href="#opencart" title="Permanent link">&para;</a></h3>
+<p>Compatible versions: 3.0+</p>
 <p>Installation instructions:</p>
 <ol>
 <li>Click on <a href="https://portal.klix.app/ecommerce_modules/opencart-v3.0+.zip">this link</a> to download Klix OpenCart extension.</li>
@@ -606,37 +629,37 @@
 <li>Press "<code class="codehilite"><span class="n">Upload</span></code>" button and select Klix OpenCart extension file downloaded in the first step. Progress bar will indicate extension upload progress.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/3_upload_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="OpenCart extension install screen" title="Upload extension" />
+    <img src="../images/ecommerce-platforms/opencart/3_upload_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:85%;margin-top:5px;margin-bottom:10px;" alt="OpenCart extension install screen" title="Upload extension" />
 </div>
 <!-- markdownlint-disable MD033 --></li>
 <li>Open "<code class="codehilite"><span class="n">Extensions</span></code>" -&gt; "<code class="codehilite"><span class="n">Extensions</span></code>" section from the main menu and filter payment extensions.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/4_filter_extensions.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Extensions filter screen" title="Filter payment extensions" />
+    <img src="../images/ecommerce-platforms/opencart/4_filter_extensions.png" style="display:block;margin-left:auto;margin-right:auto;width:85%;margin-top:5px;margin-bottom:10px;" alt="Extensions filter screen" title="Filter payment extensions" />
 </div>
 <!-- markdownlint-disable MD033 --></li>
 <li>Find Klix extension in extension list and press "<code class="codehilite"><span class="o">+</span></code>" (Install).
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/5_install_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Klix extension install screen" title="Install Klix extension" />
+    <img src="../images/ecommerce-platforms/opencart/5_install_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension install screen" title="Install Klix extension" />
 </div>
 <!-- markdownlint-disable MD033 --></li>
 <li>Press "<code class="codehilite"><span class="n">Edit</span></code>" Klix extension.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/6_edit_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Klix extension edit button screen" title="Edit Klix extension" />
+    <img src="../images/ecommerce-platforms/opencart/6_edit_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension edit button screen" title="Edit Klix extension" />
 </div>
 <!-- markdownlint-disable MD033 --></li>
 <li>Enter Brand ID and Secret key provided by Klix contact person, mark "<code class="codehilite"><span class="n">Enable</span> <span class="n">API</span></code>" to enable Klix payment method and select order payment success and error statuses.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/7_edit_extension_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Klix extension settings edit screen" title="Edit Klix extension settings" />
+    <img src="../images/ecommerce-platforms/opencart/7_edit_extension_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension settings edit screen" title="Edit Klix extension settings" />
 </div>
 <!-- markdownlint-disable MD033 --></li>
 <li>Go to your OpenCart store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
 <!-- markdownlint-disable MD033 -->
 <div>
-    <img src="../images/ecommerce-platforms/opencart/8_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
+    <img src="../images/ecommerce-platforms/opencart/8_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
 </div>
 <!-- markdownlint-disable MD033 --></li>
 </ol>
