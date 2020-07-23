@@ -583,7 +583,7 @@
 
 <p>Note that Klix widget JavaScript code should be loaded from different destinations on production and test environments. See Testing integration <a href="/../testing-integration/#Environments">Environments</a> section for details.</p>
 <h3 id="2-pass-order-information-to-klix-widget">2. Pass order information to Klix widget<a class="headerlink" href="#2-pass-order-information-to-klix-widget" title="Permanent link">&para;</a></h3>
-<p>Next step is to place Klix widget HTML code in an appropriate place on a checkout page where this widget will be rendered and pass order/payment relarted information.</p>
+<p>Next step is to place Klix widget HTML code in an appropriate place on a checkout page where this widget will be rendered and pass order/payment related information.</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;21ca7904-ff16-48b5-918d-c2d80af81f05&quot;</span>  
     <span class="na">amount</span><span class="o">=</span><span class="s">&quot;5.45&quot;</span>  
     <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span>  
@@ -594,7 +594,7 @@
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 </pre></div>
 
-<p>Note that field <code class="codehilite"><span class="n">signature</span></code> should contain valid order signature. See section <a href="../security/#signing-order">Signing order</a> for detailed instructions on how to generate a valid signature.
+<p>Note that attribute <code class="codehilite"><span class="n">signature</span></code> should contain valid order signature. See section <a href="../security/#signing-order">Signing order</a> for detailed instructions on how to generate a valid signature. Attribute <code class="codehilite"><span class="n">back</span><span class="o">-</span><span class="k">to</span><span class="o">-</span><span class="n">merchant</span><span class="o">-</span><span class="n">url</span></code> allows to specify a URL where customer will be redirected in case of cancelled purchase.
 Here's Klix widget that corresponds to previously mentioned HTML code.</p>
 <!-- markdownlint-disable MD033 -->
 
