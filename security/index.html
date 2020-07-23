@@ -371,13 +371,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-key" class="md-nav__link">
-    API Key
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#certificates" class="md-nav__link">
     Certificates
   </a>
@@ -542,13 +535,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-key" class="md-nav__link">
-    API Key
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#certificates" class="md-nav__link">
     Certificates
   </a>
@@ -620,27 +606,24 @@
                 
                 
                 <h1 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h1>
-<p>Every data modification request sent by merchant to Klix and every Klix widget order parameters should be signed by merchant private key and validated on Klix side by merchant public key. It is important to use asymmetric cryptography algorithm to have non-disputable transactions in e-commerce.</p>
+<p>Every data modification request sent by merchant to Klix and every Klix widget order parameters should be signed by merchant private key and validated on Klix side by merchant public key.</p>
 <h2 id="transport-level-security">Transport-Level Security<a class="headerlink" href="#transport-level-security" title="Permanent link">&para;</a></h2>
-<p>All communication is going via HTTPS TLS 1.2 protocol. Klix is using trusted certificates from  a well-known certificate authority.</p>
-<h2 id="api-key">API Key<a class="headerlink" href="#api-key" title="Permanent link">&para;</a></h2>
-<p>The very first level of Merchant API security is a shared API key. API key is generated for Merchant user and should be sent in HTTP header with every request. It allows identifying that requests are coming from legit user.</p>
-<p>Name of the HTTP header to be used for submitting API Key is '<em>X-KLIX-Api-Key</em>'.</p>
+<p>All communication is going via HTTPS TLS 1.2 protocol.</p>
 <h2 id="certificates">Certificates<a class="headerlink" href="#certificates" title="Permanent link">&para;</a></h2>
 <p>Private and public key pairs are issued by Klix PKI (Public Key Infrastructure) server. It is possible to generate a new RSA 2048 key pair in Merchant Console -&gt; Certificates page. When clicking “GENERATE NEW CERTIFICATE” private key is downloaded to user machine, and public key is kept in Klix database.</p>
 <p><img alt="alt_text" src="../images/merchant_console_generate_new_certificate.png" title="Generate merchant certificate in Merchant Console" /></p>
 <p>Merchant RSA Key Pair generation guidelines:</p>
 <ul>
-<li>Each key pair is assigned a unique identifier in KIiX database.</li>
+<li>Each key pair is assigned a unique identifier in Klix database.</li>
 <li>Merchant private key is not stored in Klix and its responsibility of merchant to keep it secure.</li>
 <li>Key could be revoked by the merchant or Klix admin at any time.</li>
 <li>Multiple keys could be active at the same time. Widget attribute <code class="codehilite"><span class="n">certificate</span><span class="o">-</span><span class="n">name</span></code> helps to identify which key is used to sign particular order.</li>
 <li>Default Key expiration time is 2 calendar years. This is defined on PKI policies level.</li>
-<li>Notifications about key status changes (as well as expiration reminders) should be sent to merchant email address (and potentially SMS).</li>
+<li>Notifications about key status changes (as well as expiration reminders) is sent to merchant email address.</li>
 </ul>
-<p>Requests going from Klix to merchant defined callback URL are also signed digitally using Klix private key and validated using public key, which is available in Merchant Console.</p>
+<p>Requests sent from Klix to merchant defined callback URL are also signed digitally using Klix private key and validated using public key, which is available in Merchant Console.</p>
 <div class="admonition warning">
-<p class="admonition-title">Stroing private key</p>
+<p class="admonition-title">Storing private key</p>
 <p>Do not share your private key with anyone.</p>
 </div>
 <h2 id="signing-order">Signing order<a class="headerlink" href="#signing-order" title="Permanent link">&para;</a></h2>
@@ -698,6 +681,7 @@ Note that all blank fields should be replaced with empty strings, all amount fie
     <span class="na">order-id</span><span class="o">=</span><span class="s">&quot;12345678&quot;</span>  
     <span class="na">label</span><span class="o">=</span><span class="s">&quot;Order No 12345678&quot;</span>  
     <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span>
+    <span class="na">back-to-merchant-url</span><span class="o">=</span><span class="s">&quot;https://example.com/shopping-cart&quot;</span>
     <span class="na">signature</span><span class="o">=</span><span class="s">&quot;n0b7Sj0qEVlU52kNctEHR9zUZ9pRtPjA/5/avPSQamx7HiI3q6qijgstBw6KhOKZqcCIL3RULbWNu6xoSGnNtW/nx+RcSd12I0st21Los9MXXPakEIjIto+2Zx0+ZiVoa97dxO8/iGF5A1U4qW9GFhPJGPqQecmZSp7rYaiO+VRq5D9KqKqRpBQEYN9YJgDgWMn36KVYkTdlOYAhJslwkVeKKZ+/ifUqHhiXbPKD3VKAXwx7/MqSiRlfU8Qsm7Vcv/zV05X9trZiaSYOL6yd9aWO/KE2so2hAswY58i6dR218/XD6ab5xTpCSXrfjYbfhInchukvlH7CrbE1T3RcWw==&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 </pre></div>
@@ -705,13 +689,13 @@ Note that all blank fields should be replaced with empty strings, all amount fie
 <p>Steps to calculate a signature:</p>
 <ol>
 <li>
-<p>Calculate signature input string. <code class="codehilite"><span class="k">Input</span> <span class="n">string</span> <span class="o">=</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">widget</span> <span class="n">ID</span><span class="p">,</span> <span class="k">language</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">currency</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span> <span class="o">=</span> <span class="mi">21</span><span class="n">ca7904</span><span class="o">-</span><span class="n">ff16</span><span class="o">-</span><span class="mi">48</span><span class="n">b5</span><span class="o">-</span><span class="mi">918</span><span class="n">d</span><span class="o">-</span><span class="n">c2d80af81f05lv123456785</span><span class="p">.</span><span class="mi">45</span><span class="n">EUROrder</span> <span class="k">No</span> <span class="mi">12345678</span></code>. Note that fields without a value e.g. certificate name, unit, count are not included in signature input string.</p>
+<p>Calculate signature input string. <code class="codehilite"><span class="k">Input</span> <span class="n">string</span> <span class="o">=</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">widget</span> <span class="n">ID</span><span class="p">,</span> <span class="k">language</span><span class="p">,</span> <span class="n">back</span> <span class="k">to</span> <span class="n">merchant</span> <span class="n">URL</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">currency</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span> <span class="o">=</span> <span class="mi">21</span><span class="n">ca7904</span><span class="o">-</span><span class="n">ff16</span><span class="o">-</span><span class="mi">48</span><span class="n">b5</span><span class="o">-</span><span class="mi">918</span><span class="n">d</span><span class="o">-</span><span class="n">c2d80af81f05lvhttps</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">shopping</span><span class="o">-</span><span class="n">cart123456785</span><span class="p">.</span><span class="mi">45</span><span class="n">EUROrder</span> <span class="k">No</span> <span class="mi">12345678</span></code>. Note that fields without a value e.g. certificate name, success URL, unit, count are not included in signature input string.</p>
 </li>
 <li>
-<p>Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. <code class="codehilite"><span class="n">Signature</span> <span class="o">=</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="n">signature</span><span class="o">-</span><span class="k">input</span><span class="p">))</span> <span class="o">=</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="ss">&quot;21ca7904-ff16-48b5-918d-c2d80af81f05lv123456785.45EUROrder No 12345678&quot;</span><span class="p">))</span></code>.</p>
+<p>Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. <code class="codehilite"><span class="n">Signature</span> <span class="o">=</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="n">signature</span><span class="o">-</span><span class="k">input</span><span class="p">))</span> <span class="o">=</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="ss">&quot;21ca7904-ff16-48b5-918d-c2d80af81f05lvhttps://example.com/shopping-cart123456785.45EUROrder No 12345678&quot;</span><span class="p">))</span></code>.</p>
 </li>
 </ol>
-<p>Calculated signature which should be passed to Klix widget as a <code class="codehilite"><span class="n">signature</span></code> attribute value in this example: <code class="codehilite"><span class="n">n0b7Sj0qEVlU52kNctEHR9zUZ9pRtPjA</span><span class="o">/</span><span class="mi">5</span><span class="o">/</span><span class="n">avPSQamx7HiI3q6qijgstBw6KhOKZqcCIL3RULbWNu6xoSGnNtW</span><span class="o">/</span><span class="n">nx</span><span class="o">+</span><span class="n">RcSd12I0st21Los9MXXPakEIjIto</span><span class="o">+</span><span class="mi">2</span><span class="n">Zx0</span><span class="o">+</span><span class="n">ZiVoa97dxO8</span><span class="o">/</span><span class="n">iGF5A1U4qW9GFhPJGPqQecmZSp7rYaiO</span><span class="o">+</span><span class="n">VRq5D9KqKqRpBQEYN9YJgDgWMn36KVYkTdlOYAhJslwkVeKKZ</span><span class="o">+/</span><span class="n">ifUqHhiXbPKD3VKAXwx7</span><span class="o">/</span><span class="n">MqSiRlfU8Qsm7Vcv</span><span class="o">/</span><span class="n">zV05X9trZiaSYOL6yd9aWO</span><span class="o">/</span><span class="n">KE2so2hAswY58i6dR218</span><span class="o">/</span><span class="n">XD6ab5xTpCSXrfjYbfhInchukvlH7CrbE1T3RcWw</span><span class="o">==</span></code>.</p>
+<p>Calculated signature which should be passed to Klix widget as a <code class="codehilite"><span class="n">signature</span></code> attribute value in this example: <code class="codehilite"><span class="n">ebSnfsTOV2v0zwXxk8YVYjH6iYTfkYA</span><span class="o">+</span><span class="n">tn</span><span class="o">+</span><span class="n">ove9I</span><span class="o">+</span><span class="mi">0</span><span class="n">Zi3lgQ</span><span class="o">+</span><span class="n">Mhc6sNJJlhqaSa6hqODZJKGGOCy</span><span class="o">/</span><span class="n">d2sqB86dIcJd2M3wB1MqHtVTNadCR</span><span class="o">+</span><span class="n">V3gHi</span><span class="o">+</span><span class="n">ORTcAQmX</span><span class="o">/</span><span class="n">c7crU0lLiKwfHSvaE7FlZUG9cU8ErcZfWDAJEtOMWncMl</span><span class="o">/</span><span class="n">yIeec1kPwb302mFzZUsXkVi8</span><span class="o">/</span><span class="n">VPp70k9oIh</span><span class="o">+</span><span class="n">vPvew</span><span class="o">/</span><span class="n">vVTGhoS2ClnFx4heezp1BNXYxZZsFoSgYFP555tNsHYi4GY6DOIx0qrUtmRrWCrt8HjWV7hBFPDNOQnQ05vALLcWtzWdDtGIo5a46HrlW2biCXW3R6K9jW</span><span class="o">/</span><span class="n">FxhsEVvwT7fDQ</span><span class="o">==</span></code>.</p>
 <h4 id="example-no-2-klix-checkout-widget-with-multiple-order-items-and-order-delivery">Example No 2: Klix Checkout widget with multiple order items and order delivery<a class="headerlink" href="#example-no-2-klix-checkout-widget-with-multiple-order-items-and-order-delivery" title="Permanent link">&para;</a></h4>
 <p>Consider Klix widget for following order should be placed in merchant webshop:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;8c597447-5234-4de1-ab85-b54e252098ce&quot;</span> 
