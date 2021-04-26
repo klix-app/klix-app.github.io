@@ -370,8 +370,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-single-payment" class="md-nav__link">
-    Create single payment
+  <a href="#create-available-payment-methods-purchase" class="md-nav__link">
+    Create available payment methods purchase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-whitelisted-payment-method-purchase" class="md-nav__link">
+    Create whitelisted payment method purchase
   </a>
   
 </li>
@@ -533,8 +540,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-single-payment" class="md-nav__link">
-    Create single payment
+  <a href="#create-available-payment-methods-purchase" class="md-nav__link">
+    Create available payment methods purchase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-whitelisted-payment-method-purchase" class="md-nav__link">
+    Create whitelisted payment method purchase
   </a>
   
 </li>
@@ -657,7 +671,8 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
   -H <span class="s1">&#39;cache-control: no-cache&#39;</span>
 </pre></div>
 
-<h4 id="create-single-payment">Create single payment<a class="headerlink" href="#create-single-payment" title="Permanent link">&para;</a></h4>
+<h4 id="create-available-payment-methods-purchase">Create available payment methods purchase<a class="headerlink" href="#create-available-payment-methods-purchase" title="Permanent link">&para;</a></h4>
+<p>This option allows to create a purchase that can be paid using any payment method available to merchant. Customer will be have an option to choose one of available payment methods after redirect to Klix payment page.</p>
 <div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
   https://portal.klix.app/api/v1/purchases/ <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
@@ -689,6 +704,45 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;client&quot;:{</span>
 <span class="s1">      &quot;email&quot;:&quot;test@test.com&quot;</span>
 <span class="s1">   },</span>
+<span class="s1">   &quot;brand_id&quot;:&quot;&lt;Brand ID goes here&gt;&quot;,</span>
+<span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+
+<h4 id="create-whitelisted-payment-method-purchase">Create whitelisted payment method purchase<a class="headerlink" href="#create-whitelisted-payment-method-purchase" title="Permanent link">&para;</a></h4>
+<p>This option allows to create a purchase that can be paid only using specified whitelisted payment method. Most often this option is used to allow purchase to be paid using payment method selected on merchant web-site.</p>
+<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+  https://portal.klix.app/api/v1/purchases/ <span class="se">\</span>
+  -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Connection: keep-alive&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Host: portal.klix.app&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;accept-encoding: gzip, deflate&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;cache-control: no-cache&#39;</span> <span class="se">\</span>
+  -d <span class="s1">&#39;{</span>
+<span class="s1">   &quot;success_callback&quot;: &quot;https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point&quot;,</span>
+<span class="s1">   &quot;success_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment&quot;,</span>
+<span class="s1">   &quot;failure_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment&quot;,</span>
+<span class="s1">   &quot;cancel_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment&quot;,</span>
+<span class="s1">   &quot;purchase&quot;:{</span>
+<span class="s1">      &quot;language&quot;: &quot;lv&quot;,</span>
+<span class="s1">      &quot;products&quot;:[</span>
+<span class="s1">         {</span>
+<span class="s1">            &quot;price&quot;:3000,</span>
+<span class="s1">            &quot;name&quot;:&quot;Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">         },</span>
+<span class="s1">         {</span>
+<span class="s1">            &quot;price&quot;:100,</span>
+<span class="s1">            &quot;name&quot;:&quot;Screen protector for Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">         }</span>
+<span class="s1">      ]</span>
+<span class="s1">   },</span>
+<span class="s1">   &quot;client&quot;:{</span>
+<span class="s1">      &quot;email&quot;:&quot;test@test.com&quot;</span>
+<span class="s1">   },</span>
+<span class="s1">   &quot;payment_method_whitelist&quot;: [&quot;klix&quot;],</span>
 <span class="s1">   &quot;brand_id&quot;:&quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
