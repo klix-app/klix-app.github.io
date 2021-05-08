@@ -35,18 +35,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="images/favicon.png">
+      <link rel="shortcut icon" href="../images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
-        <title>Klix Developers</title>
+        <title>Demo account - Klix Developers</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -64,10 +64,10 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="stylesheets/klix.css">
+      <link rel="stylesheet" href="../stylesheets/klix.css">
     
     
       
@@ -120,7 +120,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#overview" tabindex="1" class="md-skip">
+      <a href="#demo-account-api-credentials" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -134,11 +134,11 @@
   
         <!-- Link to home -->
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="."
+          <a href=".."
               title="Klix Developers"
               class="md-header-nav__button md-logo">
             
-              <img src="images/logo.png" width="64" height="64" />
+              <img src="../images/logo.png" width="64" height="64" />
             
           </a>
         </div>
@@ -159,7 +159,7 @@
               </span>
               <span class="md-header-nav__topic">
                 
-                  Overview
+                  Demo account
                 
               </span>
             
@@ -241,9 +241,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="." title="Klix Developers" class="md-nav__button md-logo">
+    <a href=".." title="Klix Developers" class="md-nav__button md-logo">
       
-        <img src="images/logo.png" width="48" height="48">
+        <img src="../images/logo.png" width="48" height="48">
       
     </a>
     Klix Developers
@@ -275,6 +275,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -285,22 +297,10 @@
       
     
     
-    <a href="." title="Overview" class="md-nav__link md-nav__link--active">
-      Overview
-    </a>
-    
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="demo-account/" title="Demo account" class="md-nav__link">
+    <a href="./" title="Demo account" class="md-nav__link md-nav__link--active">
       Demo account
     </a>
+    
   </li>
 
     
@@ -310,7 +310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="plugins-for-ecommerce-platforms/" title="Plugins for eCommerce platforms" class="md-nav__link">
+    <a href="../plugins-for-ecommerce-platforms/" title="Plugins for eCommerce platforms" class="md-nav__link">
       Plugins for eCommerce platforms
     </a>
   </li>
@@ -322,7 +322,7 @@
 
 
   <li class="md-nav__item">
-    <a href="libraries/" title="Libraries" class="md-nav__link">
+    <a href="../libraries/" title="Libraries" class="md-nav__link">
       Libraries
     </a>
   </li>
@@ -334,7 +334,7 @@
 
 
   <li class="md-nav__item">
-    <a href="api/" title="Direct integration using API" class="md-nav__link">
+    <a href="../api/" title="Direct integration using API" class="md-nav__link">
       Direct integration using API
     </a>
   </li>
@@ -346,7 +346,7 @@
 
 
   <li class="md-nav__item">
-    <a href="widget-api/" title="Legacy Klix API (deprecated)" class="md-nav__link">
+    <a href="../widget-api/" title="Legacy Klix API (deprecated)" class="md-nav__link">
       Legacy Klix API (deprecated)
     </a>
   </li>
@@ -358,7 +358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="static-assets/" title="Static assets" class="md-nav__link">
+    <a href="../static-assets/" title="Static assets" class="md-nav__link">
       Static assets
     </a>
   </li>
@@ -392,14 +392,52 @@
               
                 
                 
-                <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
-<p>This documentation describes <a href="https://klix.app">Klix</a> payment gateway/checkout solution integration. Multiple integration options are available:</p>
-<ul>
-<li>Klix integration with eCommerce platforms using <a href="/../plugins-for-ecommerce-platforms">plugins</a>. In case your website is built on a one of these platforms (WooCommerce, Shopify, Magento, Mozello, OpenCart, Prestashop), you will simply need to install our plugin and provide integration configuration.</li>
-<li>Klix integration with custom built site using our <a href="/../libraries">Libraries</a>.</li>
-<li>Klix integration with any other platform or custom built site using our <a href="/../api">API</a>.</li>
-</ul>
-<p>In order to become Klix merchant fill in <a href="https://www.citadele.lv/lv/business/e-commerce/apply/">application form</a> and you will be contacted by our sales team. There's also option to try out/test Klix card payments using our <a href="/../demo-account">Demo account</a>.</p>
+                <h1 id="demo-account-api-credentials">Demo account API credentials<a class="headerlink" href="#demo-account-api-credentials" title="Permanent link">&para;</a></h1>
+<p>In order to preview Klix payment gateway card payment method and test integration implementation following demo account API credentials can be used:</p>
+<table>
+<thead>
+<tr>
+<th>Brand ID</th>
+<th>Secret key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><sub><sup>702314b8-dd86-41fa-9a22-510fdd71fa92</sup></sub></td>
+<td><sub><sup>IB-bzOdJLgJjbsaA34Qpxkg1TTIrW-iDuni6JuzbP--KgtsREHzvIvLLTH8E5T0CZcSbYM3qNmfeogpWW_RZaA== </sup></sub></td>
+</tr>
+</tbody>
+</table>
+<p>Note that this Klix demo account supports only card payments using special test cards which are not connected to real bank card issuer networks. Banklink and Klix Pay Later payment methods are available only using production API keys sent to you after Klix agreement signing.</p>
+<p>Test cards that can be used with demo account:</p>
+<table>
+<thead>
+<tr>
+<th>Issuer</th>
+<th>PAN</th>
+<th>CVV</th>
+<th>Expiry date</th>
+<th>3D secure password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VISA</td>
+<td>4314 2200 0000 0056</td>
+<td>123</td>
+<td>01/22</td>
+<td>hint</td>
+</tr>
+<tr>
+<td>MASTERCARD</td>
+<td>5413 3300 0000 0019</td>
+<td>589</td>
+<td>01/22</td>
+<td>hint</td>
+</tr>
+</tbody>
+</table>
+<p>Note that any cardholder name can be used with these cards.</p>
                 
                   
                 
@@ -420,14 +458,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href=".." title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview
+              </span>
+            </div>
+          </a>
         
-          <a href="demo-account/" title="Demo account" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../plugins-for-ecommerce-platforms/" title="Plugins for eCommerce platforms" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Demo account
+                Plugins for eCommerce platforms
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -454,7 +506,7 @@
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/klix-app" class="md-footer-social__link fa fa-github"></a>
     
@@ -470,9 +522,9 @@
       
     </div>
     
-      <script src="assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
   </body>
