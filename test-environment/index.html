@@ -297,9 +297,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Test environment
+      </label>
+    
     <a href="./" title="Test environment" class="md-nav__link md-nav__link--active">
       Test environment
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simplified-integration-testing" class="md-nav__link">
+    Simplified integration testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-integration-with-test-card-data" class="md-nav__link">
+    Testing integration with test card data
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -381,6 +417,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simplified-integration-testing" class="md-nav__link">
+    Simplified integration testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-integration-with-test-card-data" class="md-nav__link">
+    Testing integration with test card data
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -393,7 +452,8 @@
                 
                 
                 <h1 id="test-environment-api-credentials">Test environment API credentials<a class="headerlink" href="#test-environment-api-credentials" title="Permanent link">&para;</a></h1>
-<p>In order to preview Klix payment gateway card payment method and test integration implementation following test account API credentials can be used:</p>
+<h2 id="simplified-integration-testing">Simplified integration testing<a class="headerlink" href="#simplified-integration-testing" title="Permanent link">&para;</a></h2>
+<p>In order to preview Klix payment gateway functionality and test integration implementation following test account API credentials can be used:</p>
 <table>
 <thead>
 <tr>
@@ -408,8 +468,54 @@
 </tr>
 </tbody>
 </table>
-<p>In case of Klix card and Klix Pay Later payment methods after redirecting customer to the Klix payment page (field "checkout_url" value from Purchase creation response) there's an option to choose either successful or failed payment scenario for testing purposes. In case of bank transfers only success scenario is supported in test environment.</p>
+<p>In case of Klix card payment method after redirecting customer to the Klix payment page (field "checkout_url" value from Purchase creation response) there's an option to choose either successful or failed payment scenario for testing purposes. In case of bank transfers and Klix Pay Later only success scenario is supported in test environment.</p>
 <p><img alt="Choose successful or failed payment scenario" src="../images/testing_integration.png" title="Tesing integration" /></p>
+<h2 id="testing-integration-with-test-card-data">Testing integration with test card data<a class="headerlink" href="#testing-integration-with-test-card-data" title="Permanent link">&para;</a></h2>
+<p>In order to perform integration testing in recurring payment, reservation scenarios or in case production like callback data is needed to test some integration scenario following test account API credentials can be used:</p>
+<table>
+<thead>
+<tr>
+<th>Brand ID</th>
+<th>Secret key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><sub><sup>702314b8-dd86-41fa-9a22-510fdd71fa92</sup></sub></td>
+<td><sub><sup>IB-bzOdJLgJjbsaA34Qpxkg1TTIrW-iDuni6JuzbP--KgtsREHzvIvLLTH8E5T0CZcSbYM3qNmfeogpWW_RZaA== </sup></sub></td>
+</tr>
+</tbody>
+</table>
+<p>Note that this test account has access only yo Klix card payment method on test environment and specific test cards should be used for testing:</p>
+<table>
+<thead>
+<tr>
+<th>Issuer</th>
+<th>PAN</th>
+<th>CVV</th>
+<th>Expiry date</th>
+<th>3D secure password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VISA</td>
+<td>4314 2200 0000 0056</td>
+<td>123</td>
+<td>01/22</td>
+<td>hint</td>
+</tr>
+<tr>
+<td>MASTERCARD</td>
+<td>5413 3300 0000 0019</td>
+<td>589</td>
+<td>01/22</td>
+<td>hint</td>
+</tr>
+</tbody>
+</table>
+<p>Any cardholder name can be used with these cards.</p>
+<p>Please try to make payment with both cards in case one card payments fails.</p>
                 
                   
                 
