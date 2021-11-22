@@ -466,6 +466,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api-usage-in-reservation-scenario-payment-execution-separated-from-authorization" class="md-nav__link">
+    API usage in reservation scenario (payment execution separated from authorization)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reservation-step-by-step-guide" class="md-nav__link">
+    Reservation step by step guide
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reservation-functionality-request-examples" class="md-nav__link">
+    Reservation functionality request examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-reservation-purchase" class="md-nav__link">
+    Create a reservation purchase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-funds-reserved-by-previously-created-purchase" class="md-nav__link">
+    Charge funds reserved by previously created purchase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-partial-funds-reserved-by-previously-created-purchase" class="md-nav__link">
+    Charge partial funds reserved by previously created purchase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-funds-reserved-by-previously-created-purchase" class="md-nav__link">
+    Release funds reserved by previously created purchase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -636,6 +697,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api-usage-in-reservation-scenario-payment-execution-separated-from-authorization" class="md-nav__link">
+    API usage in reservation scenario (payment execution separated from authorization)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reservation-step-by-step-guide" class="md-nav__link">
+    Reservation step by step guide
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reservation-functionality-request-examples" class="md-nav__link">
+    Reservation functionality request examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-reservation-purchase" class="md-nav__link">
+    Create a reservation purchase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-funds-reserved-by-previously-created-purchase" class="md-nav__link">
+    Charge funds reserved by previously created purchase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-partial-funds-reserved-by-previously-created-purchase" class="md-nav__link">
+    Charge partial funds reserved by previously created purchase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-funds-reserved-by-previously-created-purchase" class="md-nav__link">
+    Release funds reserved by previously created purchase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -700,23 +822,23 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;success_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment&quot;,</span>
 <span class="s1">   &quot;failure_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment&quot;,</span>
 <span class="s1">   &quot;cancel_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment&quot;,</span>
-<span class="s1">   &quot;purchase&quot;:{</span>
+<span class="s1">   &quot;purchase&quot;: {</span>
 <span class="s1">      &quot;language&quot;: &quot;lv&quot;,</span>
-<span class="s1">      &quot;products&quot;:[</span>
+<span class="s1">      &quot;products&quot;: [</span>
 <span class="s1">         {</span>
-<span class="s1">            &quot;price&quot;:3000,</span>
-<span class="s1">            &quot;name&quot;:&quot;Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">            &quot;price&quot;: 3000,</span>
+<span class="s1">            &quot;name&quot;: &quot;Xiaomi Mi Smart Band 5&quot;</span>
 <span class="s1">         },</span>
 <span class="s1">         {</span>
-<span class="s1">            &quot;price&quot;:100,</span>
-<span class="s1">            &quot;name&quot;:&quot;Screen protector for Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">            &quot;price&quot;: 100,</span>
+<span class="s1">            &quot;name&quot;: &quot;Screen protector for Xiaomi Mi Smart Band 5&quot;</span>
 <span class="s1">         }</span>
 <span class="s1">      ]</span>
 <span class="s1">   },</span>
-<span class="s1">   &quot;client&quot;:{</span>
-<span class="s1">      &quot;email&quot;:&quot;test@test.com&quot;</span>
+<span class="s1">   &quot;client&quot;: {</span>
+<span class="s1">      &quot;email&quot;: &quot;test@test.com&quot;</span>
 <span class="s1">   },</span>
-<span class="s1">   &quot;brand_id&quot;:&quot;&lt;Brand ID goes here&gt;&quot;,</span>
+<span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
 </pre></div>
@@ -738,24 +860,24 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;success_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment&quot;,</span>
 <span class="s1">   &quot;failure_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment&quot;,</span>
 <span class="s1">   &quot;cancel_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment&quot;,</span>
-<span class="s1">   &quot;purchase&quot;:{</span>
+<span class="s1">   &quot;purchase&quot;: {</span>
 <span class="s1">      &quot;language&quot;: &quot;lv&quot;,</span>
-<span class="s1">      &quot;products&quot;:[</span>
+<span class="s1">      &quot;products&quot;: [</span>
 <span class="s1">         {</span>
-<span class="s1">            &quot;price&quot;:3000,</span>
-<span class="s1">            &quot;name&quot;:&quot;Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">            &quot;price&quot;: 3000,</span>
+<span class="s1">            &quot;name&quot;: &quot;Xiaomi Mi Smart Band 5&quot;</span>
 <span class="s1">         },</span>
 <span class="s1">         {</span>
-<span class="s1">            &quot;price&quot;:100,</span>
-<span class="s1">            &quot;name&quot;:&quot;Screen protector for Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">            &quot;price&quot;: 100,</span>
+<span class="s1">            &quot;name&quot;: &quot;Screen protector for Xiaomi Mi Smart Band 5&quot;</span>
 <span class="s1">         }</span>
 <span class="s1">      ]</span>
 <span class="s1">   },</span>
-<span class="s1">   &quot;client&quot;:{</span>
-<span class="s1">      &quot;email&quot;:&quot;test@test.com&quot;</span>
+<span class="s1">   &quot;client&quot;: {</span>
+<span class="s1">      &quot;email&quot;: &quot;test@test.com&quot;</span>
 <span class="s1">   },</span>
 <span class="s1">   &quot;payment_method_whitelist&quot;: [&quot;klix&quot;],</span>
-<span class="s1">   &quot;brand_id&quot;:&quot;&lt;Brand ID goes here&gt;&quot;,</span>
+<span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
 </pre></div>
@@ -801,19 +923,19 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;success_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment&quot;,</span>
 <span class="s1">   &quot;failure_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment&quot;,</span>
 <span class="s1">   &quot;cancel_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment&quot;,</span>
-<span class="s1">   &quot;purchase&quot;:{</span>
+<span class="s1">   &quot;purchase&quot;: {</span>
 <span class="s1">      &quot;language&quot;: &quot;lv&quot;,</span>
-<span class="s1">      &quot;products&quot;:[</span>
+<span class="s1">      &quot;products&quot;: [</span>
 <span class="s1">         {</span>
-<span class="s1">            &quot;price&quot;:700,</span>
-<span class="s1">            &quot;name&quot;:&quot;XYZ service subscription&quot;</span>
+<span class="s1">            &quot;price&quot;: 700,</span>
+<span class="s1">            &quot;name&quot;: &quot;XYZ service subscription&quot;</span>
 <span class="s1">         }</span>
 <span class="s1">      ]</span>
 <span class="s1">   },</span>
-<span class="s1">   &quot;client&quot;:{</span>
-<span class="s1">      &quot;email&quot;:&quot;test@test.com&quot;</span>
+<span class="s1">   &quot;client&quot;: {</span>
+<span class="s1">      &quot;email&quot;: &quot;test@test.com&quot;</span>
 <span class="s1">   },</span>
-<span class="s1">   &quot;brand_id&quot;:&quot;&lt;Brand ID goes here&gt;&quot;,</span>
+<span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
 </pre></div>
@@ -832,19 +954,19 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
   -H <span class="s1">&#39;cache-control: no-cache&#39;</span> <span class="se">\</span>
   -d <span class="s1">&#39;{</span>
 <span class="s1">   &quot;success_callback&quot;: &quot;https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point&quot;,</span>
-<span class="s1">   &quot;purchase&quot;:{</span>
+<span class="s1">   &quot;purchase&quot;: {</span>
 <span class="s1">      &quot;language&quot;: &quot;lv&quot;,</span>
-<span class="s1">      &quot;products&quot;:[</span>
+<span class="s1">      &quot;products&quot;: [</span>
 <span class="s1">         {</span>
-<span class="s1">            &quot;price&quot;:700,</span>
-<span class="s1">            &quot;name&quot;:&quot;XYZ service subscription fee for December 2020&quot;</span>
+<span class="s1">            &quot;price&quot;: 700,</span>
+<span class="s1">            &quot;name&quot;: &quot;XYZ service subscription fee for December 2020&quot;</span>
 <span class="s1">         }</span>
 <span class="s1">      ]</span>
 <span class="s1">   },</span>
-<span class="s1">   &quot;client&quot;:{</span>
-<span class="s1">      &quot;email&quot;:&quot;test@test.com&quot;</span>
+<span class="s1">   &quot;client&quot;: {</span>
+<span class="s1">      &quot;email&quot;: &quot;test@test.com&quot;</span>
 <span class="s1">   },</span>
-<span class="s1">   &quot;brand_id&quot;:&quot;&lt;Brand ID goes here&gt;&quot;,</span>
+<span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
 </pre></div>
@@ -863,6 +985,84 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
   -d <span class="s1">&#39;{</span>
 <span class="s1">   &quot;recurring_token&quot;: &quot;&lt;Recurring payment token&gt;&quot;</span>
 <span class="s1">}&#39;</span>
+</pre></div>
+
+<h2 id="api-usage-in-reservation-scenario-payment-execution-separated-from-authorization">API usage in reservation scenario (payment execution separated from authorization)<a class="headerlink" href="#api-usage-in-reservation-scenario-payment-execution-separated-from-authorization" title="Permanent link">&para;</a></h2>
+<h3 id="reservation-step-by-step-guide">Reservation step by step guide<a class="headerlink" href="#reservation-step-by-step-guide" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Create a purchase by submitting order data and additional <code class="codehilite"><span class="n">skip_capture</span></code> flag to Klix indicating card payment authorization separation from payment execution. Once purchase is created link to Klix hosted payment page will be returned as <code class="codehilite"><span class="n">checkout_url</span></code> field value. Payment identifier returned in purchase creation response should be stored for later use in capture or release requests. After customer is redirected to this page Klix will capture customer card details and will reserve the funds equal to purchase total amount.</li>
+<li>There are several options how to proceed with reservation:<ul>
+<li>Charge reserved amount. There's an option to either charge full reserved amount or amount that's smaller than initially reserved amount.</li>
+<li>Release (return to customer) reserved amount. Note that reservations are also released automatically after a few days if charge request is not reveived.</li>
+</ul>
+</li>
+</ol>
+<h3 id="reservation-functionality-request-examples">Reservation functionality request examples<a class="headerlink" href="#reservation-functionality-request-examples" title="Permanent link">&para;</a></h3>
+<p>These are simple request examples that illustrate Klix API usage. Always use <a href="https://portal.klix.app/api">API Reference</a> as a single source of truth.
+Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Brand</span> <span class="n">ID</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> and <code class="codehilite"><span class="o">&lt;</span><span class="n">Secret</span> <span class="k">key</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> should be replaced with actual <code class="codehilite"><span class="n">Brand</span> <span class="n">ID</span></code> and <code class="codehilite"><span class="n">Secret</span> <span class="k">Key</span></code> received from Klix contact person.</p>
+<h4 id="create-a-reservation-purchase">Create a reservation purchase<a class="headerlink" href="#create-a-reservation-purchase" title="Permanent link">&para;</a></h4>
+<p>This option allows to create a purchase that will reserve purchase total amount in case of card payment. Store purchase <code class="codehilite"><span class="n">id</span></code> returned in response to either change or release funds reserved by this purchase. Redirect customer to <code class="codehilite"><span class="n">checkout_url</span></code> returned in purchase creation response to allow customer to enter card details. Note that in case of successful reservation purchase status will be changed to "hold" instead of "paid" as in case of regular card payment.</p>
+<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+  https://portal.klix.app/api/v1/purchases/ <span class="se">\</span>
+  -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Cache-Control: no-cache&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Connection: keep-alive&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;Host: portal.klix.app&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;accept-encoding: gzip, deflate&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;cache-control: no-cache&#39;</span> <span class="se">\</span>
+  -d <span class="s1">&#39;{</span>
+<span class="s1">   &quot;success_callback&quot;: &quot;https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point&quot;,</span>
+<span class="s1">   &quot;success_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment&quot;,</span>
+<span class="s1">   &quot;failure_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment&quot;,</span>
+<span class="s1">   &quot;cancel_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment&quot;,</span>
+<span class="s1">   &quot;purchase&quot;: {</span>
+<span class="s1">      &quot;language&quot;: &quot;lv&quot;,</span>
+<span class="s1">      &quot;products&quot;: [</span>
+<span class="s1">         {</span>
+<span class="s1">            &quot;price&quot;: 3000,</span>
+<span class="s1">            &quot;name&quot;: &quot;Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">         },</span>
+<span class="s1">         {</span>
+<span class="s1">            &quot;price&quot;: 100,</span>
+<span class="s1">            &quot;name&quot;: &quot;Screen protector for Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">         }</span>
+<span class="s1">      ]</span>
+<span class="s1">   },</span>
+<span class="s1">   &quot;skip_capture&quot;: true,</span>
+<span class="s1">   &quot;client&quot;: {</span>
+<span class="s1">      &quot;email&quot;: &quot;test@test.com&quot;</span>
+<span class="s1">   },</span>
+<span class="s1">   &quot;payment_method_whitelist&quot;: [&quot;klix&quot;],</span>
+<span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
+<span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+
+<h4 id="charge-funds-reserved-by-previously-created-purchase">Charge funds reserved by previously created purchase<a class="headerlink" href="#charge-funds-reserved-by-previously-created-purchase" title="Permanent link">&para;</a></h4>
+<p>To change full amount previously reserved by specified purchase no request body should be sent. <code class="codehilite"><span class="o">&lt;</span><span class="n">Purchase</span> <span class="n">ID</span><span class="o">&gt;</span></code> is purchase identifier (field <code class="codehilite"><span class="n">id</span></code> value) received in purchase creation response.</p>
+<div class="codehilite"><pre><span></span>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/capture/&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span>
+</pre></div>
+
+<h4 id="charge-partial-funds-reserved-by-previously-created-purchase">Charge partial funds reserved by previously created purchase<a class="headerlink" href="#charge-partial-funds-reserved-by-previously-created-purchase" title="Permanent link">&para;</a></h4>
+<p>To change amount that's smaller than previously reserved amount this new amount should be specified in request. <code class="codehilite"><span class="o">&lt;</span><span class="n">Purchase</span> <span class="n">ID</span><span class="o">&gt;</span></code> is purchase identifier (field <code class="codehilite"><span class="n">id</span></code> value) received in purchase creation response.</p>
+<div class="codehilite"><pre><span></span>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/capture/&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
+--data-raw <span class="s1">&#39;{</span>
+<span class="s1">    &quot;amount&quot;: 5</span>
+<span class="s1">}</span>
+<span class="s1">&#39;</span>
+</pre></div>
+
+<h4 id="release-funds-reserved-by-previously-created-purchase">Release funds reserved by previously created purchase<a class="headerlink" href="#release-funds-reserved-by-previously-created-purchase" title="Permanent link">&para;</a></h4>
+<p>To release funds reserved by Purchase following request should be sent:</p>
+<div class="codehilite"><pre><span></span>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/release/&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
+--header <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span>
 </pre></div>
                 
                   
