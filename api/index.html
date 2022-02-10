@@ -1035,10 +1035,14 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <li>Create a purchase by submitting order data and additional <code class="codehilite"><span class="n">skip_capture</span></code> flag to Klix indicating card payment authorization separation from payment execution. Once purchase is created link to Klix hosted payment page will be returned as <code class="codehilite"><span class="n">checkout_url</span></code> field value. Payment identifier returned in purchase creation response should be stored for later use in capture or release requests. After customer is redirected to this page Klix will capture customer card details and will reserve the funds equal to purchase total amount.</li>
 <li>There are several options how to proceed with reservation:<ul>
 <li>Charge reserved amount. There's an option to either charge full reserved amount or amount that's smaller than initially reserved amount.</li>
-<li>Release (return to customer) reserved amount. Note that reservations are also released automatically after a few days if charge request is not reveived.</li>
+<li>Release (return to customer) reserved amount.</li>
 </ul>
 </li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Automatic release of reserved amount</p>
+<p>Reservations are released automatically after 6 days if charge request is not received within this period.</p>
+</div>
 <h3 id="reservation-functionality-request-examples">Reservation functionality request examples<a class="headerlink" href="#reservation-functionality-request-examples" title="Permanent link">&para;</a></h3>
 <p>These are simple request examples that illustrate Klix API usage. Always use <a href="https://portal.klix.app/api">API Reference</a> as a single source of truth.
 Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Brand</span> <span class="n">ID</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> and <code class="codehilite"><span class="o">&lt;</span><span class="n">Secret</span> <span class="k">key</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> should be replaced with actual <code class="codehilite"><span class="n">Brand</span> <span class="n">ID</span></code> and <code class="codehilite"><span class="n">Secret</span> <span class="k">Key</span></code> received from Klix contact person.</p>
