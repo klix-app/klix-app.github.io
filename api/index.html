@@ -824,7 +824,7 @@ In order to call Klix API you should first receive API credentials (Brand ID and
 <h3 id="single-payment-step-by-step-guide">Single payment step by step guide<a class="headerlink" href="#single-payment-step-by-step-guide" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Get list of payment methods (optional). This API end-point returns name and logo of each payment method available to merchant (Klix Card payments, Citadele and other bank PSD2 payments etc.). Use this list to render a payment methods page on your site.</li>
-<li>Create a purchase by submitting order data to Klix. Once purchase is created link to Klix hosted payment page will be returned as <code class="codehilite"><span class="n">checkout_url</span></code> field value. After customer is redirected to this page Klix will handle a payment process.</li>
+<li>Create a purchase by submitting order data to Klix. Once purchase is created link to Klix hosted payment page will be returned as <code>checkout_url</code> field value. After customer is redirected to this page Klix will handle a payment process.</li>
 <li>Handle one of possible payment process outcomes:<ul>
 <li>If customer payment is successful then callback is sent to merchant server and customer is redirected to successful purchase page specified by merchant. Note that you should consider purchase as successfully paid only after callback is received and purchase status is checked. Note that in case if callback is not used you can call Klix API to get purchase status once customer is redirected back to successful purchase page.</li>
 <li>If customer payment fails for some reason customer is redirected to failed purchase page.</li>
@@ -834,9 +834,9 @@ In order to call Klix API you should first receive API credentials (Brand ID and
 </ol>
 <h3 id="single-payment-request-examples">Single payment request examples<a class="headerlink" href="#single-payment-request-examples" title="Permanent link">&para;</a></h3>
 <p>These are simple request examples that illustrate Klix API usage. Always use <a href="https://portal.klix.app/api">API Reference</a> as a single source of truth.
-Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Brand</span> <span class="n">ID</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> and <code class="codehilite"><span class="o">&lt;</span><span class="n">Secret</span> <span class="k">key</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> should be replaced with actual <code class="codehilite"><span class="n">Brand</span> <span class="n">ID</span></code> and <code class="codehilite"><span class="n">Secret</span> <span class="k">Key</span></code> received from Klix contact person.</p>
+Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes here&gt;</code> should be replaced with actual <code>Brand ID</code> and <code>Secret Key</code> received from Klix contact person.</p>
 <h4 id="get-list-of-available-payment-methods">Get list of available payment methods<a class="headerlink" href="#get-list-of-available-payment-methods" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>curl -X GET <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl -X GET <span class="se">\</span>
   <span class="s1">&#39;https://portal.klix.app/api/v1/payment_methods/?currency=EUR&amp;brand_id=&lt;Brand ID goes here&gt;&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
@@ -845,11 +845,10 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
   -H <span class="s1">&#39;Host: portal.klix.app&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;accept-encoding: gzip, deflate&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;cache-control: no-cache&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="create-available-payment-methods-purchase">Create available payment methods purchase<a class="headerlink" href="#create-available-payment-methods-purchase" title="Permanent link">&para;</a></h4>
 <p>This option allows to create a purchase that can be paid using any payment method available to merchant. Customer will be have an option to choose one of available payment methods after redirect to Klix payment page.</p>
-<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl -X POST <span class="se">\</span>
   https://portal.klix.app/api/v1/purchases/ <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
@@ -883,11 +882,10 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="create-whitelisted-payment-method-purchase">Create whitelisted payment method purchase<a class="headerlink" href="#create-whitelisted-payment-method-purchase" title="Permanent link">&para;</a></h4>
 <p>This option allows to create a purchase that can be paid only using specified whitelisted payment method. Most often this option is used to allow purchase to be paid using payment method selected on merchant web-site.</p>
-<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl -X POST <span class="se">\</span>
   https://portal.klix.app/api/v1/purchases/ <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
@@ -922,11 +920,10 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="get-purchase-information">Get purchase information<a class="headerlink" href="#get-purchase-information" title="Permanent link">&para;</a></h4>
-<p><code class="codehilite"><span class="o">&lt;</span><span class="n">Purchase</span> <span class="n">ID</span><span class="o">&gt;</span></code> is purchase identifier (field <code class="codehilite"><span class="n">id</span></code> value) received in purchase creation response.</p>
-<div class="codehilite"><pre><span></span>curl -X GET <span class="se">\</span>
+<p><code>&lt;Purchase ID&gt;</code> is purchase identifier (field <code>id</code> value) received in purchase creation response.</p>
+<div class="highlight"><pre><span></span><code>curl -X GET <span class="se">\</span>
   https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/ <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
@@ -935,21 +932,20 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
   -H <span class="s1">&#39;Host: portal.klix.app&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;accept-encoding: gzip, deflate&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;cache-control: no-cache&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h2 id="api-usage-in-recurring-payment-scenario">API usage in recurring payment scenario<a class="headerlink" href="#api-usage-in-recurring-payment-scenario" title="Permanent link">&para;</a></h2>
 <h3 id="recurring-payment-step-by-step-guide">Recurring payment step by step guide<a class="headerlink" href="#recurring-payment-step-by-step-guide" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Create an initial purchase with recurring flag set to <code class="codehilite"><span class="k">true</span></code> (see <code class="codehilite"><span class="ss">&quot;force_recurring&quot;</span><span class="p">:</span> <span class="k">true</span></code> in <a href="#create-an-initial-purchase-to-register-card-for-subsequent-recurring-payments">example</a>) in order to register payment card details for subsequent use in recurring payments. Created purchase <code class="codehilite"><span class="n">id</span></code> and <code class="codehilite"><span class="n">checkout_url</span></code> will be returned in response. Redirect customer to <code class="codehilite"><span class="n">checkout_url</span></code> and Klix will handle a payment process. Store this initial purchase <code class="codehilite"><span class="n">id</span></code> on your side as a recurring payment token and use it later on to charge a customer payment card (see <code class="codehilite"><span class="o">&lt;</span><span class="n">Recurring</span> <span class="n">payment</span> <span class="n">token</span><span class="o">&gt;</span></code> placeholder in <a href="#charge-customer-card-as-a-recurring-payment">example</a>). If purchase created in previous step is paid by customer then card details are successfully captured for subsequent use.</li>
-<li>Once customer card should be charged in a form of a recurring payment new purchase should be created via API by specifying amount that needs to be charged and transaction description. This time <code class="codehilite"><span class="n">force_recurring</span></code> should be <code class="codehilite"><span class="k">false</span></code> or can be omitted at all (see <a href="#create-recurring-payment">example</a>). In this case only purchase <code class="codehilite"><span class="n">id</span></code> returned in response should be used in next step (see <code class="codehilite"><span class="o">&lt;</span><span class="n">Purchase</span> <span class="n">id</span> <span class="k">of</span> <span class="n">recurring</span> <span class="n">payment</span><span class="o">&gt;</span></code> placeholder in <a href="#charge-customer-card-as-a-recurring-payment">example</a>). Note that <code class="codehilite"><span class="n">checkout_url</span></code> should not be used.</li>
-<li>Created purchase should be charged via API call. Note that both newly created purchase <code class="codehilite"><span class="n">id</span></code> created in step 2 and recurring payment token (purchase <code class="codehilite"><span class="n">id</span></code>) created in step 1 should be passed to this API end-point (see <a href="#charge-customer-card-as-a-recurring-payment">example</a>).</li>
+<li>Create an initial purchase with recurring flag set to <code>true</code> (see <code>"force_recurring": true</code> in <a href="#create-an-initial-purchase-to-register-card-for-subsequent-recurring-payments">example</a>) in order to register payment card details for subsequent use in recurring payments. Created purchase <code>id</code> and <code>checkout_url</code> will be returned in response. Redirect customer to <code>checkout_url</code> and Klix will handle a payment process. Store this initial purchase <code>id</code> on your side as a recurring payment token and use it later on to charge a customer payment card (see <code>&lt;Recurring payment token&gt;</code> placeholder in <a href="#charge-customer-card-as-a-recurring-payment">example</a>). If purchase created in previous step is paid by customer then card details are successfully captured for subsequent use.</li>
+<li>Once customer card should be charged in a form of a recurring payment new purchase should be created via API by specifying amount that needs to be charged and transaction description. This time <code>force_recurring</code> should be <code>false</code> or can be omitted at all (see <a href="#create-recurring-payment">example</a>). In this case only purchase <code>id</code> returned in response should be used in next step (see <code>&lt;Purchase id of recurring payment&gt;</code> placeholder in <a href="#charge-customer-card-as-a-recurring-payment">example</a>). Note that <code>checkout_url</code> should not be used.</li>
+<li>Created purchase should be charged via API call. Note that both newly created purchase <code>id</code> created in step 2 and recurring payment token (purchase <code>id</code>) created in step 1 should be passed to this API end-point (see <a href="#charge-customer-card-as-a-recurring-payment">example</a>).</li>
 </ol>
 <h3 id="request-examples">Request examples<a class="headerlink" href="#request-examples" title="Permanent link">&para;</a></h3>
 <p>These are simple request examples that illustrate Klix API usage. Always use <a href="https://portal.klix.app/api">API Reference</a> as a single source of truth.
-Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Brand</span> <span class="n">ID</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> and <code class="codehilite"><span class="o">&lt;</span><span class="n">Secret</span> <span class="k">key</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> should be replaced with actual <code class="codehilite"><span class="n">Brand</span> <span class="n">ID</span></code> and <code class="codehilite"><span class="n">Secret</span> <span class="k">Key</span></code> received from Klix contact person.</p>
+Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes here&gt;</code> should be replaced with actual <code>Brand ID</code> and <code>Secret Key</code> received from Klix contact person.</p>
 <h4 id="create-an-initial-purchase-to-register-card-for-subsequent-recurring-payments">Create an initial purchase to register card for subsequent recurring payments<a class="headerlink" href="#create-an-initial-purchase-to-register-card-for-subsequent-recurring-payments" title="Permanent link">&para;</a></h4>
 <p>This should be done only once to make initial payment and register customer card for subsequent use.</p>
-<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl -X POST <span class="se">\</span>
   https://portal.klix.app/api/v1/purchases/ <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
@@ -980,11 +976,10 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="create-recurring-payment">Create recurring payment<a class="headerlink" href="#create-recurring-payment" title="Permanent link">&para;</a></h4>
 <p>This should be done for each recurring payment (e.g. each month).</p>
-<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl -X POST <span class="se">\</span>
   https://portal.klix.app/api/v1/purchases/ <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
@@ -1011,10 +1006,9 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="charge-customer-card-as-a-recurring-payment">Charge customer card as a recurring payment<a class="headerlink" href="#charge-customer-card-as-a-recurring-payment" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl -X POST <span class="se">\</span>
   https://portal.klix.app/api/v1/purchases/&lt;Purchase id of recurring payment&gt;/charge <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
@@ -1027,12 +1021,11 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
   -d <span class="s1">&#39;{</span>
 <span class="s1">   &quot;recurring_token&quot;: &quot;&lt;Recurring payment token&gt;&quot;</span>
 <span class="s1">}&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h2 id="api-usage-in-reservation-scenario-payment-execution-separated-from-authorization">API usage in reservation scenario (payment execution separated from authorization)<a class="headerlink" href="#api-usage-in-reservation-scenario-payment-execution-separated-from-authorization" title="Permanent link">&para;</a></h2>
 <h3 id="reservation-step-by-step-guide">Reservation step by step guide<a class="headerlink" href="#reservation-step-by-step-guide" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Create a purchase by submitting order data and additional <code class="codehilite"><span class="n">skip_capture</span></code> flag to Klix indicating card payment authorization separation from payment execution. Once purchase is created link to Klix hosted payment page will be returned as <code class="codehilite"><span class="n">checkout_url</span></code> field value. Payment identifier returned in purchase creation response should be stored for later use in capture or release requests. After customer is redirected to this page Klix will capture customer card details and will reserve the funds equal to purchase total amount.</li>
+<li>Create a purchase by submitting order data and additional <code>skip_capture</code> flag to Klix indicating card payment authorization separation from payment execution. Once purchase is created link to Klix hosted payment page will be returned as <code>checkout_url</code> field value. Payment identifier returned in purchase creation response should be stored for later use in capture or release requests. After customer is redirected to this page Klix will capture customer card details and will reserve the funds equal to purchase total amount.</li>
 <li>There are several options how to proceed with reservation:<ul>
 <li>Charge reserved amount. There's an option to either charge full reserved amount or amount that's smaller than initially reserved amount.</li>
 <li>Release (return to customer) reserved amount.</li>
@@ -1045,10 +1038,10 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 </div>
 <h3 id="reservation-functionality-request-examples">Reservation functionality request examples<a class="headerlink" href="#reservation-functionality-request-examples" title="Permanent link">&para;</a></h3>
 <p>These are simple request examples that illustrate Klix API usage. Always use <a href="https://portal.klix.app/api">API Reference</a> as a single source of truth.
-Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Brand</span> <span class="n">ID</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> and <code class="codehilite"><span class="o">&lt;</span><span class="n">Secret</span> <span class="k">key</span> <span class="n">goes</span> <span class="n">here</span><span class="o">&gt;</span></code> should be replaced with actual <code class="codehilite"><span class="n">Brand</span> <span class="n">ID</span></code> and <code class="codehilite"><span class="n">Secret</span> <span class="k">Key</span></code> received from Klix contact person.</p>
+Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes here&gt;</code> should be replaced with actual <code>Brand ID</code> and <code>Secret Key</code> received from Klix contact person.</p>
 <h4 id="create-a-reservation-purchase">Create a reservation purchase<a class="headerlink" href="#create-a-reservation-purchase" title="Permanent link">&para;</a></h4>
-<p>This option allows to create a purchase that will reserve purchase total amount in case of card payment. Store purchase <code class="codehilite"><span class="n">id</span></code> returned in response to either change or release funds reserved by this purchase. Redirect customer to <code class="codehilite"><span class="n">checkout_url</span></code> returned in purchase creation response to allow customer to enter card details. Note that in case of successful reservation purchase status will be changed to "hold" instead of "paid" as in case of regular card payment.</p>
-<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+<p>This option allows to create a purchase that will reserve purchase total amount in case of card payment. Store purchase <code>id</code> returned in response to either change or release funds reserved by this purchase. Redirect customer to <code>checkout_url</code> returned in purchase creation response to allow customer to enter card details. Note that in case of successful reservation purchase status will be changed to "hold" instead of "paid" as in case of regular card payment.</p>
+<div class="highlight"><pre><span></span><code>curl -X POST <span class="se">\</span>
   https://portal.klix.app/api/v1/purchases/ <span class="se">\</span>
   -H <span class="s1">&#39;Accept: application/json&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
@@ -1084,62 +1077,56 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 <span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="charge-funds-reserved-by-previously-created-purchase">Charge funds reserved by previously created purchase<a class="headerlink" href="#charge-funds-reserved-by-previously-created-purchase" title="Permanent link">&para;</a></h4>
-<p>To change full amount previously reserved by specified purchase no request body should be sent. <code class="codehilite"><span class="o">&lt;</span><span class="n">Purchase</span> <span class="n">ID</span><span class="o">&gt;</span></code> is purchase identifier (field <code class="codehilite"><span class="n">id</span></code> value) received in purchase creation response.</p>
-<div class="codehilite"><pre><span></span>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/capture/&#39;</span> <span class="se">\</span>
+<p>To change full amount previously reserved by specified purchase no request body should be sent. <code>&lt;Purchase ID&gt;</code> is purchase identifier (field <code>id</code> value) received in purchase creation response.</p>
+<div class="highlight"><pre><span></span><code>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/capture/&#39;</span> <span class="se">\</span>
 --header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
 --header <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="charge-partial-funds-reserved-by-previously-created-purchase">Charge partial funds reserved by previously created purchase<a class="headerlink" href="#charge-partial-funds-reserved-by-previously-created-purchase" title="Permanent link">&para;</a></h4>
-<p>To change amount that's smaller than previously reserved amount this new amount should be specified in request. <code class="codehilite"><span class="o">&lt;</span><span class="n">Purchase</span> <span class="n">ID</span><span class="o">&gt;</span></code> is purchase identifier (field <code class="codehilite"><span class="n">id</span></code> value) received in purchase creation response.</p>
-<div class="codehilite"><pre><span></span>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/capture/&#39;</span> <span class="se">\</span>
+<p>To change amount that's smaller than previously reserved amount this new amount should be specified in request. <code>&lt;Purchase ID&gt;</code> is purchase identifier (field <code>id</code> value) received in purchase creation response.</p>
+<div class="highlight"><pre><span></span><code>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/capture/&#39;</span> <span class="se">\</span>
 --header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
 --header <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span> <span class="se">\</span>
 --data-raw <span class="s1">&#39;{</span>
 <span class="s1">    &quot;amount&quot;: 5</span>
 <span class="s1">}</span>
 <span class="s1">&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="release-funds-reserved-by-previously-created-purchase">Release funds reserved by previously created purchase<a class="headerlink" href="#release-funds-reserved-by-previously-created-purchase" title="Permanent link">&para;</a></h4>
 <p>To release funds reserved by Purchase following request should be sent:</p>
-<div class="codehilite"><pre><span></span>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/release/&#39;</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl --location --request POST <span class="s1">&#39;https://portal.klix.app/api/v1/purchases/&lt;Purchase ID&gt;/release/&#39;</span> <span class="se">\</span>
 --header <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
 --header <span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h2 id="klix-pay-later-monthly-payment-widget">Klix Pay Later monthly payment widget<a class="headerlink" href="#klix-pay-later-monthly-payment-widget" title="Permanent link">&para;</a></h2>
 <p>In order to add Klix Pay Later monthly payment widget to your store place following script in head part of the page.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
    <span class="c">&lt;!-- Klix Pay Later widget --&gt;</span>
    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/pay-later-widget/build/klix-pay-later-widget.esm.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">nomodule</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/pay-later-widget/build/klix-pay-later-widget.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <p>Then place Klix Pay Later monthly payment widget source code just below the product price. You should pass at least product price, language and your Brand ID to widget.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
    ...
    <span class="p">&lt;</span><span class="nt">klix-pay-later</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;67900&quot;</span> <span class="na">brand_id</span><span class="o">=</span><span class="s">&quot;702314b8-dd86-41fa-9a22-510fdd71fa92&quot;</span> 
       <span class="na">language</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">theme</span><span class="o">=</span><span class="s">&quot;light&quot;</span> <span class="na">view</span><span class="o">=</span><span class="s">&quot;product&quot;</span> <span class="na">category</span><span class="o">=</span><span class="s">&quot;SPORTS_GOODS&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;/</span><span class="nt">klix-pay-later</span><span class="p">&gt;</span>
    ...
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <p><img alt="Klix Pay Later widget in product page" src="../images/klix_pay_later_monthly_payment_widget_on_product_page.png" title="Klix Pay Later widget in product page" /></p>
 <div class="admonition note">
 <p class="admonition-title">We strongly recommend to place Klix Pay Later montly payment widget both on product, shopping cart and checkout page so that customer can preview monhly payment also if multiple different products are added to the shopping cart.</p>
 </div>
 <p>Previously mentioned widget code example will result in the following widget.</p>
 <!-- markdownlint-disable MD033 -->
-
 <p><klix-pay-later amount="67900" brand_id="55b7d52b-020e-4143-bc69-3292b5002cf2" language="en" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
-</klix-pay-later>
-<!-- markdownlint-disable MD033 --></p>
+</klix-pay-later></p>
+<!-- markdownlint-disable MD033 -->
+
 <p>Widget parameters are described in the following table.</p>
 <table>
 <thead>
@@ -1151,32 +1138,32 @@ Note that <code class="codehilite"><span class="o">&lt;</span><span class="n">Br
 </thead>
 <tbody>
 <tr>
-<td><code class="codehilite"><span class="n">amount</span></code></td>
+<td><code>amount</code></td>
 <td>Product price in cents (if widget is shown in product view)/shopping cart item total amount in cents (if widget is shown in shopping cart/checkout view)</td>
 <td>false</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="n">brand_id</span></code></td>
+<td><code>brand_id</code></td>
 <td>Brand ID assigned to your company after Klix agreement signing</td>
 <td>false</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="k">language</span></code></td>
+<td><code>language</code></td>
 <td>Current language of the page where widget is shown (supported languages: "ee", "en", "lt", "lv", "ru")</td>
 <td>false</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="n">theme</span></code></td>
+<td><code>theme</code></td>
 <td>Currenly only "light" theme is supported</td>
 <td>true</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="k">view</span></code></td>
+<td><code>view</code></td>
 <td>Widget placement in site. Following placements are supported: "product", "cart", "checkout".</td>
 <td>true</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="n">category</span></code></td>
+<td><code>category</code></td>
 <td>Product category. Should be specified only in case merchant sells different type of goods. Possible values: TV_HOME_APPLIANCES, CLOTHES_SHOES_ACCESSORIES, ELECTRONICS, COMPUTER_EQUIPMENT, FURNITURE, SPORTING_GOODS, GARDEN_GOODS, COSMETICS, CHILDREN_GOODS, CAR_GOODS, MOTO_GOODS, FOR_HOME_AND_REPAIR, ZOO_GOODS, GROCERIES_AND_ALCOHOL, BOOKS, MEDICAL_GOODS, GIFT_CARDS, DELIVERY, OTHER</td>
 <td>true</td>
 </tr>

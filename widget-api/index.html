@@ -578,81 +578,13 @@
     Callback payload signature validation
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updating-callback-urls" class="md-nav__link">
-    Updating callback URLs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#transport-level-security" class="md-nav__link">
-    Transport-Level Security
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#certificates" class="md-nav__link">
-    Certificates
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signing-order" class="md-nav__link">
-    Signing order
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#signature-generation" class="md-nav__link">
-    Signature generation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-no-1-klix-pay-widget-with-single-order-item" class="md-nav__link">
-    Example No 1: Klix Pay widget with single order item
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#example-no-2-klix-checkout-widget-with-multiple-order-items-and-order-delivery" class="md-nav__link">
     Example No 2: Klix Checkout widget with multiple order items and order delivery
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1207,81 +1139,13 @@
     Callback payload signature validation
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updating-callback-urls" class="md-nav__link">
-    Updating callback URLs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#transport-level-security" class="md-nav__link">
-    Transport-Level Security
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#certificates" class="md-nav__link">
-    Certificates
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signing-order" class="md-nav__link">
-    Signing order
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#signature-generation" class="md-nav__link">
-    Signature generation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-no-1-klix-pay-widget-with-single-order-item" class="md-nav__link">
-    Example No 1: Klix Pay widget with single order item
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#example-no-2-klix-checkout-widget-with-multiple-order-items-and-order-delivery" class="md-nav__link">
     Example No 2: Klix Checkout widget with multiple order items and order delivery
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1582,7 +1446,7 @@
 <p>A central part of Klix checkout/payment solution is Klix web widget - HTML web component i.e. form for entering customer's credit card data. Klix widget accepts merchant order parameters (order identifier, amount, payment description, etc.) via HTML element attributes. The following steps describe actions that you need to perform in order to add Klix widget to your webshop and accept a callback on a server-side once payment has been successfully processed by Klix.</p>
 <h4 id="1-embed-klix-widget-into-your-web-shop">1. Embed Klix widget into your web shop<a class="headerlink" href="#1-embed-klix-widget-into-your-web-shop" title="Permanent link">&para;</a></h4>
 <p>In order to embed Klix widget into your web shop following HTML fragment referencing Klix widget JavaScript should be added to your web shop checkout page.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span>  
         <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/stage/widget/build/klixwidget.esm.js&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -1590,12 +1454,11 @@
         <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/stage/widget/build/klixwidget.js&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <p>Note that Klix widget JavaScript code should be loaded from different destinations on production and test environments. See Testing integration <a href="#environments">Environments</a> section for details.</p>
 <h4 id="2-pass-order-information-to-klix-widget">2. Pass order information to Klix widget<a class="headerlink" href="#2-pass-order-information-to-klix-widget" title="Permanent link">&para;</a></h4>
 <p>Next step is to place Klix widget HTML code in an appropriate place on a checkout page where this widget will be rendered and pass order/payment related information.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;21ca7904-ff16-48b5-918d-c2d80af81f05&quot;</span>  
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;21ca7904-ff16-48b5-918d-c2d80af81f05&quot;</span>  
     <span class="na">amount</span><span class="o">=</span><span class="s">&quot;5.45&quot;</span>  
     <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span>  
     <span class="na">label</span><span class="o">=</span><span class="s">&quot;Order No 12345678&quot;</span>  
@@ -1603,12 +1466,10 @@
     <span class="na">back-to-merchant-url</span><span class="o">=</span><span class="s">&quot;https://developers.klix.app/&quot;</span>
     <span class="na">signature</span><span class="o">=</span><span class="s">&quot;E2Ag7p/v9cUQ1U5ntkYIZuDwXPErBxZWA19mGFaW/hRDXlnWvY8UH5jF991/fTgWE5Ls/3DHi5cbbZbM7zkGBT/MB13oVt6QJEtJLIFHi8t5Oqd61S6nSYcKgB/Ju4FvqbQcSaQavc1VS9zd8sgq4BuUzhyF4rb/ErI5wq6VqvDfJLNneL3kfxAcoxtU1lVvYoqZWFz52MN57aFwa7A9wJJRGmpETXFl6jYeFLLYTUjb67eiuMs60vxGh8CFpNCXlJpHzVV3cMTb+h7xit+HCwUDvM8mXwlPWXzg5F4orsoHPHWbMx2HXh8BuwZ5uXnwJar0zFioYlKqLZ+qxje0Bg==&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
-<p>Note that attribute <code class="codehilite"><span class="n">signature</span></code> should contain valid order signature. See section <a href="#signing-order">Signing order</a> for detailed instructions on how to generate a valid signature. Attribute <code class="codehilite"><span class="n">back</span><span class="o">-</span><span class="k">to</span><span class="o">-</span><span class="n">merchant</span><span class="o">-</span><span class="n">url</span></code> allows to specify a URL where customer will be redirected in case of cancelled purchase.
+</code></pre></div>
+<p>Note that attribute <code>signature</code> should contain valid order signature. See section <a href="#signing-order">Signing order</a> for detailed instructions on how to generate a valid signature. Attribute <code>back-to-merchant-url</code> allows to specify a URL where customer will be redirected in case of cancelled purchase.
 Here's Klix widget that corresponds to previously mentioned HTML code.</p>
 <!-- markdownlint-disable MD033 -->
-
 <details>
     <summary>Click to load Klix widget</summary>
 
@@ -1616,7 +1477,6 @@ Here's Klix widget that corresponds to previously mentioned HTML code.</p>
     <klix-checkout widget-id="21ca7904-ff16-48b5-918d-c2d80af81f05" amount="5.45" currency="EUR" label="Order No 12345678" language="lv" signature="B+nre6Oe6lnjh0hcW5dhOtRmXxN3pm6Sup3kjcNeQiSmTN6zQCp6kHErX/s+JIvkLIqQxD2D/EU2MUraQC03RyKHyX/Wr8qVVbPeBaskPkYR7l397BBYOghvVN1LS8RWdpQ4Q67kMYdPutqnJAUGJtHA51i14xmnaIRxctpK4UJE3qtfu1QjWPez/yP1lT/igpCTL66lqXKcbHac75v++5WUwwT5fCEUklPxudzC3qbujNhXZBPwAZxa2GaYQDzCOP7p/bcJgH/DwsaVMiDtekG5ANgXB51WOPB9X3pP1rdr6kbVccXhN0D4UrxMt3ZA4bPw+LaAWzVRNaVOJoNpZg=="></klix-checkout>
 </div>
 </details>
-
 <!-- markdownlint-disable MD033 -->
 
 <h4 id="3-implement-an-end-point-that-will-be-invoked-upon-payment-completetion">3. Implement an end-point that will be invoked upon payment completetion<a class="headerlink" href="#3-implement-an-end-point-that-will-be-invoked-upon-payment-completetion" title="Permanent link">&para;</a></h4>
@@ -1651,8 +1511,9 @@ Make sure to specify IP address from which Klix solution will be accessed and e-
 <p><klix-checkout widget-id="8c597447-5234-4de1-ab85-b54e252098ce" language="lv" order="{&quot;items&quot;: [{&quot;orderItemId&quot;: &quot;12345&quot;, &quot;amount&quot;: 88, &quot;taxRate&quot;: 0.21, &quot;currency&quot;: &quot;EUR&quot;, &quot;label&quot;: &quot;Vacuum cleaner TP-3&quot;}, {&quot;amount&quot;: 9.39, &quot;currency&quot;: &quot;EUR&quot;, &quot;label&quot;: &quot;TP-3 HEPA filter&quot;,&quot;count&quot;: 2, &quot;unit&quot;: &quot;PIECE&quot;}], &quot;shippingOptions&quot;: [{&quot;id&quot;:&quot;omniva&quot;,&quot;amount&quot;:2,&quot;currency&quot;:&quot;EUR&quot;,&quot;taxRate&quot;: 0.21},  {&quot;id&quot;:&quot;courier&quot;,&quot;amount&quot;:0}]}" signature="vy1KbYGxD2oZtSGvkoVLt8ZdHCkecbFpK9L7lsyK01D6FNvzTg3L3XF894sX68mmmPBm3BjMdw8QPsbz4d68aJu6WKj9hk5qu2sPmXKyt7ZgIVdHZJwI729g+Z5MFHDfmqbG1JBlQSYpMRrA1NX8zi1d4/+Sono1huvuc0H422BrxUt//CJSfug91mp/ZSkb7q5KiPZaZBpPHyNtNSuwvHUc5WO5KX2En0j4+8q/O3ekZEEDa5dsdhG4G2nZdb3ti8Wa4DQ+NTYmQ170QVoWtQwlleJ7MbP03K2kxikUqhEShLGfKkoFuhtkih0654ZnsG7AYs7ga8WvXEZ7SB2DHQ=="></klix-checkout></p>
 </li>
 </ol>
-<p></details>
-<!-- markdownlint-disable MD033 --></p>
+</details>
+<!-- markdownlint-disable MD033 -->
+
 <h3 id="3-provide-integration-configuration-in-merchant-console">3. Provide integration configuration in Merchant Console<a class="headerlink" href="#3-provide-integration-configuration-in-merchant-console" title="Permanent link">&para;</a></h3>
 <p>Follow registration link in Merchant Console invitation e-mail and specify new password. After registration follow <a href="#integration-configuration">these steps</a> to configure integration.</p>
 <h3 id="4-add-widget-html-code-to-your-web-page">4. Add widget HTML code to your web-page<a class="headerlink" href="#4-add-widget-html-code-to-your-web-page" title="Permanent link">&para;</a></h3>
@@ -1682,10 +1543,10 @@ Additional <a href="#payment-completed-callback">callback</a> can be implemented
 <p>Merchant is obligated to perform Klix callback payload signature validation using Klix public key in order to ensure request payload integrity and authenticity.</p>
 </div>
 <h3 id="3-generate-privatepublic-key-pair-for-signing-the-api-requests">3. Generate private/public key pair for signing the API requests<a class="headerlink" href="#3-generate-privatepublic-key-pair-for-signing-the-api-requests" title="Permanent link">&para;</a></h3>
-<p>Generate private/public key pair and download private key file. Merchant order details passed as Klix widget attributes and all data modification requests sent to Klix API e.g. payment refund should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a HTTP request payload HTTP header <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">Klix</span><span class="o">-</span><span class="k">Key</span><span class="o">-</span><span class="n">ID</span></code> value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".</p>
+<p>Generate private/public key pair and download private key file. Merchant order details passed as Klix widget attributes and all data modification requests sent to Klix API e.g. payment refund should be signed using this private key. Klix will use merchant certificate public key to check each data modification request payload integrity and authenticity. In order to understand which merchant's certificate should be used to validate a HTTP request payload HTTP header <code>X-Klix-Key-ID</code> value should be specified. Header value can be obtained from Certificates page corresponding certificate's field "Name".</p>
 <div class="admonition warning">
 <p class="admonition-title">Security notice</p>
-<p>Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload and widget attrributes. Note that in such case HTTP header <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">Klix</span><span class="o">-</span><span class="k">Key</span><span class="o">-</span><span class="n">ID</span></code> value and Klix widget attribute <code class="codehilite"><span class="n">certificate</span><span class="o">-</span><span class="n">name</span></code> should match new certificate's name.</p>
+<p>Merchant is reponsible for storing certificate's private key securely. Merchant can generate a new certificate in Merchant Console and use this certificate to sign request payload and widget attrributes. Note that in such case HTTP header <code>X-Klix-Key-ID</code> value and Klix widget attribute <code>certificate-name</code> should match new certificate's name.</p>
 </div>
 <p><img alt="Create new merchant certificate" src="../images/merchant_console_certificate_created.png" title="New merchant certificate creation" /></p>
 <h3 id="4-create-a-widget">4. Create a widget<a class="headerlink" href="#4-create-a-widget" title="Permanent link">&para;</a></h3>
@@ -1697,7 +1558,7 @@ Additional <a href="#payment-completed-callback">callback</a> can be implemented
 </ul>
 <p>See <a href="#klix-widget">Widget</a> section for more detailed description of widget types and configuration.</p>
 <h3 id="5-store-api-key">5. Store API key<a class="headerlink" href="#5-store-api-key" title="Permanent link">&para;</a></h3>
-<p>Note that Klix standard checkout flow doesn't require a merchant to invoke Klix API. More advanced use cases like refunding an order can be handled both in Merchant Console or via Klix API. For each HTTP request sent to Klix API HTTP header called <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">KLIX</span><span class="o">-</span><span class="n">Api</span><span class="o">-</span><span class="k">Key</span></code> should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section's field "Api key".</p>
+<p>Note that Klix standard checkout flow doesn't require a merchant to invoke Klix API. More advanced use cases like refunding an order can be handled both in Merchant Console or via Klix API. For each HTTP request sent to Klix API HTTP header called <code>X-KLIX-Api-Key</code> should be specified. Header value can be obtained from Certificates page "Merchant Api key info" section's field "Api key".</p>
 <p><img alt="Add Klix API key to HTTP request headers" src="../images/merchant_console_api_key.png" title="Klix API key" /></p>
 <h2 id="callbacks">Callbacks<a class="headerlink" href="#callbacks" title="Permanent link">&para;</a></h2>
 <h3 id="callback-urls">Callback URLs<a class="headerlink" href="#callback-urls" title="Permanent link">&para;</a></h3>
@@ -1738,7 +1599,7 @@ Additional <a href="#payment-completed-callback">callback</a> can be implemented
 <td>Order verification URL</td>
 <td>https://merchant.com/orders</td>
 <td>true</td>
-<td>Deprecated in favour of <a href="#signing-order">order signing</a>. Used only in case of Klix widgets with valiation type <code class="codehilite"><span class="n">CALLBACK</span></code>. HTTP POST request is sent from Klix backend to this end-point whenever a customer submits an order in the checkout form. Merchant store should validate order data (check if selected product/service price is valid and is available in stock etc.) and either approve or reject an order. Note that Klix does not send full order information in notification request body. Only order identifier is sent as a JWS payload. You should check JWS signature, Base64 decode request payload to extract order identifier and use Klix API to retrieve order data by order identifier. Example JWS sent as a notification body: <code class="codehilite"><span class="n">eyJraWQiOiJNUGF5IiwiYWxnIjoiUlMyNTYifQ</span><span class="p">.</span><span class="n">eyJvcmRlcklkIjoiMWE2YTUzNjgtZTc5OS00OTY3LWI3NDItNjdhZGMxNmFlYzhhIn0</span><span class="p">.</span><span class="n">OZQU_2nPKUWl93U8YJJ9GjzZlLmmKS7ffuVu1WSZ5Y4JSU65LJxYs3kj0a460abXsBLkkVGX1Hi89fxNJ8CMsQ</span></code>. Base64 decoding middle part of this JWS token will lead to following JSON document <code class="codehilite"><span class="err">{</span><span class="ss">&quot;orderId&quot;</span><span class="p">:</span><span class="ss">&quot;1a6a5368-e799-4967-b742-67adc16aec8a&quot;</span><span class="p">,</span><span class="ss">&quot;externalOrderId&quot;</span><span class="p">:</span><span class="ss">&quot;1233456789&quot;</span><span class="err">}</span></code>, where <code class="codehilite"><span class="n">orderId</span></code> is Klix order identifier and <code class="codehilite"><span class="n">externalOrderId</span></code> is order identifier in merchant's system.</td>
+<td>Deprecated in favour of <a href="#signing-order">order signing</a>. Used only in case of Klix widgets with valiation type <code>CALLBACK</code>. HTTP POST request is sent from Klix backend to this end-point whenever a customer submits an order in the checkout form. Merchant store should validate order data (check if selected product/service price is valid and is available in stock etc.) and either approve or reject an order. Note that Klix does not send full order information in notification request body. Only order identifier is sent as a JWS payload. You should check JWS signature, Base64 decode request payload to extract order identifier and use Klix API to retrieve order data by order identifier. Example JWS sent as a notification body: <code>eyJraWQiOiJNUGF5IiwiYWxnIjoiUlMyNTYifQ.eyJvcmRlcklkIjoiMWE2YTUzNjgtZTc5OS00OTY3LWI3NDItNjdhZGMxNmFlYzhhIn0.OZQU_2nPKUWl93U8YJJ9GjzZlLmmKS7ffuVu1WSZ5Y4JSU65LJxYs3kj0a460abXsBLkkVGX1Hi89fxNJ8CMsQ</code>. Base64 decoding middle part of this JWS token will lead to following JSON document <code>{"orderId":"1a6a5368-e799-4967-b742-67adc16aec8a","externalOrderId":"1233456789"}</code>, where <code>orderId</code> is Klix order identifier and <code>externalOrderId</code> is order identifier in merchant's system.</td>
 </tr>
 <tr>
 <td>Shipping cost calculation URL</td>
@@ -1749,8 +1610,8 @@ Additional <a href="#payment-completed-callback">callback</a> can be implemented
 </tbody>
 </table>
 <h4 id="purchase-notification-request-example">Purchase notification request example<a class="headerlink" href="#purchase-notification-request-example" title="Permanent link">&para;</a></h4>
-<p>HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to <a href="#callback-payload-signature-validation">check a request signature</a>. In case of a successfull payment <code class="codehilite"><span class="ss">&quot;status&quot;</span></code> field value is <code class="codehilite"><span class="ss">&quot;PAID&quot;</span></code> and order in merchant web shop can be marked as paid.</p>
-<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<p>HTTP status code 200 should be returned by this API end-point otherwise Klix server will retry to send notification multiple times. In order to ensure that a purchase notification was sent by Klix and request was not altered it's important to <a href="#callback-payload-signature-validation">check a request signature</a>. In case of a successfull payment <code>"status"</code> field value is <code>"PAID"</code> and order in merchant web shop can be marked as paid.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 curl -x PUT https://your.site/payment-notifications <span class="se">\</span>
     -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
     -H <span class="s1">&#39;X-Klix-Signature: MKqXr7siOkC6TYENeHUcy5ofFDiWpqMt+ow5iWJqnIYWU71W50fZFHfy3BVrehEGCvf+TufZK6DPymdM1e2G0w==&#39;</span> <span class="se">\</span>
@@ -1835,11 +1696,10 @@ curl -x PUT https://your.site/payment-notifications <span class="se">\</span>
 <span class="s1">        },</span>
 <span class="s1">        &quot;effective_amount&quot;:108.78</span>
 <span class="s1">    }&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="shipping-cost-calculation-request-example">Shipping cost calculation request example<a class="headerlink" href="#shipping-cost-calculation-request-example" title="Permanent link">&para;</a></h4>
-<p>Note that <code class="codehilite"><span class="n">pickup_point</span></code> is present only if customer has selected a delivery to pickup point, <code class="codehilite"><span class="n">address</span></code> is present both in case of delivery to address specified by customer and delivery to pickup point.</p>
-<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<p>Note that <code>pickup_point</code> is present only if customer has selected a delivery to pickup point, <code>address</code> is present both in case of delivery to address specified by customer and delivery to pickup point.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 curl -x POST https://your.site/shipping-cost-calculations <span class="se">\</span>
     -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
     -H <span class="s1">&#39;X-Klix-Signature: TODO&#39;</span> <span class="se">\</span>
@@ -1868,216 +1728,220 @@ curl -x POST https://your.site/shipping-cost-calculations <span class="se">\</sp
 <span class="s1">            &quot;service_hours&quot;: &quot;P-Pk. piegāde 10:00, iznemšana 17:00 Sestdienas piegāde 14:00, iznemšana 14:00&quot;</span>
 <span class="s1">        }</span>
 <span class="s1">    }&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <h3 id="callback-payload-signature-validation">Callback payload signature validation<a class="headerlink" href="#callback-payload-signature-validation" title="Permanent link">&para;</a></h3>
-<p>First thing upon receiving purchase completed HTTP request you should verify request signature in order to ensure that request was sent by Klix server. Signature is sent as HTTP header <code class="codehilite"><span class="n">X</span><span class="o">-</span><span class="n">Klix</span><span class="o">-</span><span class="n">Signature</span></code> value and should be verified using <code class="codehilite"><span class="n">SHA256WithRSA</span></code> algorithm and Klix public key that can be downloaded from Merchant Console. Example signature validation code:</p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">PHP</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="k">function</span> <span class="nf">is_signature_valid</span><span class="p">(</span><span class="nv">$payload</span><span class="p">,</span> <span class="nv">$signature_header_value</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-    <span class="nv">$klix_public_key</span> <span class="o">=</span> <span class="s">&lt;&lt;&lt;</span><span class="dl">EOD</span><span class="s"></span>
-<span class="s">-----BEGIN CERTIFICATE-----</span>
-<span class="s">MIIB5TCCAY+gAwIBAgIENkY2rzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJM</span>
-<span class="s">VjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMI</span>
-<span class="s">Q2l0YWRlbGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wHhcN</span>
-<span class="s">MTgwNjEyMTMzNjM4WhcNMjgwNjA5MTMzNjM4WjBoMQswCQYDVQQGEwJMVjEQMA4G</span>
-<span class="s">A1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMIQ2l0YWRl</span>
-<span class="s">bGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wXDANBgkqhkiG</span>
-<span class="s">9w0BAQEFAANLADBIAkEAqAUyLiFAd4hxAh3LrbBrbqk+lmGPVFgS3996vTCQ/L/h</span>
-<span class="s">L9WnA+EPnxMV5LFyd49xsf5bbspaLrXnVmwkuvUC9wIDAQABoyEwHzAdBgNVHQ4E</span>
-<span class="s">FgQUzbA4JwE+SOUOJEd25iwpd9cajJMwDQYJKoZIhvcNAQELBQADQQBDtypgN8O3</span>
-<span class="s">AZ+H4CjH5Ihq+V5i/a3pL6nj8Dg502wejDN8fXZJjJvdu0VxRzf4k41xeRg3lO7I</span>
-<span class="s">IrWkkFCW0LSH</span>
-<span class="s">-----END CERTIFICATE-----</span>
-<span class="dl">EOD</span><span class="p">;</span>
+<p>First thing upon receiving purchase completed HTTP request you should verify request signature in order to ensure that request was sent by Klix server. Signature is sent as HTTP header <code>X-Klix-Signature</code> value and should be verified using <code>SHA256WithRSA</code> algorithm and Klix public key that can be downloaded from Merchant Console. Example signature validation code:</p>
+<p>```PHP tab=</p>
+<?php
+function is_signature_valid($payload, $signature_header_value) : int {
+    $klix_public_key = <<<EOD
+-----BEGIN CERTIFICATE-----
+MIIB5TCCAY+gAwIBAgIENkY2rzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJM
+VjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMI
+Q2l0YWRlbGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wHhcN
+MTgwNjEyMTMzNjM4WhcNMjgwNjA5MTMzNjM4WjBoMQswCQYDVQQGEwJMVjEQMA4G
+A1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMIQ2l0YWRl
+bGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wXDANBgkqhkiG
+9w0BAQEFAANLADBIAkEAqAUyLiFAd4hxAh3LrbBrbqk+lmGPVFgS3996vTCQ/L/h
+L9WnA+EPnxMV5LFyd49xsf5bbspaLrXnVmwkuvUC9wIDAQABoyEwHzAdBgNVHQ4E
+FgQUzbA4JwE+SOUOJEd25iwpd9cajJMwDQYJKoZIhvcNAQELBQADQQBDtypgN8O3
+AZ+H4CjH5Ihq+V5i/a3pL6nj8Dg502wejDN8fXZJjJvdu0VxRzf4k41xeRg3lO7I
+IrWkkFCW0LSH
+-----END CERTIFICATE-----
+EOD;
 
-    <span class="k">return</span> <span class="nb">openssl_verify</span><span class="p">(</span><span class="nv">$payload</span><span class="p">,</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$signature_header_value</span><span class="p">),</span> <span class="nv">$klix_public_key</span><span class="p">,</span> <span class="nx">OPENSSL_ALGO_SHA256</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span>
-</pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">Klix PHP library</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="k">use</span> <span class="nx">Klix\Callback\ProviderSignatureValidator</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Klix\Callback\ProviderCallbackRequestDecoder</span><span class="p">;</span>
+    return openssl_verify($payload, base64_decode($signature_header_value), $klix_public_key, OPENSSL_ALGO_SHA256);
+}
+?>
+<div class="highlight"><pre><span></span><code>```PHP tab=&quot;Klix PHP library&quot;
+&lt;?php
+use Klix\Callback\ProviderSignatureValidator;
+use Klix\Callback\ProviderCallbackRequestDecoder;
 
-<span class="nv">$validator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProviderSignatureValidator</span><span class="p">(</span><span class="nv">$apiConfiguration</span><span class="p">);</span>
-<span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">(</span><span class="nx">payload</span><span class="p">,</span> <span class="nx">signature_header_value</span><span class="p">);</span>
-<span class="cp">?&gt;</span><span class="x"></span>
-</pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_2" />
-<label for="__tab_1_2">Java</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.ByteArrayInputStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.charset.StandardCharsets</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.InvalidKeyException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.NoSuchAlgorithmException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.PublicKey</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.Signature</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.SignatureException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.cert.CertificateException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.cert.CertificateFactory</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.security.cert.X509Certificate</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Base64</span><span class="o">;</span>
+$validator = new ProviderSignatureValidator($apiConfiguration);
+$validator-&gt;isValid(payload, signature_header_value);
+?&gt;
+</code></pre></div>
+<p>```Java tab=
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
+import java.security.Signature;
+import java.security.SignatureException;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.util.Base64;</p>
+<p>private boolean isSignatureValid(String payload, String signatureHeaderValue) {
+    byte[] decodedSignatureHeaderValue = Base64.getDecoder().decode(signatureHeaderValue);
+    Signature signature = getSignature(payload);
+    try {
+        return signature.verify(decodedSignatureHeaderValue);
+    } catch (SignatureException e) {
+        throw new RuntimeException(e);
+    }
+}</p>
+<p>private Signature getSignature(String payload) {
+    PublicKey publicKey = loadPublicKey();
+    try {
+        Signature signature = Signature.getInstance("SHA256withRSA");
+        signature.initVerify(publicKey);
+        signature.update(payload.getBytes(StandardCharsets.UTF_8));
+        return signature;
+    } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException e) {
+        throw new RuntimeException(e);
+    }
+}</p>
+<p>private PublicKey loadPublicKey() {
+    String klixPublicKey = "-----BEGIN CERTIFICATE-----\n" +
+            "MIIB5TCCAY+gAwIBAgIENkY2rzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJM\n" +
+            "VjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMI\n" +
+            "Q2l0YWRlbGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wHhcN\n" +
+            "MTgwNjEyMTMzNjM4WhcNMjgwNjA5MTMzNjM4WjBoMQswCQYDVQQGEwJMVjEQMA4G\n" +
+            "A1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMIQ2l0YWRl\n" +
+            "bGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wXDANBgkqhkiG\n" +
+            "9w0BAQEFAANLADBIAkEAqAUyLiFAd4hxAh3LrbBrbqk+lmGPVFgS3996vTCQ/L/h\n" +
+            "L9WnA+EPnxMV5LFyd49xsf5bbspaLrXnVmwkuvUC9wIDAQABoyEwHzAdBgNVHQ4E\n" +
+            "FgQUzbA4JwE+SOUOJEd25iwpd9cajJMwDQYJKoZIhvcNAQELBQADQQBDtypgN8O3\n" +
+            "AZ+H4CjH5Ihq+V5i/a3pL6nj8Dg502wejDN8fXZJjJvdu0VxRzf4k41xeRg3lO7I\n" +
+            "IrWkkFCW0LSH\n" +
+            "-----END CERTIFICATE-----";
+    try (InputStream inputStream = new ByteArrayInputStream(klixPublicKey.getBytes())) {
+        CertificateFactory fact = CertificateFactory.getInstance("X.509");
+        X509Certificate certificate = (X509Certificate) fact.generateCertificate(inputStream);
+        return certificate.getPublicKey();
+    } catch (IOException | CertificateException e) {
+        throw new RuntimeException(e);
+    }
+}
+<div class="highlight"><pre><span></span><code>### Updating callback URLs
 
-<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isSignatureValid</span><span class="o">(</span><span class="n">String</span> <span class="n">payload</span><span class="o">,</span> <span class="n">String</span> <span class="n">signatureHeaderValue</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">byte</span><span class="o">[]</span> <span class="n">decodedSignatureHeaderValue</span> <span class="o">=</span> <span class="n">Base64</span><span class="o">.</span><span class="na">getDecoder</span><span class="o">().</span><span class="na">decode</span><span class="o">(</span><span class="n">signatureHeaderValue</span><span class="o">);</span>
-    <span class="n">Signature</span> <span class="n">signature</span> <span class="o">=</span> <span class="n">getSignature</span><span class="o">(</span><span class="n">payload</span><span class="o">);</span>
-    <span class="k">try</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">signature</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">decodedSignatureHeaderValue</span><span class="o">);</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SignatureException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+URLs can be set in Merchant Console settings.
 
-<span class="kd">private</span> <span class="n">Signature</span> <span class="nf">getSignature</span><span class="o">(</span><span class="n">String</span> <span class="n">payload</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">PublicKey</span> <span class="n">publicKey</span> <span class="o">=</span> <span class="n">loadPublicKey</span><span class="o">();</span>
-    <span class="k">try</span> <span class="o">{</span>
-        <span class="n">Signature</span> <span class="n">signature</span> <span class="o">=</span> <span class="n">Signature</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;SHA256withRSA&quot;</span><span class="o">);</span>
-        <span class="n">signature</span><span class="o">.</span><span class="na">initVerify</span><span class="o">(</span><span class="n">publicKey</span><span class="o">);</span>
-        <span class="n">signature</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">payload</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
-        <span class="k">return</span> <span class="n">signature</span><span class="o">;</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NoSuchAlgorithmException</span> <span class="o">|</span> <span class="n">InvalidKeyException</span> <span class="o">|</span> <span class="n">SignatureException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+![alt_text](images/callback_urls.png &quot;Callback URLs configuration in Merchant Console&quot;)
 
-<span class="kd">private</span> <span class="n">PublicKey</span> <span class="nf">loadPublicKey</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">klixPublicKey</span> <span class="o">=</span> <span class="s">&quot;-----BEGIN CERTIFICATE-----\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;MIIB5TCCAY+gAwIBAgIENkY2rzANBgkqhkiG9w0BAQsFADBoMQswCQYDVQQGEwJM\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;VjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMI\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;Q2l0YWRlbGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wHhcN\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;MTgwNjEyMTMzNjM4WhcNMjgwNjA5MTMzNjM4WjBoMQswCQYDVQQGEwJMVjEQMA4G\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;A1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjERMA8GA1UEChMIQ2l0YWRl\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;bGUxEDAOBgNVBAsTB1Vua25vd24xEDAOBgNVBAMTB1Vua25vd24wXDANBgkqhkiG\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;9w0BAQEFAANLADBIAkEAqAUyLiFAd4hxAh3LrbBrbqk+lmGPVFgS3996vTCQ/L/h\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;L9WnA+EPnxMV5LFyd49xsf5bbspaLrXnVmwkuvUC9wIDAQABoyEwHzAdBgNVHQ4E\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;FgQUzbA4JwE+SOUOJEd25iwpd9cajJMwDQYJKoZIhvcNAQELBQADQQBDtypgN8O3\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;AZ+H4CjH5Ihq+V5i/a3pL6nj8Dg502wejDN8fXZJjJvdu0VxRzf4k41xeRg3lO7I\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;IrWkkFCW0LSH\n&quot;</span> <span class="o">+</span>
-            <span class="s">&quot;-----END CERTIFICATE-----&quot;</span><span class="o">;</span>
-    <span class="k">try</span> <span class="o">(</span><span class="n">InputStream</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayInputStream</span><span class="o">(</span><span class="n">klixPublicKey</span><span class="o">.</span><span class="na">getBytes</span><span class="o">()))</span> <span class="o">{</span>
-        <span class="n">CertificateFactory</span> <span class="n">fact</span> <span class="o">=</span> <span class="n">CertificateFactory</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;X.509&quot;</span><span class="o">);</span>
-        <span class="n">X509Certificate</span> <span class="n">certificate</span> <span class="o">=</span> <span class="o">(</span><span class="n">X509Certificate</span><span class="o">)</span> <span class="n">fact</span><span class="o">.</span><span class="na">generateCertificate</span><span class="o">(</span><span class="n">inputStream</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">certificate</span><span class="o">.</span><span class="na">getPublicKey</span><span class="o">();</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="o">|</span> <span class="n">CertificateException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></div></div>
-</div>
-<h3 id="updating-callback-urls">Updating callback URLs<a class="headerlink" href="#updating-callback-urls" title="Permanent link">&para;</a></h3>
-<p>URLs can be set in Merchant Console settings.</p>
-<p><img alt="alt_text" src="../images/callback_urls.png" title="Callback URLs configuration in Merchant Console" /></p>
-<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
-<p>Every data modification request sent by merchant to Klix and every Klix widget order parameters should be signed by merchant private key and validated on Klix side by merchant public key.</p>
-<h3 id="transport-level-security">Transport-Level Security<a class="headerlink" href="#transport-level-security" title="Permanent link">&para;</a></h3>
-<p>All communication is going via HTTPS TLS 1.2 protocol.</p>
-<h3 id="certificates">Certificates<a class="headerlink" href="#certificates" title="Permanent link">&para;</a></h3>
-<p>Private and public key pairs are issued by Klix PKI (Public Key Infrastructure) server. It is possible to generate a new RSA 2048 key pair in Merchant Console -&gt; Certificates page. When clicking “GENERATE NEW CERTIFICATE” private key is downloaded to user machine, and public key is kept in Klix database.</p>
-<p><img alt="alt_text" src="../images/merchant_console_generate_new_certificate.png" title="Generate merchant certificate in Merchant Console" /></p>
-<p>Merchant RSA Key Pair generation guidelines:</p>
-<ul>
-<li>Each key pair is assigned a unique identifier in Klix database.</li>
-<li>Merchant private key is not stored in Klix and its responsibility of merchant to keep it secure.</li>
-<li>Key could be revoked by the merchant or Klix admin at any time.</li>
-<li>Multiple keys could be active at the same time. Widget attribute <code class="codehilite"><span class="n">certificate</span><span class="o">-</span><span class="n">name</span></code> helps to identify which key is used to sign particular order.</li>
-<li>Default Key expiration time is 2 calendar years. This is defined on PKI policies level.</li>
-<li>Notifications about key status changes (as well as expiration reminders) is sent to merchant email address.</li>
-</ul>
-<p>Requests sent from Klix to merchant defined callback URL are also signed digitally using Klix private key and validated using public key, which is available in Merchant Console.</p>
-<div class="admonition warning">
-<p class="admonition-title">Storing private key</p>
-<p>Do not share your private key with anyone.</p>
-</div>
-<h3 id="signing-order">Signing order<a class="headerlink" href="#signing-order" title="Permanent link">&para;</a></h3>
-<p>In order for Klix server to be able to verify a payment request origin Klix widget order parameters must be signed by merchant. Note that if your webshop is written in PHP you can use <a href="https://github.com/klix-app/merchant-api-php#generate-widget-html-representation">Klix PHP library</a> to sign orders therefore following section can be skipped.</p>
-<h4 id="signature-generation">Signature generation<a class="headerlink" href="#signature-generation" title="Permanent link">&para;</a></h4>
-<p>Order signature is generated by concatenating order fields into single string and applying SHA256 hash function and RSA encryption to it.
-Order signature = <code class="codehilite"><span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="n">signature</span><span class="o">-</span><span class="k">input</span><span class="p">))</span></code>, where <code class="codehilite"><span class="n">signature</span><span class="o">-</span><span class="k">input</span></code> is calculated in a following way.
-<img alt="Generate signature" src="../images/signature-generation.svg" title="Signature generation algorithm" />
-Note that all blank fields should be replaced with empty strings, all amount fields should be formatted with 2 decimals using dot as a decimal point and without thousand separator (e.g. if amount is 1025 then it should be formatted as 1025.00), count field should be formatted with 3 decimals (e.g. 2 should be formatted as 2.000).</p>
-<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
-<p>Following private key is used in all examples. Note that you can obtain your merchant private key in Klix Merchant Console.</p>
-<!-- markdownlint-disable MD033 -->
+## Security
 
-<details>
-    <summary>Expand to see a private key</summary>
+Every data modification request sent by merchant to Klix and every Klix widget order parameters should be signed by merchant private key and validated on Klix side by merchant public key.
 
-    <div class="codehilite"><pre><span></span><span class="o">-----</span><span class="nv">BEGIN</span> <span class="nv">PRIVATE</span> <span class="nv">KEY</span><span class="o">-----</span>
-<span class="nv">MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDAom</span><span class="o">+</span><span class="mi">89</span><span class="nv">QBxPCJz</span>
-<span class="nv">lQP</span><span class="o">+</span><span class="nv">PtVsJrdl7wJq2Nj2crBDyNyZjIZcCaf7CCLRD43VCwsFjGSGoWhYDwbWAWzy</span>
-<span class="nv">ryi6bwcaXdWg8p</span><span class="o">/</span><span class="nv">pHoWTP3sHluVaHQx6fh3xHsb2qgSE320JtvEYJC3k0RwQyt7j</span>
-<span class="nv">MEhN79Dizxj2fsMl9nv2fe1</span><span class="o">/</span><span class="mi">8</span><span class="nv">WwEudtaJl2o</span><span class="o">+</span><span class="nv">iEQvhz9p2XR106AOU8</span><span class="o">+</span><span class="nv">DesOt</span><span class="o">/</span><span class="mi">1</span><span class="nv">X</span>
-<span class="mi">9</span><span class="nv">wGmQKpxffOLbq0WpYzXw7U5R41Zk9atusRi</span><span class="o">+</span><span class="nv">CP5FAhKvdRQu9zv18vU2Mv2CdHl</span>
-<span class="nv">Dxe</span><span class="o">/</span><span class="nv">Z</span><span class="o">+</span><span class="nv">dpm3iFbBFKVPRMFHzBE4tYQ49YfHrxTob6rHbv1MoyGW01FgVhW989Caq2</span>
-<span class="nv">Sa60iV4XAgMBAAECggEAYG7w0P81gXpBJOtsXFLINKQNG5JS</span><span class="o">+</span><span class="mi">3</span><span class="nv">oi4vz3EHf1N0kJ</span>
-<span class="mi">2</span><span class="nv">flbhmfERjQrJIOquNRXXq5etfaPzYJZMARPt0TtoV1oHHJZazJEXDpjNKFtn3b7</span>
-<span class="nv">UDbidlqZ79GdAYd35m0WtKcn8mxcSGvGuKTrDVkIkQJr1LoQp2iFFhhkVLBfCt3A</span>
-<span class="nv">W13MeCq4fcu5CHj7ZHExpgTkyO</span><span class="o">+</span><span class="nv">o4cKCU</span><span class="o">+</span><span class="nv">XqBMiN0xl2yt8BeFVpyuK0bxMs8yjb</span>
-<span class="nv">budT5mhA</span><span class="o">+</span><span class="nv">pQYYLblS</span><span class="o">/</span><span class="nv">S</span><span class="o">+</span><span class="nv">ONYFhQZdvwyCUDcpmDwQc5oUCyJISPvT618cAL9</span><span class="o">/</span><span class="nv">WfWU</span>
-<span class="nv">YhDjPZ1LDkiGcP6KWyEp4TCupMOCDQ6KoKdbfEdHAQKBgQD13sE1E5327ZnuqmYD</span>
-<span class="mi">4</span><span class="nv">c</span><span class="o">+</span><span class="nv">zD4c3duXi9ZqoD</span><span class="o">/</span><span class="nv">ZYV9XwiER2XnMKMbDDztaPiBZVd5gy60I7uLXs</span><span class="o">/</span><span class="mi">7</span><span class="nv">elQ02D</span>
-<span class="nv">zla</span><span class="o">+</span><span class="nv">vIew44ZgZUFuNnVCooT5MEGIrI6lyZEy7wOiMSSQsw60wbsDAqWqNZm63wbf</span>
-<span class="nv">fizIpvc3ELxXXDfqfgBpM1GJJwKBgQDIkjG4</span><span class="o">/</span><span class="nv">E2dXhlUDxKozwi</span><span class="o">+</span><span class="mi">5</span><span class="nv">y</span><span class="o">/</span><span class="mi">61</span><span class="nv">Ir1jBKg</span>
-<span class="nv">c7KF5BbO61o</span><span class="o">/</span><span class="nv">J7GxUcUDtf4Rw9wqaYWrcIycyIB0wGQKuWomadi1uM3m63x44cqQ</span>
-<span class="nv">RzcwUZckiQv465rpct</span><span class="o">/</span><span class="nv">exXoq5xy8JdLMi9pVjGaAKtvDy1moVVMqf44704JTYBjK</span>
-<span class="nv">pqLRPkc5kQKBgFBh3SSvHyvFjlfa2bNXNgJCh2B4vLuwtDlRzqYfQVB8HHXedxnU</span>
-<span class="nv">GQhLLRaL1VFn4hhzlZnUz5WGHNIo6MS4xt9g37PTDvGg6P1RTJDWdUbKogI</span><span class="o">+</span><span class="mi">9</span><span class="o">/</span><span class="nv">v3</span>
-<span class="nv">pELUpYl3K48rGxm5ZJydVvAIyhOwKp0SsS2AeL5F</span><span class="o">+</span><span class="nv">G1PNvCw9Q1vu65tAoGAGeNc</span>
-<span class="nv">zZ6rOfOqW0Iyy10lqNZYSAzk</span><span class="o">/</span><span class="nv">rqcsN8eHNAK7ZxNIrex5MxEHK2B5LMeGM9T9IPr</span>
-<span class="nv">clUi1275urSh8eFZmmMHGJYuk7</span><span class="o">+</span><span class="mi">5</span><span class="nv">EJRQmEj</span><span class="o">/</span><span class="nv">tDSIOhHXBejQ4oUktqLr</span><span class="o">/</span><span class="mi">5</span><span class="nv">D2O3aV</span>
-<span class="nv">sNMVa9ecVBJMOUECIgsixbAQM0jFCmslutJKCTECgYA</span><span class="o">+</span><span class="nv">SCrepQmwfQF47I</span><span class="o">+</span><span class="nv">wVHDf</span>
-<span class="mi">81</span><span class="nv">Hvh3</span><span class="o">/</span><span class="nv">WqeFaaXt12kvEk2DDdG9PYvEuqtEFalvH</span><span class="o">/</span><span class="mi">5</span><span class="nv">LcsWDiknA1zdo9pXLIg95N</span>
-<span class="nv">SY5hDphsXnZLaYS9V9uaW7RCC4VpWELxoVG13mtGDnteAIgoxwWIQ6TfhidFpVtM</span>
-<span class="mi">2</span><span class="nv">KcJhf0hnLkFQW0qEMn0vg</span><span class="o">==</span>
-<span class="o">-----</span><span class="k">END</span> <span class="nv">PRIVATE</span> <span class="nv">KEY</span><span class="o">-----</span>
-</pre></div>
-</details>
+### Transport-Level Security
 
-<!-- markdownlint-disable MD033 -->
+All communication is going via HTTPS TLS 1.2 protocol.
 
-<h5 id="example-no-1-klix-pay-widget-with-single-order-item">Example No 1: Klix Pay widget with single order item<a class="headerlink" href="#example-no-1-klix-pay-widget-with-single-order-item" title="Permanent link">&para;</a></h5>
-<p>Consider Klix widget for following order should be placed in merchant webshop:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;21ca7904-ff16-48b5-918d-c2d80af81f05&quot;</span>  
-    <span class="na">amount</span><span class="o">=</span><span class="s">&quot;5.45&quot;</span>  
-    <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span>  
-    <span class="na">order-id</span><span class="o">=</span><span class="s">&quot;12345678&quot;</span>  
-    <span class="na">label</span><span class="o">=</span><span class="s">&quot;Order No 12345678&quot;</span>  
-    <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span>
-    <span class="na">back-to-merchant-url</span><span class="o">=</span><span class="s">&quot;https://example.com/shopping-cart&quot;</span>
-    <span class="na">signature</span><span class="o">=</span><span class="s">&quot;n0b7Sj0qEVlU52kNctEHR9zUZ9pRtPjA/5/avPSQamx7HiI3q6qijgstBw6KhOKZqcCIL3RULbWNu6xoSGnNtW/nx+RcSd12I0st21Los9MXXPakEIjIto+2Zx0+ZiVoa97dxO8/iGF5A1U4qW9GFhPJGPqQecmZSp7rYaiO+VRq5D9KqKqRpBQEYN9YJgDgWMn36KVYkTdlOYAhJslwkVeKKZ+/ifUqHhiXbPKD3VKAXwx7/MqSiRlfU8Qsm7Vcv/zV05X9trZiaSYOL6yd9aWO/KE2so2hAswY58i6dR218/XD6ab5xTpCSXrfjYbfhInchukvlH7CrbE1T3RcWw==&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
+### Certificates
 
+Private and public key pairs are issued by Klix PKI (Public Key Infrastructure) server. It is possible to generate a new RSA 2048 key pair in Merchant Console -&gt; Certificates page. When clicking “GENERATE NEW CERTIFICATE” private key is downloaded to user machine, and public key is kept in Klix database.
+
+![alt_text](images/merchant_console_generate_new_certificate.png &quot;Generate merchant certificate in Merchant Console&quot;)
+
+Merchant RSA Key Pair generation guidelines:
+
+* Each key pair is assigned a unique identifier in Klix database.
+* Merchant private key is not stored in Klix and its responsibility of merchant to keep it secure.
+* Key could be revoked by the merchant or Klix admin at any time.
+* Multiple keys could be active at the same time. Widget attribute `certificate-name` helps to identify which key is used to sign particular order.
+* Default Key expiration time is 2 calendar years. This is defined on PKI policies level.
+* Notifications about key status changes (as well as expiration reminders) is sent to merchant email address.
+
+Requests sent from Klix to merchant defined callback URL are also signed digitally using Klix private key and validated using public key, which is available in Merchant Console.
+
+!!! Warning &quot;Storing private key&quot;
+    Do not share your private key with anyone.
+
+### Signing order
+
+In order for Klix server to be able to verify a payment request origin Klix widget order parameters must be signed by merchant. Note that if your webshop is written in PHP you can use [Klix PHP library](https://github.com/klix-app/merchant-api-php#generate-widget-html-representation) to sign orders therefore following section can be skipped.
+
+#### Signature generation
+
+Order signature is generated by concatenating order fields into single string and applying SHA256 hash function and RSA encryption to it.
+Order signature = `Base64Encode(SHA256withRSA(signature-input))`, where `signature-input` is calculated in a following way.
+![Generate signature](images/signature-generation.svg &quot;Signature generation algorithm&quot;)
+Note that all blank fields should be replaced with empty strings, all amount fields should be formatted with 2 decimals using dot as a decimal point and without thousand separator (e.g. if amount is 1025 then it should be formatted as 1025.00), count field should be formatted with 3 decimals (e.g. 2 should be formatted as 2.000).
+
+#### Examples
+
+Following private key is used in all examples. Note that you can obtain your merchant private key in Klix Merchant Console.
+
+&lt;!-- markdownlint-disable MD033 --&gt;
+&lt;details&gt;
+    &lt;summary&gt;Expand to see a private key&lt;/summary&gt;
+
+    ```txt
+    -----BEGIN PRIVATE KEY-----
+    MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDAom+89QBxPCJz
+    lQP+PtVsJrdl7wJq2Nj2crBDyNyZjIZcCaf7CCLRD43VCwsFjGSGoWhYDwbWAWzy
+    ryi6bwcaXdWg8p/pHoWTP3sHluVaHQx6fh3xHsb2qgSE320JtvEYJC3k0RwQyt7j
+    MEhN79Dizxj2fsMl9nv2fe1/8WwEudtaJl2o+iEQvhz9p2XR106AOU8+DesOt/1X
+    9wGmQKpxffOLbq0WpYzXw7U5R41Zk9atusRi+CP5FAhKvdRQu9zv18vU2Mv2CdHl
+    Dxe/Z+dpm3iFbBFKVPRMFHzBE4tYQ49YfHrxTob6rHbv1MoyGW01FgVhW989Caq2
+    Sa60iV4XAgMBAAECggEAYG7w0P81gXpBJOtsXFLINKQNG5JS+3oi4vz3EHf1N0kJ
+    2flbhmfERjQrJIOquNRXXq5etfaPzYJZMARPt0TtoV1oHHJZazJEXDpjNKFtn3b7
+    UDbidlqZ79GdAYd35m0WtKcn8mxcSGvGuKTrDVkIkQJr1LoQp2iFFhhkVLBfCt3A
+    W13MeCq4fcu5CHj7ZHExpgTkyO+o4cKCU+XqBMiN0xl2yt8BeFVpyuK0bxMs8yjb
+    budT5mhA+pQYYLblS/S+ONYFhQZdvwyCUDcpmDwQc5oUCyJISPvT618cAL9/WfWU
+    YhDjPZ1LDkiGcP6KWyEp4TCupMOCDQ6KoKdbfEdHAQKBgQD13sE1E5327ZnuqmYD
+    4c+zD4c3duXi9ZqoD/ZYV9XwiER2XnMKMbDDztaPiBZVd5gy60I7uLXs/7elQ02D
+    zla+vIew44ZgZUFuNnVCooT5MEGIrI6lyZEy7wOiMSSQsw60wbsDAqWqNZm63wbf
+    fizIpvc3ELxXXDfqfgBpM1GJJwKBgQDIkjG4/E2dXhlUDxKozwi+5y/61Ir1jBKg
+    c7KF5BbO61o/J7GxUcUDtf4Rw9wqaYWrcIycyIB0wGQKuWomadi1uM3m63x44cqQ
+    RzcwUZckiQv465rpct/exXoq5xy8JdLMi9pVjGaAKtvDy1moVVMqf44704JTYBjK
+    pqLRPkc5kQKBgFBh3SSvHyvFjlfa2bNXNgJCh2B4vLuwtDlRzqYfQVB8HHXedxnU
+    GQhLLRaL1VFn4hhzlZnUz5WGHNIo6MS4xt9g37PTDvGg6P1RTJDWdUbKogI+9/v3
+    pELUpYl3K48rGxm5ZJydVvAIyhOwKp0SsS2AeL5F+G1PNvCw9Q1vu65tAoGAGeNc
+    zZ6rOfOqW0Iyy10lqNZYSAzk/rqcsN8eHNAK7ZxNIrex5MxEHK2B5LMeGM9T9IPr
+    clUi1275urSh8eFZmmMHGJYuk7+5EJRQmEj/tDSIOhHXBejQ4oUktqLr/5D2O3aV
+    sNMVa9ecVBJMOUECIgsixbAQM0jFCmslutJKCTECgYA+SCrepQmwfQF47I+wVHDf
+    81Hvh3/WqeFaaXt12kvEk2DDdG9PYvEuqtEFalvH/5LcsWDiknA1zdo9pXLIg95N
+    SY5hDphsXnZLaYS9V9uaW7RCC4VpWELxoVG13mtGDnteAIgoxwWIQ6TfhidFpVtM
+    2KcJhf0hnLkFQW0qEMn0vg==
+    -----END PRIVATE KEY-----
+    ```
+&lt;/details&gt;
+&lt;!-- markdownlint-disable MD033 --&gt;
+
+##### Example No 1: Klix Pay widget with single order item
+
+Consider Klix widget for following order should be placed in merchant webshop:
+
+```html
+&lt;klix-checkout widget-id=&quot;21ca7904-ff16-48b5-918d-c2d80af81f05&quot;  
+    amount=&quot;5.45&quot;  
+    currency=&quot;EUR&quot;  
+    order-id=&quot;12345678&quot;  
+    label=&quot;Order No 12345678&quot;  
+    language=&quot;lv&quot;
+    back-to-merchant-url=&quot;https://example.com/shopping-cart&quot;
+    signature=&quot;n0b7Sj0qEVlU52kNctEHR9zUZ9pRtPjA/5/avPSQamx7HiI3q6qijgstBw6KhOKZqcCIL3RULbWNu6xoSGnNtW/nx+RcSd12I0st21Los9MXXPakEIjIto+2Zx0+ZiVoa97dxO8/iGF5A1U4qW9GFhPJGPqQecmZSp7rYaiO+VRq5D9KqKqRpBQEYN9YJgDgWMn36KVYkTdlOYAhJslwkVeKKZ+/ifUqHhiXbPKD3VKAXwx7/MqSiRlfU8Qsm7Vcv/zV05X9trZiaSYOL6yd9aWO/KE2so2hAswY58i6dR218/XD6ab5xTpCSXrfjYbfhInchukvlH7CrbE1T3RcWw==&quot;&gt;
+&lt;/klix-checkout&gt;
+</code></pre></div></p>
 <p>Steps to calculate a signature:</p>
 <ol>
 <li>
-<p>Calculate signature input string. <code class="codehilite"><span class="k">Input</span> <span class="n">string</span> <span class="o">=</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">widget</span> <span class="n">ID</span><span class="p">,</span> <span class="k">language</span><span class="p">,</span> <span class="n">back</span> <span class="k">to</span> <span class="n">merchant</span> <span class="n">URL</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">currency</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span> <span class="o">=</span> <span class="mi">21</span><span class="n">ca7904</span><span class="o">-</span><span class="n">ff16</span><span class="o">-</span><span class="mi">48</span><span class="n">b5</span><span class="o">-</span><span class="mi">918</span><span class="n">d</span><span class="o">-</span><span class="n">c2d80af81f05lvhttps</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">shopping</span><span class="o">-</span><span class="n">cart123456785</span><span class="p">.</span><span class="mi">45</span><span class="n">EUROrder</span> <span class="k">No</span> <span class="mi">12345678</span></code>. Note that fields without a value e.g. certificate name, success URL, unit, count are not included in signature input string.</p>
+<p>Calculate signature input string. <code>Input string = CONCAT(widget ID, language, back to merchant URL, amount, currency, label) = 21ca7904-ff16-48b5-918d-c2d80af81f05lvhttps://example.com/shopping-cart123456785.45EUROrder No 12345678</code>. Note that fields without a value e.g. certificate name, success URL, unit, count are not included in signature input string.</p>
 </li>
 <li>
-<p>Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. <code class="codehilite"><span class="n">Signature</span> <span class="o">=</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="n">signature</span><span class="o">-</span><span class="k">input</span><span class="p">))</span> <span class="o">=</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="ss">&quot;21ca7904-ff16-48b5-918d-c2d80af81f05lvhttps://example.com/shopping-cart123456785.45EUROrder No 12345678&quot;</span><span class="p">))</span></code>.</p>
+<p>Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. <code>Signature = Base64Encode(SHA256withRSA(signature-input)) = Base64Encode(SHA256withRSA("21ca7904-ff16-48b5-918d-c2d80af81f05lvhttps://example.com/shopping-cart123456785.45EUROrder No 12345678"))</code>.</p>
 </li>
 </ol>
-<p>Calculated signature which should be passed to Klix widget as a <code class="codehilite"><span class="n">signature</span></code> attribute value in this example: <code class="codehilite"><span class="n">ebSnfsTOV2v0zwXxk8YVYjH6iYTfkYA</span><span class="o">+</span><span class="n">tn</span><span class="o">+</span><span class="n">ove9I</span><span class="o">+</span><span class="mi">0</span><span class="n">Zi3lgQ</span><span class="o">+</span><span class="n">Mhc6sNJJlhqaSa6hqODZJKGGOCy</span><span class="o">/</span><span class="n">d2sqB86dIcJd2M3wB1MqHtVTNadCR</span><span class="o">+</span><span class="n">V3gHi</span><span class="o">+</span><span class="n">ORTcAQmX</span><span class="o">/</span><span class="n">c7crU0lLiKwfHSvaE7FlZUG9cU8ErcZfWDAJEtOMWncMl</span><span class="o">/</span><span class="n">yIeec1kPwb302mFzZUsXkVi8</span><span class="o">/</span><span class="n">VPp70k9oIh</span><span class="o">+</span><span class="n">vPvew</span><span class="o">/</span><span class="n">vVTGhoS2ClnFx4heezp1BNXYxZZsFoSgYFP555tNsHYi4GY6DOIx0qrUtmRrWCrt8HjWV7hBFPDNOQnQ05vALLcWtzWdDtGIo5a46HrlW2biCXW3R6K9jW</span><span class="o">/</span><span class="n">FxhsEVvwT7fDQ</span><span class="o">==</span></code>.</p>
+<p>Calculated signature which should be passed to Klix widget as a <code>signature</code> attribute value in this example: <code>ebSnfsTOV2v0zwXxk8YVYjH6iYTfkYA+tn+ove9I+0Zi3lgQ+Mhc6sNJJlhqaSa6hqODZJKGGOCy/d2sqB86dIcJd2M3wB1MqHtVTNadCR+V3gHi+ORTcAQmX/c7crU0lLiKwfHSvaE7FlZUG9cU8ErcZfWDAJEtOMWncMl/yIeec1kPwb302mFzZUsXkVi8/VPp70k9oIh+vPvew/vVTGhoS2ClnFx4heezp1BNXYxZZsFoSgYFP555tNsHYi4GY6DOIx0qrUtmRrWCrt8HjWV7hBFPDNOQnQ05vALLcWtzWdDtGIo5a46HrlW2biCXW3R6K9jW/FxhsEVvwT7fDQ==</code>.</p>
 <h5 id="example-no-2-klix-checkout-widget-with-multiple-order-items-and-order-delivery">Example No 2: Klix Checkout widget with multiple order items and order delivery<a class="headerlink" href="#example-no-2-klix-checkout-widget-with-multiple-order-items-and-order-delivery" title="Permanent link">&para;</a></h5>
 <p>Consider Klix widget for following order should be placed in merchant webshop:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;8c597447-5234-4de1-ab85-b54e252098ce&quot;</span> 
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;8c597447-5234-4de1-ab85-b54e252098ce&quot;</span> 
     <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span>
     <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;items&amp;quot;: [{&amp;quot;orderItemId&amp;quot;: &amp;quot;12345&amp;quot;, &amp;quot;amount&amp;quot;: 88, &amp;quot;taxRate&amp;quot;: 0.21, &amp;quot;currency&amp;quot;: &amp;quot;EUR&amp;quot;, &amp;quot;label&amp;quot;: &amp;quot;Vacuum cleaner TP-3&amp;quot;}, {&amp;quot;amount&amp;quot;: 9.39, &amp;quot;currency&amp;quot;: &amp;quot;EUR&amp;quot;, &amp;quot;label&amp;quot;: &amp;quot;TP-3 HEPA filter&amp;quot;,&amp;quot;count&amp;quot;: 2, &amp;quot;unit&amp;quot;: &amp;quot;PIECE&amp;quot;}], &amp;quot;shippingOptions&amp;quot;: [{&amp;quot;id&amp;quot;:&amp;quot;omniva&amp;quot;,&amp;quot;amount&amp;quot;:2,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;taxRate&amp;quot;: 0.21},  {&amp;quot;id&amp;quot;:&amp;quot;courier&amp;quot;,&amp;quot;amount&amp;quot;:0}]}&quot;</span>
     <span class="na">signature</span><span class="o">=</span><span class="s">&quot;DJNg/BEiWk6+9CR/wD6P2gbK1+LtAtB0wuqZEelc3tj22/8uVgiTLJ1bj6/H5AhMIiIzI7mIDAFTSc5l+BHZPM7Z/BAXU6mLrbqQUQ6apKmNcjDIDL+NQnZEVb3PCcLRO+IR5tRJLnTcJXVYBDwLlYfvK7INFLwz/4pvklGQOa/ZSHdMLsR5aHLpvfgm6gTlMszV63k8NxCgFghN6B6xdftcdQPskzEYXdpqn+++40bbYv3hReA1zaOCDupjrJirYcNP3P+f6V7t1MLkQqX2pqh3TJEkorrJH/0e1WMbHUdQY6NiJcsMN56qEntdQI6GiUQVNtwOj8sH9kMMdgdjbg==&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
-<p>Note that character <code class="codehilite"><span class="err">&quot;</span></code> values are escaped in a JSON document passed as <code class="codehilite"><span class="k">order</span></code> attribute value.  </p>
+</code></pre></div>
+<p>Note that character <code>"</code> values are escaped in a JSON document passed as <code>order</code> attribute value.  </p>
 <!-- markdownlint-disable MD033 -->
-
 <details>
     <summary>Expand to see an unescaped and formatted order attribute value</summary>
-    <div class="codehilite"><pre><span></span><span class="p">{</span>
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;items&quot;</span><span class="p">:[</span>
         <span class="p">{</span>
             <span class="nt">&quot;orderItemId&quot;</span><span class="p">:</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span>
@@ -2107,29 +1971,28 @@ Note that all blank fields should be replaced with empty strings, all amount fie
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 </details>
-
 <!-- markdownlint-disable MD033 -->
 
 <p>Steps to calculate a signature:</p>
 <ol>
 <li>
-<p>Calculate signature input string. <code class="codehilite"><span class="k">Input</span> <span class="n">string</span> <span class="o">=</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">widget</span> <span class="n">ID</span><span class="p">,</span> <span class="k">language</span><span class="p">,</span> <span class="k">first</span> <span class="k">order</span> <span class="n">item</span> <span class="n">amount</span><span class="p">,</span> <span class="k">first</span> <span class="k">order</span> <span class="n">item</span> <span class="n">currency</span><span class="p">,</span> <span class="k">first</span> <span class="k">order</span> <span class="n">item</span> <span class="n">label</span><span class="p">,</span> <span class="k">first</span> <span class="k">order</span> <span class="n">item</span> <span class="n">tax</span> <span class="n">rate</span><span class="p">,</span> <span class="k">first</span> <span class="k">order</span> <span class="n">item</span> <span class="n">id</span><span class="p">,</span> <span class="k">second</span> <span class="k">order</span> <span class="n">item</span> <span class="n">amount</span><span class="p">,</span> <span class="k">second</span> <span class="k">order</span> <span class="n">item</span> <span class="n">currency</span><span class="p">,</span> <span class="k">second</span> <span class="k">order</span> <span class="n">item</span> <span class="n">label</span><span class="p">,</span> <span class="k">second</span> <span class="k">order</span> <span class="n">item</span> <span class="k">count</span><span class="p">,</span> <span class="k">second</span> <span class="k">order</span> <span class="n">item</span> <span class="n">unit</span><span class="p">,</span> <span class="k">first</span> <span class="n">shipping</span> <span class="k">option</span> <span class="n">id</span><span class="p">,</span> <span class="k">first</span> <span class="n">shipping</span> <span class="k">option</span> <span class="n">amount</span><span class="p">,</span> <span class="k">first</span> <span class="n">shipping</span> <span class="k">option</span> <span class="n">currency</span><span class="p">,</span> <span class="k">second</span> <span class="n">shipping</span> <span class="k">option</span> <span class="n">id</span><span class="p">,</span> <span class="k">second</span> <span class="n">shipping</span> <span class="k">option</span> <span class="n">amount</span><span class="p">)</span> <span class="o">=</span> <span class="mi">8</span><span class="n">c597447</span><span class="o">-</span><span class="mi">5234</span><span class="o">-</span><span class="mi">4</span><span class="n">de1</span><span class="o">-</span><span class="n">ab85</span><span class="o">-</span><span class="n">b54e252098celv88</span><span class="p">.</span><span class="mi">00</span><span class="n">EURVacuum</span> <span class="n">cleaner</span> <span class="n">TP</span><span class="o">-</span><span class="mi">30</span><span class="p">.</span><span class="mi">21123459</span><span class="p">.</span><span class="mi">39</span><span class="n">EURTP</span><span class="o">-</span><span class="mi">3</span> <span class="n">HEPA</span> <span class="n">filter2PIECEomniva2</span><span class="p">.</span><span class="mi">00</span><span class="n">EURcourier0</span><span class="p">.</span><span class="mi">00</span></code>. Note that fields without a value are not included in signature input string.</p>
+<p>Calculate signature input string. <code>Input string = CONCAT(widget ID, language, first order item amount, first order item currency, first order item label, first order item tax rate, first order item id, second order item amount, second order item currency, second order item label, second order item count, second order item unit, first shipping option id, first shipping option amount, first shipping option currency, second shipping option id, second shipping option amount) = 8c597447-5234-4de1-ab85-b54e252098celv88.00EURVacuum cleaner TP-30.21123459.39EURTP-3 HEPA filter2PIECEomniva2.00EURcourier0.00</code>. Note that fields without a value are not included in signature input string.</p>
 </li>
 <li>
-<p>Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. <code class="codehilite"><span class="n">Signature</span> <span class="o">=</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="n">signature</span><span class="o">-</span><span class="k">input</span><span class="p">))</span> <span class="o">=</span> <span class="n">Base64Encode</span><span class="p">(</span><span class="n">SHA256withRSA</span><span class="p">(</span><span class="ss">&quot;8c597447-5234-4de1-ab85-b54e252098celv88.00EURVacuum cleaner TP-30.21123459.39EURTP-3 HEPA filter2PIECEomniva2.00EURcourier0.00&quot;</span><span class="p">))</span></code>.</p>
+<p>Calculate signature using private key previously downloaded from Klix Merchant Console and applying SHA256withRSA and Base64Encode functions to calculated input string. <code>Signature = Base64Encode(SHA256withRSA(signature-input)) = Base64Encode(SHA256withRSA("8c597447-5234-4de1-ab85-b54e252098celv88.00EURVacuum cleaner TP-30.21123459.39EURTP-3 HEPA filter2PIECEomniva2.00EURcourier0.00"))</code>.</p>
 </li>
 </ol>
-<p>Calculated signature which should be passed to Klix widget as a <code class="codehilite"><span class="n">signature</span></code> attribute value in this example: <code class="codehilite"><span class="n">DJNg</span><span class="o">/</span><span class="n">BEiWk6</span><span class="o">+</span><span class="mi">9</span><span class="n">CR</span><span class="o">/</span><span class="n">wD6P2gbK1</span><span class="o">+</span><span class="n">LtAtB0wuqZEelc3tj22</span><span class="o">/</span><span class="mi">8</span><span class="n">uVgiTLJ1bj6</span><span class="o">/</span><span class="n">H5AhMIiIzI7mIDAFTSc5l</span><span class="o">+</span><span class="n">BHZPM7Z</span><span class="o">/</span><span class="n">BAXU6mLrbqQUQ6apKmNcjDIDL</span><span class="o">+</span><span class="n">NQnZEVb3PCcLRO</span><span class="o">+</span><span class="n">IR5tRJLnTcJXVYBDwLlYfvK7INFLwz</span><span class="o">/</span><span class="mi">4</span><span class="n">pvklGQOa</span><span class="o">/</span><span class="n">ZSHdMLsR5aHLpvfgm6gTlMszV63k8NxCgFghN6B6xdftcdQPskzEYXdpqn</span><span class="o">+++</span><span class="mi">40</span><span class="n">bbYv3hReA1zaOCDupjrJirYcNP3P</span><span class="o">+</span><span class="n">f6V7t1MLkQqX2pqh3TJEkorrJH</span><span class="o">/</span><span class="mi">0</span><span class="n">e1WMbHUdQY6NiJcsMN56qEntdQI6GiUQVNtwOj8sH9kMMdgdjbg</span><span class="o">==</span></code>.</p>
+<p>Calculated signature which should be passed to Klix widget as a <code>signature</code> attribute value in this example: <code>DJNg/BEiWk6+9CR/wD6P2gbK1+LtAtB0wuqZEelc3tj22/8uVgiTLJ1bj6/H5AhMIiIzI7mIDAFTSc5l+BHZPM7Z/BAXU6mLrbqQUQ6apKmNcjDIDL+NQnZEVb3PCcLRO+IR5tRJLnTcJXVYBDwLlYfvK7INFLwz/4pvklGQOa/ZSHdMLsR5aHLpvfgm6gTlMszV63k8NxCgFghN6B6xdftcdQPskzEYXdpqn+++40bbYv3hReA1zaOCDupjrJirYcNP3P+f6V7t1MLkQqX2pqh3TJEkorrJH/0e1WMbHUdQY6NiJcsMN56qEntdQI6GiUQVNtwOj8sH9kMMdgdjbg==</code>.</p>
 <h2 id="klix-widget">Klix Widget<a class="headerlink" href="#klix-widget" title="Permanent link">&para;</a></h2>
 <h3 id="klix-widget-placement">Klix Widget placement<a class="headerlink" href="#klix-widget-placement" title="Permanent link">&para;</a></h3>
 <p>Klix Widget is implemented as embeddable Web Component. In order to show Klix widget on a merchant website widget JavaScript should be included in the page and custom HTML tag needs to be placed in the required location. See the example below for integration code.</p>
 <div class="admonition warning">
 <p class="admonition-title">Widget JavaScript location</p>
-<p>Please note that Klix Widget JavaScript source should be loaded from different destination in case of production and test environments. Test environment Klix Widget JavaScript base path is  <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">klix</span><span class="p">.</span><span class="nb">blob</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">stage</span><span class="o">/</span><span class="n">widget</span><span class="o">/</span><span class="n">build</span><span class="o">/</span></code>. Production environment Klix Widget JavaScript base path is <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">klix</span><span class="p">.</span><span class="nb">blob</span><span class="p">.</span><span class="n">core</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="k">public</span><span class="o">/</span><span class="n">widget</span><span class="o">/</span><span class="n">build</span><span class="o">/</span></code>.</p>
+<p>Please note that Klix Widget JavaScript source should be loaded from different destination in case of production and test environments. Test environment Klix Widget JavaScript base path is  <code>https://klix.blob.core.windows.net/stage/widget/build/</code>. Production environment Klix Widget JavaScript base path is <code>https://klix.blob.core.windows.net/public/widget/build/</code>.</p>
 </div>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/stage/widget/build/klixwidget.esm.js&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">nomodule</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/stage/widget/build/klixwidget.js&quot;</span><span class="p">&gt;</span>
@@ -2140,24 +2003,21 @@ Note that all blank fields should be replaced with empty strings, all amount fie
     <span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;604419cc-c313-4e47-93e8-330385669bdb&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <p>Integration code can be accessed and copied from Widgets section of Merchant Console.</p>
 <h3 id="widget-configuration">Widget Configuration<a class="headerlink" href="#widget-configuration" title="Permanent link">&para;</a></h3>
 <p>Klix widget is created and configured in <em>Merchant Console</em>. Generated <em>Widget ID</em> is used to embed Web Component into Merchant HTML page.</p>
 <h4 id="specifying-widget-language">Specifying widget language<a class="headerlink" href="#specifying-widget-language" title="Permanent link">&para;</a></h4>
 <p>Widget language can be specified using attribute <em>language</em> e.g. "lv" for Latvian, "en" for English or "ru" for Russian.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;604419cc-c313-4e47-93e8-330385669bdb&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;604419cc-c313-4e47-93e8-330385669bdb&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="prefilling-klix-widget-form-data">Prefilling Klix widget form data<a class="headerlink" href="#prefilling-klix-widget-form-data" title="Permanent link">&para;</a></h4>
 <p>Klix widget form data prefilling allows to reduce a number of fields that needs to be entred by customer in Klix form in situations where required customer information was previously entered in merchant's webpage e.g. in case if Klix form is presented to exsiting merchant's customer or customer needs to fill specific form on merchant's page before continuing with Klix form.</p>
 <p>Klix widget supports prefilling form with customer data specified as Klix widget attributes. Customer phone number, e-mail, first name and last name can be passed to widget:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">email</span><span class="o">=</span><span class="s">&quot;john.doe@klix.app&quot;</span> <span class="na">phone</span><span class="o">=</span><span class="s">&quot;37120000000&quot;</span> <span class="na">first-name</span><span class="o">=</span><span class="s">&quot;John&quot;</span> <span class="na">last-name</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span> <span class="na">email</span><span class="o">=</span><span class="s">&quot;john.doe@klix.app&quot;</span> <span class="na">phone</span><span class="o">=</span><span class="s">&quot;37120000000&quot;</span> <span class="na">first-name</span><span class="o">=</span><span class="s">&quot;John&quot;</span> <span class="na">last-name</span><span class="o">=</span><span class="s">&quot;Doe&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <p>Note that partial data prefill is supported i.e. if only firstname and last name of customer is passed to Klix widget it will be prefilled after non existing Klix customer enters his mobile phone number.</p>
 <p>In case there's no Klix customer with specified mobile phone number Klix widget form will be prefilled with specified data.</p>
 <p><img alt="New customer data prefilled in widget" src="../images/widget_new_customer_data_prefilled.png" title="New customer data prefilled in widget" /></p>
@@ -2166,76 +2026,70 @@ Note that all blank fields should be replaced with empty strings, all amount fie
 <h3 id="instant-fixed-price-widget-type">INSTANT (Fixed Price) Widget Type<a class="headerlink" href="#instant-fixed-price-widget-type" title="Permanent link">&para;</a></h3>
 <p>It is possible to generate Klix widget for a specific order. In this case no validation on merchant side is required - all order items are defined at widget configuration in Merchant Console (MC). They can’t be overwritten by <em>Widget HTML API</em> or <em>Widget JS API</em> (specified later in the document) for security purposes. This type of Widget allows lightweight integration with merchant - no merchant back-end is required for integration.</p>
 <p>Widget language is specified either in page <em><html></em> tag or as a Klix widget attribute.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;lv&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;lv&quot;</span><span class="p">&gt;</span>
 ...
 <span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <p>OR</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;lv&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+</code></pre></div>
 <h3 id="checkout-dynamic-price-widget-type">CHECKOUT (Dynamic Price) Widget Type<a class="headerlink" href="#checkout-dynamic-price-widget-type" title="Permanent link">&para;</a></h3>
 <p>Order items should be provided either via <em>Widget HTML API</em> (widget tag attributes) or via <em>Widget JS API</em>. Widget language is defined in the same manner as in <em>Fixed Price Widget</em> type.</p>
 <h4 id="html-api-for-single-order-item">HTML API for single order item<a class="headerlink" href="#html-api-for-single-order-item" title="Permanent link">&para;</a></h4>
 <p>Tax could be defined as rate (0.XX) or percentage (number greater than 1 without ‘%’ symbol).</p>
 <p>Tax rate default value is merchant specific (e.g. for merchants registered in LV it would be "0.21"). Currency default value is merchant specific as well (e.g. for merchants registered in EU it would be "EUR").</p>
 <p>All HTML widgets below are equivalent for merchant registered in LV:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span> <span class="na">tax-rate</span><span class="o">=</span><span class="s">&quot;0.21&quot;</span> <span class="na">count</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">unit</span><span class="o">=</span><span class="s">&quot;PIECE&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span> <span class="na">tax-rate</span><span class="o">=</span><span class="s">&quot;0.21&quot;</span> <span class="na">count</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">unit</span><span class="o">=</span><span class="s">&quot;PIECE&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span> <span class="na">tax-rate</span><span class="o">=</span><span class="s">&quot;21&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">currency</span><span class="o">=</span><span class="s">&quot;EUR&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;1.99&quot;</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Philips XR3857&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="html-api-for-multiple-order-items">HTML API for multiple order items<a class="headerlink" href="#html-api-for-multiple-order-items" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&#39;{&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;unit&quot;:&quot;PIECE&quot;,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21},{&quot;amount&quot;:5,&quot;label&quot;:&quot;Piegāde&quot;}]}&#39;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&#39;{&quot;items&quot;:[{&quot;amount&quot;:40,&quot;currency&quot;:&quot;EUR&quot;,&quot;count&quot;:2,&quot;unit&quot;:&quot;PIECE&quot;,&quot;label&quot;:&quot;Philips XR3857&quot;,&quot;taxRate&quot;:0.21},{&quot;amount&quot;:5,&quot;label&quot;:&quot;Piegāde&quot;}]}&#39;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <p>OR</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;items&amp;quot;:[{&amp;quot;amount&amp;quot;:40,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;count&amp;quot;:2,&amp;quot;label&amp;quot;:&amp;quot;Philips XR3857&amp;quot;,&amp;quot;taxRate&amp;quot;:0.21},{&amp;quot;amount&amp;quot;:5,&amp;quot;label&amp;quot;:&amp;quot;Piegāde&amp;quot;}]}&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;items&amp;quot;:[{&amp;quot;amount&amp;quot;:40,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;count&amp;quot;:2,&amp;quot;label&amp;quot;:&amp;quot;Philips XR3857&amp;quot;,&amp;quot;taxRate&amp;quot;:0.21},{&amp;quot;amount&amp;quot;:5,&amp;quot;label&amp;quot;:&amp;quot;Piegāde&amp;quot;}]}&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
-<p>Also product name value needs to be properly escaped (e.g. using <code class="codehilite"><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span></code> for <code class="codehilite"><span class="o">&amp;</span></code>, <code class="codehilite"><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span></code> for <code class="codehilite"><span class="o">&lt;</span></code>, <code class="codehilite"><span class="o">&amp;#</span><span class="mi">39</span><span class="p">;</span></code> for <code class="codehilite"><span class="err">&#39;</span></code>, <code class="codehilite"><span class="o">&amp;#</span><span class="mi">34</span><span class="p">;</span></code> for <code class="codehilite"><span class="err">&quot;</span></code>, etc.) to be a valid HTML attribute value.</p>
+</code></pre></div>
+<p>Also product name value needs to be properly escaped (e.g. using <code>&amp;amp;</code> for <code>&amp;</code>, <code>&amp;lt;</code> for <code>&lt;</code>, <code>&amp;#39;</code> for <code>'</code>, <code>&amp;#34;</code> for <code>"</code>, etc.) to be a valid HTML attribute value.</p>
 <h5 id="implementation-details">Implementation details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h5>
-<div class="codehilite"><pre><span></span><span class="c1">// merchant order</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// merchant order</span>
 <span class="kd">let</span> <span class="nx">orderObject</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">&quot;items&quot;</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Philips XR3857&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Piegāde&quot;</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mf">40</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Philips XR3857&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mf">5</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Piegāde&quot;</span><span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">&quot;shippingOptions&quot;</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;pickup&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;omniva&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;pickup&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mf">0</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;omniva&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mf">3</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;latvijaspasts&quot;</span><span class="p">}]</span>
 <span class="p">};</span>
 
 <span class="c1">// this value goes into widget &#39;order&#39; attribute</span>
-<span class="kd">let</span> <span class="nx">orderAttribute</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">orderObject</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">orderAttribute</span> <span class="o">=</span> <span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">orderObject</span><span class="p">);</span>
 
 <span class="c1">// this value goes into HTML attribute (e.g. client side templating)</span>
 <span class="kd">let</span> <span class="nx">escaped</span> <span class="o">=</span> <span class="nx">orderAttribute</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;amp;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;lt;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;#39;&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&amp;#34;&#39;</span><span class="p">);</span>
 
 <span class="c1">// this value is received as widget internal state</span>
-<span class="kd">let</span> <span class="nx">orderObjectInWidget</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">orderAttribute</span><span class="p">);</span>
-</pre></div>
-
+<span class="kd">let</span> <span class="nx">orderObjectInWidget</span> <span class="o">=</span> <span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">orderAttribute</span><span class="p">);</span>
+</code></pre></div>
 <h4 id="js-api-for-single-and-multiple-order-items">JS API for single and multiple order items<a class="headerlink" href="#js-api-for-single-and-multiple-order-items" title="Permanent link">&para;</a></h4>
-<p>Widget <code class="codehilite"><span class="s1">&#39;lazy&#39;</span></code> attribute is used to delay widget initialization (until configuration via <em>Widget JS API</em> is completed):</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my-klix-checkout&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">lazy</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<p>Widget <code>'lazy'</code> attribute is used to delay widget initialization (until configuration via <em>Widget JS API</em> is completed):</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;my-klix-checkout&quot;</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">lazy</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 ...
 <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="kd">let</span> <span class="nx">checkoutWidget</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#my-klix-checkout&#39;</span><span class="p">);</span>
-  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addOrderItem</span><span class="p">(</span> <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Philips XR3857&quot;</span><span class="p">,</span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="s2">&quot;PIECE&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">});</span>
-  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addOrderItem</span><span class="p">({</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Piegāde&quot;</span><span class="p">});</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addOrderItem</span><span class="p">(</span> <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mf">40</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Philips XR3857&quot;</span><span class="p">,</span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="mf">2</span><span class="p">,</span><span class="s2">&quot;unit&quot;</span><span class="o">:</span><span class="s2">&quot;PIECE&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">});</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addOrderItem</span><span class="p">({</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mf">5</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;Piegāde&quot;</span><span class="p">});</span>
 
   <span class="c1">// pick-up at store, free of charge </span>
-  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;pickup&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">});</span>
+  <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;pickup&quot;</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mf">0</span><span class="p">});</span>
 
   <span class="c1">// shipping price is unknown, separate request will be initiated</span>
   <span class="c1">// for entered (by customer) address via Merchant API</span>
@@ -2244,12 +2098,11 @@ Note that all blank fields should be replaced with empty strings, all amount fie
   <span class="c1">// shipping price (before tax) and tax rate are known for</span>
   <span class="c1">// given product/cart (whatever selected address or pickup point)</span>
   <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">addShippingOption</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;myIdForPickupProvider&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">});</span>
+    <span class="s2">&quot;amount&quot;</span><span class="o">:</span><span class="mf">5</span><span class="p">,</span><span class="s2">&quot;currency&quot;</span><span class="o">:</span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="s2">&quot;taxRate&quot;</span><span class="o">:</span><span class="mf">0.21</span><span class="p">});</span>
 
   <span class="nx">checkoutWidget</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <h4 id="order-item-attributes">Order Item attributes<a class="headerlink" href="#order-item-attributes" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -2308,14 +2161,14 @@ Note that all blank fields should be replaced with empty strings, all amount fie
 <h3 id="javascript-callbacks">Javascript callbacks<a class="headerlink" href="#javascript-callbacks" title="Permanent link">&para;</a></h3>
 <p>Klix widget uses <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events">Custom DOM events</a> to communicate with merchant page. In order to listen specifc Klix widget event appropriate event listener should be registered first.</p>
 <h4 id="payment-completed-callback">Payment completed callback<a class="headerlink" href="#payment-completed-callback" title="Permanent link">&para;</a></h4>
-<p>Event with type <code class="codehilite"><span class="n">paymentCompleted</span></code> is published in case of successfull or failed payment right before payment status screen is shown to customer.</p>
+<p>Event with type <code>paymentCompleted</code> is published in case of successfull or failed payment right before payment status screen is shown to customer.</p>
 <p><img alt="Klix widget payment status screen" src="../images/widget_payment_status.png" title="Klix widget payment status screen" /></p>
 <p>Event handler can be used to dynamically update merchant page contents according to payment processing result.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="kr">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
     <span class="nx">checkoutElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;paymentCompleted&#39;</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Order with id &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;orderId&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; payment succeeded -&gt; &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;paymentSucceeded&quot;</span><span class="p">];</span>
+        <span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Order with id &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;orderId&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; payment succeeded -&gt; &#39;</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">detail</span><span class="p">[</span><span class="s2">&quot;paymentSucceeded&quot;</span><span class="p">];</span>
         <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
         <span class="c1">// Note that this callback can be used to hide Klix default payment success screen and show your own instead</span>
         <span class="cm">/*</span>
@@ -2327,8 +2180,7 @@ Note that all blank fields should be replaced with empty strings, all amount fie
 
     <span class="p">});</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <p>Following event properties can be used:</p>
 <table>
 <thead>
@@ -2352,23 +2204,21 @@ Note that all blank fields should be replaced with empty strings, all amount fie
 </tbody>
 </table>
 <h4 id="navigate-back-to-payment-method-selection-shopping-cart-page">Navigate back to payment method selection / shopping cart page<a class="headerlink" href="#navigate-back-to-payment-method-selection-shopping-cart-page" title="Permanent link">&para;</a></h4>
-<p>Event with type <code class="codehilite"><span class="n">navigateBackToCart</span></code> is published in case if customer presses "Back to merchant store" button on cancelled/failed payment Klix widget form.</p>
+<p>Event with type <code>navigateBackToCart</code> is published in case if customer presses "Back to merchant store" button on cancelled/failed payment Klix widget form.</p>
 <!-- markdownlint-disable MD033 -->
-
 <p style="text-align: center;">
   <img src="../images/widget_failed_payment.png" width="500" alt="Failed/cancelled payment screen" />
 </p>
 
 <p>Event handler should point browser to checkout or payment method selection page so that customer can use another payment method if available.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="kr">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">checkoutElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;klix-checkout&#39;</span><span class="p">);</span>
     <span class="nx">checkoutElement</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;navigateBackToCart&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">=</span> <span class="s1">&#39;/shopping-cart&#39;</span><span class="p">;</span>
     <span class="p">});</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <h3 id="limiting-accepted-cards">Limiting accepted cards<a class="headerlink" href="#limiting-accepted-cards" title="Permanent link">&para;</a></h3>
 <p>By default all cards issued by Mastercard and VISA are accepted by Klix however following constraints can be imposed via order configuration if needed:</p>
 <table>
@@ -2382,25 +2232,24 @@ Note that all blank fields should be replaced with empty strings, all amount fie
 <tbody>
 <tr>
 <td>Accepted card issuer</td>
-<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;issuer&quot;</span><span class="p">:</span> <span class="ss">&quot;Citadele&quot;</span><span class="err">}</span></code></td>
+<td><code>"constraints": {"issuer": "Citadele"}</code></td>
 <td>Only cards issued by Citadele bank are accepted for this payment</td>
 </tr>
 <tr>
 <td>Accepted card brand</td>
-<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;brand&quot;</span><span class="p">:</span> <span class="ss">&quot;X karte&quot;</span><span class="err">}</span></code></td>
+<td><code>"constraints": {"brand": "X karte"}</code></td>
 <td>Only Citadele "X karte" brand cards are accepted for this payment</td>
 </tr>
 <tr>
 <td>Accepted card payment scheme</td>
-<td><code class="codehilite"><span class="ss">&quot;constraints&quot;</span><span class="p">:</span> <span class="err">{</span><span class="ss">&quot;paymentScheme&quot;</span><span class="p">:</span> <span class="ss">&quot;VISA&quot;</span><span class="err">}</span></code></td>
+<td><code>"constraints": {"paymentScheme": "VISA"}</code></td>
 <td>Only VISA cards are accepted for this payment</td>
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;constraints&amp;quot;:{&amp;quot;issuer&amp;quot;:&amp;quot;Citadele&amp;quot;},&amp;quot;items&amp;quot;:[{&amp;quot;amount&amp;quot;:40,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;count&amp;quot;:2,&amp;quot;label&amp;quot;:&amp;quot;Philips XR3857&amp;quot;,&amp;quot;taxRate&amp;quot;:0.21}]}&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-checkout</span> <span class="na">widget-id</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">order</span><span class="o">=</span><span class="s">&quot;{&amp;quot;constraints&amp;quot;:{&amp;quot;issuer&amp;quot;:&amp;quot;Citadele&amp;quot;},&amp;quot;items&amp;quot;:[{&amp;quot;amount&amp;quot;:40,&amp;quot;currency&amp;quot;:&amp;quot;EUR&amp;quot;,&amp;quot;count&amp;quot;:2,&amp;quot;label&amp;quot;:&amp;quot;Philips XR3857&amp;quot;,&amp;quot;taxRate&amp;quot;:0.21}]}&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">klix-checkout</span><span class="p">&gt;</span>
-</pre></div>
-
+</code></pre></div>
 <h2 id="client-libraries">Client libraries<a class="headerlink" href="#client-libraries" title="Permanent link">&para;</a></h2>
 <p>Klix team maintains official API client libraries which wraps Klix API invocations including request signing and response signature validation.</p>
 <p>If you have implemented client library for programming language or popular framework that's not listed here then let us know it so that we might share it with others.</p>
@@ -2476,17 +2325,16 @@ Note that all blank fields should be replaced with empty strings, all amount fie
 <h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
 <h4 id="authentication-method">Authentication method<a class="headerlink" href="#authentication-method" title="Permanent link">&para;</a></h4>
 <p>All requests sent to Klix Merchant API should be digitally signed using merchant certificate generated in Klix Merchant Console. Signing process is performed according to <a href="https://www.ietf.org/archive/id/draft-cavage-http-signatures-12.txt">"Draft cavage HTTP Signatures"</a> specification.
-Request signature is sent as an HTTP <code class="codehilite"><span class="k">Authorization</span></code> header value together with metadata describing signature algorithm and certificate key used.</p>
+Request signature is sent as an HTTP <code>Authorization</code> header value together with metadata describing signature algorithm and certificate key used.</p>
 <h4 id="signing-requests-without-request-body">Signing requests without request body<a class="headerlink" href="#signing-requests-without-request-body" title="Permanent link">&para;</a></h4>
 <p>The following HTTP headers should be sent for all requests without a request body: Authorization, Date.
 Signed HTTP GET request example:</p>
-<div class="codehilite"><pre><span></span>curl -X GET <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl -X GET <span class="se">\</span>
   https://api.stage.klix.app/v2/merchants/052eb290-a6ca-41f0-aac5-fd4ca14632e3/orders/a6f0f3c7-e3e7-4182-bc4c-bddec2a89d9a <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Signature keyId=&quot;ad537135-59f5-4073-8f8e-1137fc19b9d2&quot;,algorithm=&quot;rsa-sha256&quot;,headers=&quot;date (request-target)&quot;,signature=&quot;xkdqOeB0Iy4iaSQRgIWsyCuSewMzOcDISMdKO6ThFiRrvZXxdVnW1xY6WZH8E3y2qdyazSUOfMuPstVQE1ATLdUDeZFiCgRO4iYcjEviSSsXQuKT3agtad2qg8pza8w2rCmfuCjFZ87ntPKFfYqMkNTHkZB4EM/l+JEDwRXiOhRTfyVQU/xRzzq+PQ3rzSAGAPceoAmzIp6QgRVZDDAO67ktYVJ2Y9qfKGBggtQwXkZPsDy622zP8hODYLqUQlL3qsAgOL6a0RlqpOKFWJZEt4ZHfY3qBxHFUhlMyQfExZyZXMOrt4/SNNPNJwUkNbHLYXVVRuGGh2Wmc78vP464Tw==&quot;&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;date: Fri, 15 May 2020 10:28:40 GMT&#39;</span>
-</pre></div>
-
-<p>Note that HTTP header <code class="codehilite"><span class="k">Authorization</span></code> starts with <code class="codehilite"><span class="n">Signature</span></code> and thus specifies that HTTP Signatures authentication type should be used. Signature metadata description is summarized in a following table:</p>
+</code></pre></div>
+<p>Note that HTTP header <code>Authorization</code> starts with <code>Signature</code> and thus specifies that HTTP Signatures authentication type should be used. Signature metadata description is summarized in a following table:</p>
 <table>
 <thead>
 <tr>
@@ -2509,14 +2357,14 @@ Signed HTTP GET request example:</p>
 <tr>
 <td>headers</td>
 <td>date (request-target)</td>
-<td>HTTP headers that are included in signature. For HTTP requests without body at least <code class="codehilite"><span class="nb">date</span></code> and <code class="codehilite"><span class="n">request</span><span class="o">-</span><span class="n">target</span></code> headers should be included. Field <code class="codehilite"><span class="p">(</span><span class="n">request</span><span class="o">-</span><span class="n">target</span><span class="p">)</span></code> is not a HTTP header but rather a combination of HTTP method and request URI e.g. in this case <code class="codehilite"><span class="k">get</span> <span class="o">/</span><span class="n">v2</span><span class="o">/</span><span class="n">merchants</span><span class="o">/</span><span class="mi">052</span><span class="n">eb290</span><span class="o">-</span><span class="n">a6ca</span><span class="o">-</span><span class="mi">41</span><span class="n">f0</span><span class="o">-</span><span class="n">aac5</span><span class="o">-</span><span class="n">fd4ca14632e3</span><span class="o">/</span><span class="n">orders</span><span class="o">/</span><span class="n">a6f0f3c7</span><span class="o">-</span><span class="n">e3e7</span><span class="o">-</span><span class="mi">4182</span><span class="o">-</span><span class="n">bc4c</span><span class="o">-</span><span class="n">bddec2a89d9a</span></code>. In case additional HTTP headers are included in signature these fields should also be added to headers list</td>
+<td>HTTP headers that are included in signature. For HTTP requests without body at least <code>date</code> and <code>request-target</code> headers should be included. Field <code>(request-target)</code> is not a HTTP header but rather a combination of HTTP method and request URI e.g. in this case <code>get /v2/merchants/052eb290-a6ca-41f0-aac5-fd4ca14632e3/orders/a6f0f3c7-e3e7-4182-bc4c-bddec2a89d9a</code>. In case additional HTTP headers are included in signature these fields should also be added to headers list</td>
 </tr>
 </tbody>
 </table>
 <h4 id="signing-requests-with-request-body">Signing requests with request body<a class="headerlink" href="#signing-requests-with-request-body" title="Permanent link">&para;</a></h4>
 <p>The following HTTP headers should be sent for all requests with a request body: Authorization, Date, Content-Type, Digest.
 Signed HTTP POST request example:</p>
-<div class="codehilite"><pre><span></span>curl -X POST <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl -X POST <span class="se">\</span>
   https://api.stage.klix.app/v2/merchants/052eb290-a6ca-41f0-aac5-fd4ca14632e3/orders/a6f0f3c7-e3e7-4182-bc4c-bddec2a89d9a/refunds <span class="se">\</span>
   -H <span class="s1">&#39;Authorization: Signature keyId=&quot;ad537135-59f5-4073-8f8e-1137fc19b9d2&quot;,algorithm=&quot;rsa-sha256&quot;,headers=&quot;digest date content-type (request-target)&quot;,signature=&quot;xkdqOeB0Iy4iaSQRgIWsyCuSewMzOcDISMdKO6ThFiRrvZXxdVnW1xY6WZH8E3y2qdyazSUOfMuPstVQE1ATLdUDeZFiCgRO4iYcjEviSSsXQuKT3agtad2qg8pza8w2rCmfuCjFZ87ntPKFfYqMkNTHkZB4EM/l+JEDwRXiOhRTfyVQU/xRzzq+PQ3rzSAGAPceoAmzIp6QgRVZDDAO67ktYVJ2Y9qfKGBggtQwXkZPsDy622zP8hODYLqUQlL3qsAgOL6a0RlqpOKFWJZEt4ZHfY3qBxHFUhlMyQfExZyZXMOrt4/SNNPNJwUkNbHLYXVVRuGGh2Wmc78vP464Tw==&quot;&#39;</span> <span class="se">\</span>
   -H <span class="s1">&#39;Content-Type: application/json&#39;</span> <span class="se">\</span>
@@ -2530,8 +2378,7 @@ Signed HTTP POST request example:</p>
 <span class="s1">        &quot;note&quot;: &quot;Internal note visible in Merchant Console&quot;</span>
 <span class="s1">    }</span>
 <span class="s1">}&#39;</span>
-</pre></div>
-
+</code></pre></div>
 <p>Signature metadata description that differs from HTTP requests without request body is summarized in a following table:</p>
 <table>
 <thead>
@@ -2545,11 +2392,11 @@ Signed HTTP POST request example:</p>
 <tr>
 <td>headers</td>
 <td>digest date content-type (request-target)</td>
-<td>HTTP headers that are included in signature. For HTTP requests with body at least <code class="codehilite"><span class="n">digest</span></code>, <code class="codehilite"><span class="nb">date</span></code>, <code class="codehilite"><span class="n">content</span><span class="o">-</span><span class="k">type</span></code> and <code class="codehilite"><span class="n">request</span><span class="o">-</span><span class="n">target</span></code> headers should be included. Field <code class="codehilite"><span class="p">(</span><span class="n">request</span><span class="o">-</span><span class="n">target</span><span class="p">)</span></code> is not a HTTP header but rather a combination of HTTP method and request URI e.g. in this case <code class="codehilite"><span class="n">post</span> <span class="o">/</span><span class="n">v2</span><span class="o">/</span><span class="n">merchants</span><span class="o">/</span><span class="mi">052</span><span class="n">eb290</span><span class="o">-</span><span class="n">a6ca</span><span class="o">-</span><span class="mi">41</span><span class="n">f0</span><span class="o">-</span><span class="n">aac5</span><span class="o">-</span><span class="n">fd4ca14632e3</span><span class="o">/</span><span class="n">orders</span><span class="o">/</span><span class="n">a6f0f3c7</span><span class="o">-</span><span class="n">e3e7</span><span class="o">-</span><span class="mi">4182</span><span class="o">-</span><span class="n">bc4c</span><span class="o">-</span><span class="n">bddec2a89d9a</span><span class="o">/</span><span class="n">refunds</span></code>. In case additional HTTP headers are included in signature these fields should also be added to headers list</td>
+<td>HTTP headers that are included in signature. For HTTP requests with body at least <code>digest</code>, <code>date</code>, <code>content-type</code> and <code>request-target</code> headers should be included. Field <code>(request-target)</code> is not a HTTP header but rather a combination of HTTP method and request URI e.g. in this case <code>post /v2/merchants/052eb290-a6ca-41f0-aac5-fd4ca14632e3/orders/a6f0f3c7-e3e7-4182-bc4c-bddec2a89d9a/refunds</code>. In case additional HTTP headers are included in signature these fields should also be added to headers list</td>
 </tr>
 </tbody>
 </table>
-<p>HTTP header <code class="codehilite"><span class="n">digest</span></code> consists of HTTP request body digest algorithm and digest value seperated by <code class="codehilite"><span class="o">=</span></code> sign i.e. <code class="codehilite"><span class="n">sha</span><span class="o">-</span><span class="mi">256</span><span class="o">=</span><span class="n">base64</span><span class="p">(</span><span class="n">sha256</span><span class="p">(</span><span class="n">request</span> <span class="n">body</span><span class="p">))</span></code>. Supported digest algorithms are SHA-256, SHA-384 and SHA-512. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Digest">additional details</a>.</p>
+<p>HTTP header <code>digest</code> consists of HTTP request body digest algorithm and digest value seperated by <code>=</code> sign i.e. <code>sha-256=base64(sha256(request body))</code>. Supported digest algorithms are SHA-256, SHA-384 and SHA-512. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Digest">additional details</a>.</p>
 <h4 id="libraries">Libraries<a class="headerlink" href="#libraries" title="Permanent link">&para;</a></h4>
 <p>Here is a list of libraries that can be used to simplify merchant authentication in Klix using HTTP Signatures specification. Note that this is not an extensive list and there might be a better candidate for programming language and framework used in your project.</p>
 <table>
