@@ -1117,6 +1117,15 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
    ...
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div>
+<p>For Shopify integration:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   ...
+   <span class="p">&lt;</span><span class="nt">klix-pay-later</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;{{ product.price | money_numbers_only}}&quot;</span> <span class="na">brand_id</span><span class="o">=</span><span class="s">&quot;702314b8-dd86-41fa-9a22-510fdd71fa92&quot;</span> 
+      <span class="na">language</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">theme</span><span class="o">=</span><span class="s">&quot;light&quot;</span> <span class="na">view</span><span class="o">=</span><span class="s">&quot;product&quot;</span> <span class="na">category</span><span class="o">=</span><span class="s">&quot;SPORTS_GOODS&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">klix-pay-later</span><span class="p">&gt;</span>
+   ...
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
 <p><img alt="Klix Pay Later widget in product page" src="../images/klix_pay_later_monthly_payment_widget_on_product_page.png" title="Klix Pay Later widget in product page" /></p>
 <div class="admonition note">
 <p class="admonition-title">We strongly recommend to place Klix Pay Later monthly payment widget both on product, shopping cart and checkout page so that customer can preview monthly payment also if multiple different products are added to the shopping cart.</p>
