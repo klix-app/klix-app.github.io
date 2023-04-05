@@ -429,18 +429,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../widget-api/" title="Legacy Klix API (deprecated)" class="md-nav__link">
-      Legacy Klix API (deprecated)
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../static-assets/" title="Static assets" class="md-nav__link">
       Static assets
     </a>
@@ -581,233 +569,139 @@
 <li>Extract Klix Magento plugin archive contents to <code>app/code/</code> directory so that there's <code>app/code/SpellPayment/Magento2Module</code> directory structure after that: <code>unzip -q magento-v2.0+.zip &amp;&amp; rm magento-v2.0+.zip</code></li>
 <li>Navigate to Magento root directory and run <code>php bin/magento module:enable SpellPayment_Magento2Module --clear-static-content</code></li>
 <li>Run <code>php bin/magento setup:upgrade</code></li>
-<li>Run <code>php bin/magento setup:static-content:deploy</code> (note that message "Manual static content deployment is not required in "default" and "developer" modes" can be ignored).</li>
+<li>
+<p>Run <code>php bin/magento setup:static-content:deploy</code> (note that message "Manual static content deployment is not required in "default" and "developer" modes" can be ignored).
+<img alt="Run php bin/magento setup:static-content:deploy" src="../images/ecommerce-platforms/magento/1_run_commands.png#instruction-image" /></p>
+</li>
+<li>
+<p>Log in to your Magento store admin panel.
+<img alt="Log in to your Magento store admin panel." src="../images/ecommerce-platforms/magento/2_login.png#instruction-image" /></p>
+</li>
 </ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/magento/1_run_commands.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Terminal screen" title="Run Klix plugin installation commands in terminal" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Log in to your Magento store admin panel.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/magento/2_login.png" style="display:block;margin-left:auto;margin-right:auto;width:50%;margin-top:5px;margin-bottom:10px;" alt="Magento admin panel login screen" title="Log in to your Magento admin panel" />
-</div>
-<!-- markdownlint-disable MD033 -->
-
 <h3 id="mozello">Mozello<a class="headerlink" href="#mozello" title="Permanent link">&para;</a></h3>
 <p>Installation instructions:</p>
 <ol>
 <li>Log in to your Mozello store administration portal.</li>
-<li>Open <code>Catalog</code> -&gt; <code>Catalog settings</code> -&gt; <code>Payment</code> page and locate <code>Credit cards / payment platforms</code> section.</li>
+<li>
+<p>Open <code>Catalog</code> -&gt; <code>Catalog settings</code> -&gt; <code>Payment</code> page and locate <code>Credit cards / payment platforms</code> section.
+<img alt="Catalog settings" src="../images/ecommerce-platforms/mozello/1_provide_klix_settings.png#instruction-image" /></p>
+</li>
+<li>
+<p>Select "Klix by Citadele" in <code>Connect online payment platform</code> drop down and enter Brand ID and Secret key provided by Klix contact person. Change payment method title in checkout form if needed.</p>
+</li>
+<li>Go to your Mozello store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
+<img alt="Mozello checkout" src="../images/ecommerce-platforms/mozello/2_preview_klix_payment_method.png#instruction-image" /></li>
 </ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/mozello/1_provide_klix_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix payment method configuration screen in Mozello" title="Configure Klix payment method in Mozello" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Select "Klix by Citadele" in <code>Connect online payment platform</code> drop down and enter Brand ID and Secret key provided by Klix contact person. Change payment method title in checkout form if needed.</li>
-<li>Go to your Mozello store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/mozello/2_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:80%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen in Mozello store" title="Preview Klix payment method in Mozello store" />
-</div>
-<!-- markdownlint-disable MD033 -->
-
 <h3 id="opencart">OpenCart<a class="headerlink" href="#opencart" title="Permanent link">&para;</a></h3>
 <p>Compatible versions: 3.0+</p>
 <p>Installation instructions:</p>
 <ol>
 <li>Click on <a href="https://klixecom.blob.core.windows.net/modules/opencart-v3.0+.ocmod.zip">this link</a> to download Klix OpenCart extension.</li>
-<li>Log in to your OpenCart store admin panel by specifying authentication credentials.</li>
+<li>
+<p>Log in to your OpenCart store admin panel by specifying authentication credentials.
+<img alt="Opencart login page" src="../images/ecommerce-platforms/opencart/1_login.png#instruction-image" /></p>
+</li>
+<li>
+<p>Open "Extensions" -&gt; "Installer" section from the main menu.
+<img alt="Opencart extension installer page" src="../images/ecommerce-platforms/opencart/2_open_extension_upload_section.png#instruction-image" /></p>
+</li>
+<li>
+<p>Press "Upload" button and select Klix OpenCart extension file downloaded in the first step. Progress bar will indicate extension upload progress.
+<img alt="Upload extension instruction" src="../images/ecommerce-platforms/opencart/3_upload_extension.png#instruction-image" /></p>
+</li>
+<li>
+<p>Open "Extensions" -&gt; "Extensions" section from the main menu and filter payment extensions.
+<img alt="Finding Klix plugin in extension page" src="../images/ecommerce-platforms/opencart/4_filter_extensions.png#instruction-image" /></p>
+</li>
+<li>
+<p>Find Klix extension in extension list and press "+" (Install).
+<img alt="Klix extension install screen" src="../images/ecommerce-platforms/opencart/5_install_extension.png#instruction-image" /></p>
+</li>
+<li>
+<p>Press "Edit" Klix extension.
+<img alt="Klix extension edit button screen" src="../images/ecommerce-platforms/opencart/6_edit_extension.png#instruction-image" /></p>
+</li>
+<li>
+<p>Enter Brand ID and Secret key provided by Klix contact person, mark "Enable API" to enable Klix payment method and select order payment success and error statuses.
+<img alt="Klix extension settings edit screen" src="../images/ecommerce-platforms/opencart/7_edit_extension_settings.png#instruction-image" /></p>
+</li>
+<li>
+<p>Go to your OpenCart store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
+<img alt="Checkout payment method selection screen" src="../images/ecommerce-platforms/opencart/8_preview_klix_payment_method.png#instruction-image" /></p>
+</li>
+<li>
+<p>Localize Klix checkout page (optional). By default all Klix payment method section text elements are in English. In order to add translations for Klix section to your store checkout page go to OpenCart store admin panel, open "Design" -&gt; "Language Editor". Press on "+" (add new) button and for each language create translations for required keys: "klix_payment_method_selection" (Klix payment section title), "klix_place_order" (Klix pay button title). Note that empty translation key should be selected in translation key drop-down and one of previously mentioned Klix translation keys should be copied to text input field below translation key drop-down. In a given example translation for default "Select payment method" label is defined for Russian. In a similar way translation for pay button can be changed, the only difference is in translation key which should be "klix_place_order". Note that route should always be "checkout/checkout".
+<img alt="Translation definition screen" src="../images/ecommerce-platforms/opencart/9_localize_klix_payment_section.png#instruction-image" /></p>
+</li>
+<li>
+<p>Go to your OpenCart store checkout page and preview translations by switching to desired language.
+<img alt="Translated checkout payment method selection screen" src="../images/ecommerce-platforms/opencart/10_preview_translated_payment_section.png#instruction-image" /></p>
+</li>
+<li>
+<p><b>Pay Later widget</b> will be enabled after modification refresh. Open "Extensions" -&gt; "Modifications" section. Click on <b> refresh</b> button.
+<img alt="Refresh modifications" src="../images/ecommerce-platforms/opencart/11_modifications_refresh.png#instruction-image" /></p>
+</li>
 </ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/1_login.png" style="display:block;margin-left:auto;margin-right:auto;width:75%;margin-top:5px;margin-bottom:10px;" alt="OpenCart admin panel login screen" title="Log in to your OpenCart admin panel" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Open "Extensions" -&gt; "Installer" section from the main menu.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/2_open_extension_upload_section.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="OpenCart extension upload screen" title="Open extension upload section" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Press "Upload" button and select Klix OpenCart extension file downloaded in the first step. Progress bar will indicate extension upload progress.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/3_upload_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:85%;margin-top:5px;margin-bottom:10px;" alt="OpenCart extension install screen" title="Upload extension" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Open "Extensions" -&gt; "Extensions" section from the main menu and filter payment extensions.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/4_filter_extensions.png" style="display:block;margin-left:auto;margin-right:auto;width:85%;margin-top:5px;margin-bottom:10px;" alt="Extensions filter screen" title="Filter payment extensions" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Find Klix extension in extension list and press "+" (Install).</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/5_install_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension install screen" title="Install Klix extension" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Press "Edit" Klix extension.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/6_edit_extension.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension edit button screen" title="Edit Klix extension" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Enter Brand ID and Secret key provided by Klix contact person, mark "Enable API" to enable Klix payment method and select order payment success and error statuses.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/7_edit_extension_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix extension settings edit screen" title="Edit Klix extension settings" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Go to your OpenCart store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/8_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Localize Klix checkout page (optional). By default all Klix payment method section text elements are in English. In order to add translations for Klix section to your store checkout page go to OpenCart store admin panel, open "Design" -&gt; "Language Editor". Press on "+" (add new) button and for each language create translations for required keys: "klix_payment_method_selection" (Klix payment section title), "klix_place_order" (Klix pay button title). Note that empty translation key should be selected in translation key drop-down and one of previously mentioned Klix translation keys should be copied to text input field below translation key drop-down. In a given example translation for default "Select payment method" label is defined for Russian. In a similar way translation for pay button can be changed, the only difference is in translation key which should be "klix_place_order". Note that route should always be "checkout/checkout".</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/9_localize_klix_payment_section.png" style="display:block;margin-left:auto;margin-right:auto;width:60%;margin-top:5px;margin-bottom:10px;" alt="Translation definition screen" title="Add translation" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Go to your OpenCart store checkout page and preview translations by switching to desired language.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/opencart/10_preview_translated_payment_section.png" style="display:block;margin-left:auto;margin-right:auto;width:95%;margin-top:5px;margin-bottom:10px;" alt="Translated checkout payment method selection screen" title="Preview translations" />
-</div>
-<ol>
-<li><b>Pay Later widget</b> will be enabled after modification refresh. Open "Extensions" -&gt; "Modifications" section. Click on <b> refresh</b> button.
- 
-<div>
-    <img src="../images/ecommerce-platforms/opencart/11_modifications_refresh.png" style="display:block;margin-left:auto;margin-right:auto;width:95%;margin-top:5px;margin-bottom:10px;" alt="Refresh modifications" title="Modification refresh" />
-</div></li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-
 <h3 id="prestashop">PrestaShop<a class="headerlink" href="#prestashop" title="Permanent link">&para;</a></h3>
 <p>Compatible versions: 1.7+</p>
 <p>Installation instructions:</p>
 <ol>
 <li>Click on <a href="https://klixecom.blob.core.windows.net/modules/klix-prestashop.zip">this link</a> to download Klix PrestaShop plugin in case your store Prestshop version is 1.7.6. or newer. If you use Prestashop version that's older than 1.7.6. then click on <a href="https://portal.klix.app/ecommerce_modules/prestashop-v1.7+.zip">this link</a> (note that translations functionality will work only with Prestashop 1.7.6. and newer version).</li>
-<li>Log in to your PrestaShop store admin panel by specifying authentication credentials.</li>
+<li>
+<p>Log in to your PrestaShop store admin panel by specifying authentication credentials.
+<img alt="PrestaShop admin panel login screen" src="../images/ecommerce-platforms/prestashop/1_login.png#instruction-image" /></p>
+</li>
+<li>
+<p>Open "Modules" -&gt; "Module Manager" section.
+<img alt="Module mangager menu screen" src="../images/ecommerce-platforms/prestashop/2_open_module_manager.png#instruction-image" /></p>
+</li>
+<li>
+<p>Press "Upload a module" button.
+<img alt="Open upload module dialog screen" src="../images/ecommerce-platforms/prestashop/3_upload_module_button.png#instruction-image" /></p>
+</li>
+<li>
+<p>Select a module file downloaded in the first step. Selected module file will be installed.
+<img alt="Upload module screen" src="../images/ecommerce-platforms/prestashop/4_select_module_file.png#instruction-image" /></p>
+</li>
+<li>
+<p>After module is installed press "Configure" button.
+<img alt="Installed module screen" src="../images/ecommerce-platforms/prestashop/5_press_configure_module.png#instruction-image" /></p>
+</li>
+<li>
+<p>Enter Brand ID and Secret key provided by Klix contact person, mark "Enable API" to enable Klix payment method.
+<img alt="Klix module configuration screen" src="../images/ecommerce-platforms/prestashop/6_configure_module.png#instruction-image" /></p>
+</li>
+<li>
+<p>Localize Klix checkout page (optional). By default all Klix payment method section text elements are in English. In order to add translations for Klix section to your store checkout page press "Translate" button.
+<img alt="Klix module configuration screen" src="../images/ecommerce-platforms/prestashop/7_translate_module.png#instruction-image" /></p>
+</li>
+<li>
+<p>Then choose your store language for which you would like to enter translations.
+<img alt="Klix module translation language selection screen" src="../images/ecommerce-platforms/prestashop/8_choose_language.png#instruction-image" /></p>
+</li>
+<li>
+<p>And provide translations for all provided texts.
+<img alt="Klix translations screen" src="../images/ecommerce-platforms/prestashop/9_provide_translations.png#instruction-image" /></p>
+</li>
+<li>
+<p>Go to your PrestShop store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
+<img alt="Checkout payment method selection screen" src="../images/ecommerce-platforms/prestashop/10_preview_klix_payment_method.png#instruction-image" /></p>
+</li>
 </ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/1_login.png" style="display:block;margin-left:auto;margin-right:auto;width:60%;margin-top:5px;margin-bottom:10px;" alt="PrestaShop admin panel login screen" title="Log in to your PrestaShop admin panel" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Open "Modules" -&gt; "Module Manager" section.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/2_open_module_manager.png" style="display:block;margin-left:auto;margin-right:auto;width:35%;margin-top:5px;margin-bottom:10px;" alt="Module mangager menu screen" title="Open module manager" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Press "Upload a module" button.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/3_upload_module_button.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Open upload module dialog screen" title="Open module upload dialog" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Select a module file downloaded in the first step. Selected module file will be installed.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/4_select_module_file.png" style="display:block;margin-left:auto;margin-right:auto;width:70%;margin-top:5px;margin-bottom:10px;" alt="Upload module screen" title="Upload Klix module" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>After module is installed press "Configure" button.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/5_press_configure_module.png" style="display:block;margin-left:auto;margin-right:auto;width:70%;margin-top:5px;margin-bottom:10px;" alt="Installed module screen" title="Open Klix module configuration" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Enter Brand ID and Secret key provided by Klix contact person, mark "Enable API" to enable Klix payment method.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/6_configure_module.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix module configuration screen" title="Configure Klix module" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Localize Klix checkout page (optional). By default all Klix payment method section text elements are in English. In order to add translations for Klix section to your store checkout page press "Translate" button.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/7_translate_module.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix module configuration screen" title="Translate Klix module" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Then choose your store language for which you would like to enter translations.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/8_choose_language.png" style="display:block;margin-left:auto;margin-right:auto;width:40%;margin-top:5px;margin-bottom:10px;" alt="Klix module translation language selection screen" title="Choose translation language" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>And provide translations for all provided texts.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/9_provide_translations.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Klix translations screen" title="Translate Klix module texts" />
-</div>
-<ol>
-<li>Go to your PrestShop store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/prestashop/10_preview_klix_payment_method.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Checkout payment method selection screen" title="Preview Klix payment method" />
-</div>
-<!-- markdownlint-disable MD033 -->
-
 <h3 id="shopify">Shopify<a class="headerlink" href="#shopify" title="Permanent link">&para;</a></h3>
 <p>Installation instructions:</p>
 <ol>
-<li>Add a <strong>Klix payments app</strong> from <a href="https://apps.shopify.com/klix-payments">Shopify app store</a>.</li>
-<li>After an install Shopify will redirect to our Business Portal page.
-    <img alt="After an install Shopify will redirect to our Business Portal page." src="../images/ecommerce-platforms/shopify/business-portal.png#instruction-image" /></li>
-<li>After successful login click on <strong>Create</strong> in Business Portal.
+<li>Login to <a href="https://portal.klix.app/">Business Portal</a>
+<img alt="After an install Shopify will redirect to our Business Portal page." src="../images/ecommerce-platforms/shopify/business-portal.png#instruction-image" /></li>
+<li>After successful login open <a href="https://apps.shopify.com/klix-payments">Shopify app store</a> in <strong>new tab</strong> and install the plugin.</li>
+<li>During instalation Shopify will redirect to our Business Portal page to confirm Shopify store integration.
     <img alt="After successful login click on Create in Business Portal." src="../images/ecommerce-platforms/shopify/create-merchant-business-portal.png#instruction-image" /></li>
 <li>
 <p>Business Portal will redirect back to Shopify settings to settings view. In settings click on <strong>Activate Klix payments</strong>.
     <img alt="Business Portal will redirect back to Shopify settings to settings view." src="../images/ecommerce-platforms/shopify/activate-klix-payments.png#instruction-image" /></p>
 </li>
 <li>
-<p>Go to your Shopify store checkout page and check that Klix payment method is available. For test purposes please click on <strong>Enable test mode</strong> and then on <strong>Save</strong>.</p>
+<p>Go to your Shopify store checkout page and check that Klix payment method is available. For test purposes please click on <strong>Enable test mode</strong>.</p>
 </li>
 </ol>
 <h3 id="woocommerce">WooCommerce<a class="headerlink" href="#woocommerce" title="Permanent link">&para;</a></h3>
@@ -815,60 +709,35 @@
 <p>Installation instructions:</p>
 <ol>
 <li>Click on <a href="https://klixecom.blob.core.windows.net/modules/klix-woocommerce.zip">this link</a> to download Klix WooCommerce plugin.</li>
-<li>Log in to your WooCommerce store admin panel by specifying authentication credentials.</li>
+<li>
+<p>Log in to your WooCommerce store admin panel by specifying authentication credentials.
+<img alt="WooCommerce admin panel" src="../images/ecommerce-platforms/woocommerce/1_login.png#instruction-image" /></p>
+</li>
+<li>
+<p>Open "Plugins" -&gt; "Add new" section.
+<img alt="Plugin menu screen" src="../images/ecommerce-platforms/woocommerce/2_select_plugin_menu.png#instruction-image" /></p>
+</li>
+<li>
+<p>Press on "Upload Plugin" and select Klix WooCommerce plugin file downloaded in the first step, press "Install Now". In rare cases e.g. if your server is not configured to allow automatic installations you might need to install Klix WooCommerce plugin by manually transfering Klix plugin files onto the server. Follow <a href="https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation">these instructions</a> in such case.
+<img alt="Upload plugin screen" src="../images/ecommerce-platforms/woocommerce/3_upload_plugin.png#instruction-image" /></p>
+</li>
+<li>
+<p>Press "Activate" button to activate installed Klix WooCommerce plugin.
+<img alt="Finished plugin installation screen" src="../images/ecommerce-platforms/woocommerce/4_activate_plugin.png#instruction-image" /></p>
+</li>
+<li>
+<p>Find Klix plugin and press on "Settings" link.
+<img alt="Plugins screen" src="../images/ecommerce-platforms/woocommerce/5_find_klix_plugin.png#instruction-image" /></p>
+</li>
+<li>
+<p>Enter Brand ID and Secret key provided by Klix contact person and check <code>Enable API</code> checkbox.
+<img alt="Klix plugin settings screen" src="../images/ecommerce-platforms/woocommerce/6_specify_klix_plugin_settings.png#instruction-image" /></p>
+</li>
+<li>
+<p>Go to your WooCommerce store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.
+<img alt="Payment option selection screen" src="../images/ecommerce-platforms/woocommerce/7_test_klix_payment_option.png#instruction-image" /></p>
+</li>
 </ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/woocommerce/1_login.png" style="display:block;margin-left:auto;margin-right:auto;width:45%;margin-top:5px;margin-bottom:10px;" alt="WooCommerce admin panel login screen" title="Log in to your WooCommerce admin panel" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Open "Plugins" -&gt; "Add new" section.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/woocommerce/2_select_plugin_menu.png" style="display:block;margin-left:auto;margin-right:auto;width:20%;margin-top:5px;margin-bottom:10px;" alt="Plugin menu screen" title="Open new plugin section" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Press on "Upload Plugin" and select Klix WooCommerce plugin file downloaded in the first step, press "Install Now". In rare cases e.g. if your server is not configured to allow automatic installations you might need to install Klix WooCommerce plugin by manually transfering Klix plugin files onto the server. Follow <a href="https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation">these instructions</a> in such case.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/woocommerce/3_upload_plugin.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Upload plugin screen" title="Select and install plugin from file" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Press "Activate" button to activate installed Klix WooCommerce plugin.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/woocommerce/4_activate_plugin.png" style="display:block;margin-left:auto;margin-right:auto;width:80%;margin-top:5px;margin-bottom:10px;" alt="Finished plugin installation screen" title="Activate plugin" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Find Klix plugin and press on "Settings" link.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/woocommerce/5_find_klix_plugin.png" style="display:block;margin-left:auto;margin-right:auto;width:90%;margin-top:5px;margin-bottom:10px;" alt="Plugins screen" title="Find Klix plugin and open plugin settings" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Enter Brand ID and Secret key provided by Klix contact person and check <code>Enable API</code> checkbox.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/woocommerce/6_specify_klix_plugin_settings.png" style="display:block;margin-left:auto;margin-right:auto;width:100%;margin-top:5px;margin-bottom:10px;" alt="Klix plugin settings screen" title="Specify Klix plugin settings" />
-</div>
-<!-- markdownlint-disable MD033 -->
-<ol>
-<li>Go to your WooCommerce store checkout page and check that Klix payment method is available. It's advisable to test Klix integration using a real card.</li>
-</ol>
-<!-- markdownlint-disable MD033 -->
-<div>
-    <img src="../images/ecommerce-platforms/woocommerce/7_test_klix_payment_option.png" style="display:block;margin-left:auto;margin-right:auto;width:65%;margin-top:5px;margin-bottom:10px;" alt="Payment option selection screen" title="Test Klix payment option" />
-</div>
                 
                   
                 
