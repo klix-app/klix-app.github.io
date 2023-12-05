@@ -16,10 +16,10 @@
         <link rel="prev" href="../libraries/">
       
       
-        <link rel="next" href="../static-assets/">
+        <link rel="next" href="../pay-later-widget/">
       
       <link rel="icon" href="../images/logos/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.6">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -61,6 +61,8 @@
 <!-- Klix Pay Later widget -->
 <script type="module" src="https://klix.blob.core.windows.net/public/pay-later-widget/build/klix-pay-later-widget.esm.js"></script>
 <script nomodule="" src="https://klix.blob.core.windows.net/public/pay-later-widget/build/klix-pay-later-widget.js"></script>
+<!-- Klix Pay Later widget with adjustable down-payment amount -->
+<script src="https://klix.app/app/themes/klix/js/widget-2.js"></script>
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9008822.js"></script>
 <!-- End of HubSpot Embed Code -->
@@ -123,8 +125,6 @@
         </div>
       </div>
     </div>
-    
-      
     
     
     
@@ -572,17 +572,25 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#klix-pay-later-monthly-payment-widget" class="md-nav__link">
-    Klix Pay Later monthly payment widget
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pay-later-widget/" class="md-nav__link">
+        Pay Later monthly payment widget
+      </a>
     </li>
   
 
@@ -906,13 +914,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#klix-pay-later-monthly-payment-widget" class="md-nav__link">
-    Klix Pay Later monthly payment widget
-  </a>
   
 </li>
       
@@ -1288,90 +1289,6 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <p>Note that after successful capture recurring purchase status is changed to "paid".</p>
 <h4 id="release-funds-reserved-by-previously-created-purchase_1"><a href="#release-funds-reserved-by-previously-created-purchase">Release funds reserved by previously created purchase</a><a class="headerlink" href="#release-funds-reserved-by-previously-created-purchase_1" title="Permanent link">&para;</a></h4>
 <p>Note that after successful capture recurring purchase status is changed to "released".</p>
-<h2 id="klix-pay-later-monthly-payment-widget">Klix Pay Later monthly payment widget<a class="headerlink" href="#klix-pay-later-monthly-payment-widget" title="Permanent link">&para;</a></h2>
-<p>In order to add Klix Pay Later monthly payment widget to your store place following script in head part of the page.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-   <span class="cm">&lt;!-- Klix Pay Later widget --&gt;</span>
-   <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/pay-later-widget/build/klix-pay-later-widget.esm.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-   <span class="p">&lt;</span><span class="nt">script</span> <span class="na">nomodule</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/pay-later-widget/build/klix-pay-later-widget.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>Then place Klix Pay Later monthly payment widget source code just below the product price. You should pass at least product price, language and your Brand ID to widget.</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-   ...
-   <span class="p">&lt;</span><span class="nt">klix-pay-later</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;67900&quot;</span> <span class="na">brand_id</span><span class="o">=</span><span class="s">&quot;702314b8-dd86-41fa-9a22-510fdd71fa92&quot;</span> 
-      <span class="na">language</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">theme</span><span class="o">=</span><span class="s">&quot;light&quot;</span> <span class="na">view</span><span class="o">=</span><span class="s">&quot;product&quot;</span> <span class="na">category</span><span class="o">=</span><span class="s">&quot;SPORTS_GOODS&quot;</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">klix-pay-later</span><span class="p">&gt;</span>
-   ...
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>For Shopify integration:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-   ...
-   <span class="p">&lt;</span><span class="nt">klix-pay-later</span> <span class="na">amount</span><span class="o">=</span><span class="s">&quot;{{ product.price | money_numbers_only}}&quot;</span> <span class="na">brand_id</span><span class="o">=</span><span class="s">&quot;702314b8-dd86-41fa-9a22-510fdd71fa92&quot;</span> 
-      <span class="na">language</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">theme</span><span class="o">=</span><span class="s">&quot;light&quot;</span> <span class="na">view</span><span class="o">=</span><span class="s">&quot;product&quot;</span> <span class="na">category</span><span class="o">=</span><span class="s">&quot;SPORTS_GOODS&quot;</span><span class="p">&gt;</span>
-   <span class="p">&lt;/</span><span class="nt">klix-pay-later</span><span class="p">&gt;</span>
-   ...
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</code></pre></div>
-<p><img alt="Klix Pay Later widget in product page" src="../images/klix_pay_later_monthly_payment_widget_on_product_page.png" title="Klix Pay Later widget in product page" /></p>
-<div class="admonition note">
-<p class="admonition-title">We strongly recommend to place Klix Pay Later monthly payment widget both on product, shopping cart and checkout page so that customer can preview monthly payment also if multiple different products are added to the shopping cart.</p>
-</div>
-<p>Previously mentioned widget code example will result in the following widgets.</p>
-<!-- markdownlint-disable MD033 -->
-<div>
-<div style="padding-bottom:10px">
-<klix-pay-later amount="67900" brand_id="702314b8-dd86-41fa-9a22-510fdd71fa92" language="en" theme="light" view="product" category="SPORTS_GOODS" class="hydrated">
-</klix-pay-later>
-</div>
-<klix-pay-later amount="67900" brand_id="0f69862f-4f5e-426e-8945-b0d9b0b17cc1" language="lt" theme="light" view="cart" category="SPORTS_GOODS" class="hydrated">
-</klix-pay-later>
-</div>
-<!-- markdownlint-disable MD033 -->
-
-<p>Widget parameters are described in the following table.</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Optional</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>amount</code></td>
-<td>Product price in cents (if widget is shown in product view)/shopping cart item total amount in cents (if widget is shown in shopping cart/checkout view)</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>brand_id</code></td>
-<td>Brand ID assigned to your company after Klix agreement signing</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>language</code></td>
-<td>Widget language ( Latvia "en", "lv", "ru", Lithuania: "lt")</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>theme</code></td>
-<td>Currenly only "light" theme is supported</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>view</code></td>
-<td>Widget placement in site. Following placements are supported: "product", "cart", "checkout".</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>category</code></td>
-<td>Product category. Should be specified only in case merchant sells different type of goods. Possible values: TV_HOME_APPLIANCES, CLOTHES_SHOES_ACCESSORIES, ELECTRONICS, COMPUTER_EQUIPMENT, FURNITURE, SPORTING_GOODS, GARDEN_GOODS, COSMETICS, CHILDREN_GOODS, CAR_GOODS, MOTO_GOODS, FOR_HOME_AND_REPAIR, ZOO_GOODS, GROCERIES_AND_ALCOHOL, BOOKS, MEDICAL_GOODS, GIFT_CARDS, DELIVERY, OTHER</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
 
 
 
@@ -1409,13 +1326,13 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
         
         
           
-          <a href="../static-assets/" class="md-footer__link md-footer__link--next" aria-label="Next: Static assets" rel="next">
+          <a href="../pay-later-widget/" class="md-footer__link md-footer__link--next" aria-label="Next: Pay Later monthly payment widget" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Static assets
+                Pay Later monthly payment widget
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1491,7 +1408,7 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
