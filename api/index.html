@@ -19,7 +19,7 @@
         <link rel="next" href="../pay-later-widget/">
       
       <link rel="icon" href="../images/logos/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.6">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -125,8 +125,6 @@
         </div>
       </div>
     </div>
-    
-      
     
     
     
@@ -953,9 +951,98 @@ In order to call Klix API you should first receive API credentials (Brand ID and
 <p>These are simple request examples that illustrate Klix API usage. Always use <a href="https://portal.klix.app/api">API Reference</a> as a single source of truth.
 Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes here&gt;</code> should be replaced with actual <code>Brand ID</code> and <code>Secret Key</code> received from Klix contact person.</p>
 <h4 id="get-list-of-available-payment-methods">Get list of available payment methods<a class="headerlink" href="#get-list-of-available-payment-methods" title="Permanent link">&para;</a></h4>
+<p>This operation allows you to retrieve all payment methods available to you at the current time. Note that payment method availability depends upon your agreement with Klix and it can also vary from time to time e.g. some bank payment method can be temporarily unavailable because of planned maintenance down-time. In such a case this bank payment method will be excluded from the available payment method list returned by this API end-point until planned maintenance is over and this payment method is re-enabled. That's one of the examples of why an available payment method list should be retrieved on a regular basis in order to offer only fully functional payment methods to the end-user.</p>
 <div class="admonition warning">
-<p class="admonition-title">Do not call this API end-point before each purchase initiation since this API end-point is rate limited. Cache available payment methods on server side and call this API end-point less often than once in a minute.</p>
+<p class="admonition-title">Do not call this API end-point before each purchase initiation since this API end-point is rate limited. Cache available payment methods on server side and call this API end-point not more often than once in a minute.</p>
 </div>
+<p>List of currently supported payment methods:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>klix</td>
+<td>Klix card payments</td>
+</tr>
+<tr>
+<td>citadele_ee_digilink</td>
+<td>Citadele Bank payments</td>
+</tr>
+<tr>
+<td>citadele_lt_digilink</td>
+<td>Citadele Bank payments</td>
+</tr>
+<tr>
+<td>citadele_lv_digilink</td>
+<td>Citadele Bank payments</td>
+</tr>
+<tr>
+<td>coop_pank_ee_pis</td>
+<td>Coop Pank payments</td>
+</tr>
+<tr>
+<td>klix_apple_pay</td>
+<td>Apple Pay payments</td>
+</tr>
+<tr>
+<td>klix_pay_later</td>
+<td>Klix Pay Later</td>
+</tr>
+<tr>
+<td>lhv_ee_pis</td>
+<td>LHV payments</td>
+</tr>
+<tr>
+<td>luminor_ee_pis</td>
+<td>Luminor payments</td>
+</tr>
+<tr>
+<td>luminor_lt_pis</td>
+<td>Luminor payments</td>
+</tr>
+<tr>
+<td>luminor_lv_pis</td>
+<td>Luminor payments</td>
+</tr>
+<tr>
+<td>revolut_pis</td>
+<td>Revolut payments</td>
+</tr>
+<tr>
+<td>seb_ee_pis</td>
+<td>SEB payments</td>
+</tr>
+<tr>
+<td>seb_lt_pis</td>
+<td>SEB payments</td>
+</tr>
+<tr>
+<td>seb_lv_pis</td>
+<td>SEB payments</td>
+</tr>
+<tr>
+<td>siauliu_lt_pis</td>
+<td>Šiaulių Bankas payments</td>
+</tr>
+<tr>
+<td>swedbank_ee_pis</td>
+<td>Swedbank payments</td>
+</tr>
+<tr>
+<td>swedbank_lt_pis</td>
+<td>Swedbank payments</td>
+</tr>
+<tr>
+<td>swedbank_lv_pis</td>
+<td>Swedbank payments</td>
+</tr>
+</tbody>
+</table>
+<p>Note that this API end-point returns both payment method general availability, availability in country and additional information like human-readable payment method name and logo URI. </p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;https://portal.klix.app/api/v1/payment_methods/?currency=EUR&amp;brand_id=&lt;Brand ID goes here&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -967,7 +1054,7 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;cache-control: no-cache&#39;</span>
 </code></pre></div>
 <h4 id="create-available-payment-methods-purchase">Create available payment methods purchase<a class="headerlink" href="#create-available-payment-methods-purchase" title="Permanent link">&para;</a></h4>
-<p>This option allows to create a purchase that can be paid using any payment method available to merchant. Customer will be have an option to choose one of available payment methods after redirect to Klix payment page.</p>
+<p>This option allows to create a purchase that can be paid using any payment method available to merchant. Customer will be have an option to choose one of available payment methods after redirect to Klix payment page.
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>https://portal.klix.app/api/v1/purchases/<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1002,7 +1089,7 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
 <span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;</span>
 <span class="s1">}&#39;</span>
-</code></pre></div>
+</code></pre></div></p>
 <h4 id="create-whitelisted-payment-method-purchase">Create whitelisted payment method purchase<a class="headerlink" href="#create-whitelisted-payment-method-purchase" title="Permanent link">&para;</a></h4>
 <p>This option allows to create a purchase that can be paid only using specified whitelisted payment method. Most often this option is used to allow purchase to be paid using payment method selected on merchant web-site.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
@@ -1410,7 +1497,7 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
