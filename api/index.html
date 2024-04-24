@@ -19,7 +19,7 @@
         <link rel="next" href="../pay-later-widget/">
       
       <link rel="icon" href="../images/logos/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.6">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -125,8 +125,6 @@
         </div>
       </div>
     </div>
-    
-      
     
     
     
@@ -574,6 +572,46 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api-usage-in-bulk-payment-scenario" class="md-nav__link">
+    API usage in bulk payment scenario
+  </a>
+  
+    <nav class="md-nav" aria-label="API usage in bulk payment scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bulk-payment-step-by-step-guide" class="md-nav__link">
+    Bulk payment step-by-step guide
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-payment-request-examples" class="md-nav__link">
+    Bulk payment request examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Bulk payment request examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-bulk-payment-purchase" class="md-nav__link">
+    Create a bulk payment purchase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -905,6 +943,46 @@
           <li class="md-nav__item">
   <a href="#release-funds-reserved-by-previously-created-purchase_1" class="md-nav__link">
     Release funds reserved by previously created purchase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-usage-in-bulk-payment-scenario" class="md-nav__link">
+    API usage in bulk payment scenario
+  </a>
+  
+    <nav class="md-nav" aria-label="API usage in bulk payment scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bulk-payment-step-by-step-guide" class="md-nav__link">
+    Bulk payment step-by-step guide
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-payment-request-examples" class="md-nav__link">
+    Bulk payment request examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Bulk payment request examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-bulk-payment-purchase" class="md-nav__link">
+    Create a bulk payment purchase
   </a>
   
 </li>
@@ -1380,6 +1458,90 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <p>Note that after successful capture recurring purchase status is changed to "paid".</p>
 <h4 id="release-funds-reserved-by-previously-created-purchase_1"><a href="#release-funds-reserved-by-previously-created-purchase">Release funds reserved by previously created purchase</a><a class="headerlink" href="#release-funds-reserved-by-previously-created-purchase_1" title="Permanent link">&para;</a></h4>
 <p>Note that after successful capture recurring purchase status is changed to "released".</p>
+<h2 id="api-usage-in-bulk-payment-scenario">API usage in bulk payment scenario<a class="headerlink" href="#api-usage-in-bulk-payment-scenario" title="Permanent link">&para;</a></h2>
+<p>A bulk payment is a group of payments to multiple bank accounts (IBANs) which requires only single confirmation from customer. 
+Bulk payments are executed in "all-or-nothing" mode i.e. either each individual payment succeeds or all of them fails.</p>
+<p>Typical use case for bulk payment functionality is a product marketplaces where during a checkout customer pays to multiple merchants at once. 
+Bulk payment functionality allows to initiate and confirm these multiple payments as a single payment.</p>
+<p>Here is a list of the payment methods that currently support bulk payment functionality:</p>
+<ul>
+<li>seb_ee_pis</li>
+<li>seb_lt_pis</li>
+<li>seb_lv_pis</li>
+<li>swedbank_ee_pis</li>
+<li>swedbank_lt_pis</li>
+<li>swedbank_lv_pis</li>
+</ul>
+<h3 id="bulk-payment-step-by-step-guide">Bulk payment step-by-step guide<a class="headerlink" href="#bulk-payment-step-by-step-guide" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Sign the agreement with Klix for the usage of bulk payment functionality. Submit the list of creditor IBANs for whitelisting.</li>
+<li>Initiate a bulk payment by providing multiple creditors and amounts.</li>
+<li>Handle a single successful payment callback for each bulk payment.</li>
+</ol>
+<h3 id="bulk-payment-request-examples">Bulk payment request examples<a class="headerlink" href="#bulk-payment-request-examples" title="Permanent link">&para;</a></h3>
+<p>These are simple request examples that illustrate Klix API usage. Always use <a href="https://portal.klix.app/api">API Reference</a> as a single source of truth.
+Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes here&gt;</code> should be replaced with actual <code>Brand ID</code> and <code>Secret Key</code> received from Klix contact person.</p>
+<h4 id="create-a-bulk-payment-purchase">Create a bulk payment purchase<a class="headerlink" href="#create-a-bulk-payment-purchase" title="Permanent link">&para;</a></h4>
+<p>Initiate a purchase by specifying multiple creditors and corresponding payment amounts and descriptions. In the following example Swedbank Latvia bulk payment total amount is 0.03 EUR, and it consists of two payments:</p>
+<ul>
+<li>0.02 EUR payment to John Doe's IBAN LVXXPARX0000000000001 with a payment description "Description of payment to John Doe"</li>
+<li>0.01 EUR payment to Jane Doe's IBAN LVXXHABA0000000000001 with a payment description "Description of payment to Jane Doe"</li>
+</ul>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://portal.klix.app/api/v1/purchases/<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Cache-Control: no-cache&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Connection: keep-alive&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Host: portal.klix.app&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept-encoding: gzip, deflate&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;cache-control: no-cache&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;purchase&quot;: {</span>
+<span class="s1">        &quot;products&quot;: [</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;name&quot;: &quot;Description of payment to John Doe&quot;,</span>
+<span class="s1">                &quot;price&quot;: 2</span>
+<span class="s1">            },</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;name&quot;: &quot;Description of payment to Jane Doe&quot;,</span>
+<span class="s1">                &quot;price&quot;: 1</span>
+<span class="s1">            }</span>
+<span class="s1">        ],</span>
+<span class="s1">        &quot;payment_method_details&quot;: {</span>
+<span class="s1">            &quot;pis_bulk_purchase&quot;: [</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;creditor_name&quot;: &quot;John Doe&quot;,</span>
+<span class="s1">                    &quot;creditor_iban&quot;: &quot;LVXXPARX0000000000001&quot;</span>
+<span class="s1">                },</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;creditor_name&quot;: &quot;Jane Doe&quot;,</span>
+<span class="s1">                    &quot;creditor_iban&quot;: &quot;LVXXHABA0000000000001&quot;</span>
+<span class="s1">                }</span>
+<span class="s1">            ]</span>
+<span class="s1">        }</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;client&quot;: {</span>
+<span class="s1">        &quot;email&quot;: &quot;test@test.com&quot;</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;payment_method_whitelist&quot;: [&quot;swedbank_lv_pis&quot;],</span>
+<span class="s1">    &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;`&quot;,</span>
+<span class="s1">    &quot;reference&quot;: &quot;Your order id&quot;</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<p>After redirecting customer to Klix payment page (field <code>checkout_url</code> from init payment response) bulk payment details will be presented.</p>
+<p><img alt="Bulk payment example" src="../images/api/bulk_payment_example.png" /></p>
+<p>Note that all creditor IBANs should be whitelisted before bulk payment is initiated. In case at least one of the creditor IBANs is not whitelisted following error message is returned in a purchase initiation response:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;__all__&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Creditor&#39;s IBAN &#39;LVXXPARX0000000000001&#39; is not whitelisted. Please ensure the creditor&#39;s IBAN is added to the whitelist and try again.&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -1488,7 +1650,7 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
       
     
   </body>
