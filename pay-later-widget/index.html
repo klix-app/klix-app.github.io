@@ -353,6 +353,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#monthly-payment-widget-with-adjustable-order-and-down-payment-amount" class="md-nav__link">
+    Monthly payment widget with adjustable order and down-payment amount
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#monthly-payment-widget-with-custom-view" class="md-nav__link">
     Monthly payment widget with custom view
   </a>
@@ -455,6 +462,13 @@
         <li class="md-nav__item">
   <a href="#monthly-payment-widget-with-adjustable-down-payment-amount" class="md-nav__link">
     Monthly payment widget with adjustable down-payment amount
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monthly-payment-widget-with-adjustable-order-and-down-payment-amount" class="md-nav__link">
+    Monthly payment widget with adjustable order and down-payment amount
   </a>
   
 </li>
@@ -681,6 +695,48 @@
 </div>
 <!-- markdownlint-disable MD033 -->
 
+<h2 id="monthly-payment-widget-with-adjustable-order-and-down-payment-amount">Monthly payment widget with adjustable order and down-payment amount<a class="headerlink" href="#monthly-payment-widget-with-adjustable-order-and-down-payment-amount" title="Permanent link">&para;</a></h2>
+<p>In order to add Klix Pay Later monthly payment widget with adjustable principal and down-payment amount to your store place following script in head part of the page.
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="cm">&lt;!-- Klix Pay Later widget with adjustable down-payment amount --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://klix.blob.core.windows.net/public/pay-later-calculator-widget/build/klix-widget.esm.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p>Then place Klix Pay Later monthly payment widget source code in desired place and pass data-brand-id, data-loan-amount, data-amount-slider and data-locale attributes.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">klix-widget</span> <span class="na">data-brand-id</span><span class="o">=</span><span class="s">&quot;702314b8-dd86-41fa-9a22-510fdd71fa92&quot;</span> <span class="na">data-locale</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">data-loan-amount</span><span class="o">=</span><span class="s">&quot;67800&quot;</span> <span class="na">data-amount-slider</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">klix-widget</span><span class="p">&gt;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data-brand-id</code></td>
+<td>Brand ID assigned to your company after Klix agreement signing</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>data-loan-amount</code></td>
+<td>Product price in cents</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>data-locale</code></td>
+<td>Representative example language. Possible values: "en", "lv", "ru", "lt", "et"</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>data-amount-slider</code></td>
+<td>Paraameter should be set to <code>true</code></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><klix-widget data-brand-id="a6cef80b-92a4-4bc2-b611-7dc597f9a000" data-locale="en" data-loan-amount="40000" data-amount-slider="true"></klix-widget></p>
 <h2 id="monthly-payment-widget-with-custom-view">Monthly payment widget with custom view<a class="headerlink" href="#monthly-payment-widget-with-custom-view" title="Permanent link">&para;</a></h2>
 <p>This type of widget allows you to implement monthly payment widget that matches your web-page design. 
 To enable monthly payment widget custom view you should set global variables <code>showCustomView</code> to <code>true</code> and provide implementation for following functions:</p>
@@ -818,7 +874,7 @@ To enable monthly payment widget custom view you should set global variables <co
 </tbody>
 </table>
 <h2 id="representative-example">Representative example<a class="headerlink" href="#representative-example" title="Permanent link">&para;</a></h2>
-<p>This API endpoint allows you to retrieve a representative example.</p>
+<p>This API endpoint allows you to retrieve a representative example. The amount should correspond to the exact product price.</p>
 <div class="highlight"><pre><span></span><code>https://api.klix.app/financing/v2/preliminary-offers/pl/representative-example?b=702314b8-dd86-41fa-9a22-510fdd71fa92&amp;a=56000&amp;d=12&amp;l=en
 </code></pre></div>
 <p>Example
@@ -853,7 +909,7 @@ To enable monthly payment widget custom view you should set global variables <co
 </tr>
 <tr>
 <td><code>d</code></td>
-<td>The loanDuration variable is used to specify the length of time over which the loan will be repaid.</td>
+<td>The duration variable is used to specify the length of time over which the loan will be repaid.</td>
 <td>true</td>
 </tr>
 </tbody>
