@@ -359,6 +359,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#representative-example" class="md-nav__link">
+    Representative example
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -455,6 +462,13 @@
         <li class="md-nav__item">
   <a href="#monthly-payment-widget-with-custom-view" class="md-nav__link">
     Monthly payment widget with custom view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representative-example" class="md-nav__link">
+    Representative example
   </a>
   
 </li>
@@ -800,6 +814,47 @@ To enable monthly payment widget custom view you should set global variables <co
 <td><code>sequence</code></td>
 <td>Financing product sequence</td>
 <td>number</td>
+</tr>
+</tbody>
+</table>
+<h2 id="representative-example">Representative example<a class="headerlink" href="#representative-example" title="Permanent link">&para;</a></h2>
+<p>This API endpoint allows you to retrieve a representative example.</p>
+<div class="highlight"><pre><span></span><code>https://api.klix.app/financing/v2/preliminary-offers/pl/representative-example?b=702314b8-dd86-41fa-9a22-510fdd71fa92&amp;a=56000&amp;d=12&amp;l=en
+</code></pre></div>
+<p>Example
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;representativeExample&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Representative example: Loan amount: €560, loan duration: 12 mos., monthly payment: €46.67, total loan amount: €576.8, interest rate: 0%, annual percentage rate (APR): 5.78%, commission fee: €16.8. Calculations are only informative, and each customers situation is evaluated individually. The lending service using Klix is provided by AS Citadele banka, AS Lateko Līzings, or SIA Aizdevums.lv.&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><code>Preliminary offers</code> parameters description:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b</code></td>
+<td>Brand ID assigned to your company after Klix agreement signing</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>Product price in cents</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>Representative example language. Possible values: "en", "lv", "ru", "lt", "et"</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>The loanDuration variable is used to specify the length of time over which the loan will be repaid.</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
