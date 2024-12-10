@@ -1905,8 +1905,47 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="api-usage-in-native-apple-pay-google-paytm-scenario">API usage in native Apple Pay / Google Pay™ scenario<a class="headerlink" href="#api-usage-in-native-apple-pay-google-paytm-scenario" title="Permanent link">&para;</a></h2>
-<p>By default Klix Apple Pay / Google Pay payments are handled fully on Klix side i.e. after Klix purchase initiation customer is redirected to Klix hosted payment page where customer interacts with Apple Pay / Google Pay browser elements. Interaction with Apple Pay / Google Pay JavaScript SDK is done by Klix in this case.</p>
+<p>By default, Klix Apple Pay / Google Pay payments are handled fully on Klix side i.e. after Klix purchase initiation customer is redirected to Klix hosted payment page where customer interacts with Apple Pay / Google Pay browser elements. Interaction with Apple Pay / Google Pay JavaScript SDK is done by Klix in this case.</p>
 <p>To accept Apple Pay / Google Pay payments directly in your application or website, Klix provides an API end-point that accepts encrypted payment token. In case of native Apple Pay / Google Pay payments there are no redirects to Klix payment page and merchant is responsible for interaction with Apple Pay / Google Pay JavaScript or mobile SDKs.</p>
+<p>In order to initiate Apple Pay payment request following Apple Pay merchant identifier should be used: <code>merchant.app.klix.portal</code> (also note that 3D Secure capability should be set):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">paymentRequest</span> <span class="p">=</span> <span class="bp">PKPaymentRequest</span><span class="p">()</span>
+<span class="n">paymentRequest</span><span class="p">.</span><span class="n">merchantIdentifier</span> <span class="p">=</span> <span class="s">&quot;merchant.app.klix.portal&quot;</span>
+<span class="n">paymentRequest</span><span class="p">.</span><span class="n">supportedNetworks</span> <span class="p">=</span> <span class="p">[.</span><span class="n">visa</span><span class="p">,</span> <span class="p">.</span><span class="n">masterCard</span><span class="p">]</span>
+<span class="n">paymentRequest</span><span class="p">.</span><span class="n">merchantCapabilities</span> <span class="p">=</span> <span class="p">.</span><span class="n">capability3DS</span>
+</code></pre></div>
+<p>In order to initiate Google Pay payment request following <code>gateway</code>, <code>gatewayMerchantId</code> and <code>merchantId</code> should be specified (also note <code>allowedAuthMethods</code> value):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">paymentDataRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PaymentDataRequest</span><span class="p">.</span><span class="na">fromJson</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+<span class="s">{</span>
+<span class="s">  &quot;apiVersion&quot;: 2,</span>
+<span class="s">  &quot;apiVersionMinor&quot;: 0,</span>
+<span class="s">  &quot;allowedPaymentMethods&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;type&quot;: &quot;CARD&quot;,</span>
+<span class="s">      &quot;parameters&quot;: {</span>
+<span class="s">        &quot;allowedAuthMethods&quot;: [&quot;PAN_ONLY&quot;, &quot;CRYPTOGRAM_3DS&quot;],</span>
+<span class="s">        &quot;allowedCardNetworks&quot;: [&quot;VISA&quot;, &quot;MASTERCARD&quot;]</span>
+<span class="s">      },</span>
+<span class="s">      &quot;tokenizationSpecification&quot;: {</span>
+<span class="s">        &quot;type&quot;: &quot;PAYMENT_GATEWAY&quot;,</span>
+<span class="s">        &quot;parameters&quot;: {</span>
+<span class="s">          &quot;gateway&quot;: &quot;klix&quot;,</span>
+<span class="s">          &quot;gatewayMerchantId&quot;: &quot;request_your_gateway_merchant_id_to_klix_support&quot;</span>
+<span class="s">        }</span>
+<span class="s">      }</span>
+<span class="s">    }</span>
+<span class="s">  ],</span>
+<span class="s">  &quot;transactionInfo&quot;: {</span>
+<span class="s">    &quot;totalPriceStatus&quot;: &quot;FINAL&quot;,</span>
+<span class="s">    &quot;totalPrice&quot;: &quot;1.00&quot;,</span>
+<span class="s">    &quot;currencyCode&quot;: &quot;EUR&quot;</span>
+<span class="s">  },</span>
+<span class="s">  &quot;merchantInfo&quot;: {</span>
+<span class="s">    &quot;merchantName&quot;: &quot;your_company_name&quot;,</span>
+<span class="s">    &quot;merchantId&quot;: &quot;BCR2DN4TTWQITP2N&quot;</span>
+<span class="s">  }</span>
+<span class="s">}</span>
+<span class="s">&quot;&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="native-apple-pay-google-pay-payment-step-by-step-guide">Native Apple Pay / Google Pay payment step-by-step guide<a class="headerlink" href="#native-apple-pay-google-pay-payment-step-by-step-guide" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Initiate a payment by specifying either <code>klix_apple_pay</code> or <code>klix_google_pay</code> as a whitelisted payment method. </li>
