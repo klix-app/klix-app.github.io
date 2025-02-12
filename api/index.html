@@ -722,6 +722,54 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api-usage-in-variable-creditor-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      API usage in variable creditor scenario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API usage in variable creditor scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-creditor-payment-step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable creditor payment step-by-step guide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-creditor-payment-request-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable creditor payment request examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable creditor payment request examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-variable-creditor-payment-purchase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a variable creditor payment purchase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#api-usage-in-native-apple-pay-google-paytm-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       API usage in native Apple Pay / Google Pay™ scenario
@@ -1330,6 +1378,54 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#api-usage-in-variable-creditor-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      API usage in variable creditor scenario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API usage in variable creditor scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-creditor-payment-step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable creditor payment step-by-step guide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-creditor-payment-request-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable creditor payment request examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable creditor payment request examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-variable-creditor-payment-purchase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a variable creditor payment purchase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#api-usage-in-native-apple-pay-google-paytm-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       API usage in native Apple Pay / Google Pay™ scenario
@@ -1827,6 +1923,9 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 Bulk payment functionality allows to initiate and confirm these multiple payments as a single payment.</p>
 <p>Here is a list of the payment methods that currently support bulk payment functionality:</p>
 <ul>
+<li>citadele_ee_pis</li>
+<li>citadele_lt_pis</li>
+<li>citadele_lv_pis</li>
 <li>seb_ee_pis</li>
 <li>seb_lt_pis</li>
 <li>seb_lv_pis</li>
@@ -1902,6 +2001,64 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <span class="w">            </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="api-usage-in-variable-creditor-scenario">API usage in variable creditor scenario<a class="headerlink" href="#api-usage-in-variable-creditor-scenario" title="Permanent link">&para;</a></h2>
+<p>By default, each Klix bank payment method's creditor account number configuration is set to a static IBAN specified by the merchant in the Klix agreement.
+If the merchant needs to specify the creditor account number individually during purchase initiation, the variable creditor account functionality should be used. Note that this functionality is disabled by default, and its usage must be explicitly requested.</p>
+<h3 id="variable-creditor-payment-step-by-step-guide">Variable creditor payment step-by-step guide<a class="headerlink" href="#variable-creditor-payment-step-by-step-guide" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Sign the agreement with Klix for the usage of variable creditor payment functionality. Submit the list of creditor IBANs and creditor names for whitelisting.</li>
+<li>Initiate a purchase by specifying one of the previously whitelisted creditor IBANs and creditor names.</li>
+</ol>
+<h3 id="variable-creditor-payment-request-examples">Variable creditor payment request examples<a class="headerlink" href="#variable-creditor-payment-request-examples" title="Permanent link">&para;</a></h3>
+<p>These are simple request examples that illustrate Klix API usage. Always use <a href="https://portal.klix.app/api">API Reference</a> as a single source of truth.
+Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes here&gt;</code> should be replaced with actual <code>Brand ID</code> and <code>Secret Key</code> received from Klix contact person.</p>
+<h4 id="create-a-variable-creditor-payment-purchase">Create a variable creditor payment purchase<a class="headerlink" href="#create-a-variable-creditor-payment-purchase" title="Permanent link">&para;</a></h4>
+<p>Initiate a purchase by specifying one of the previously whitelisted creditor IBANs and names.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://portal.klix.app/api/v1/purchases/<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Cache-Control: no-cache&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Connection: keep-alive&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Host: portal.klix.app&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept-encoding: gzip, deflate&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;cache-control: no-cache&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;purchase&quot;: {</span>
+<span class="s1">        &quot;products&quot;: [</span>
+<span class="s1">            {</span>
+<span class="s1">                &quot;name&quot;: &quot;Variable creditor account example&quot;,</span>
+<span class="s1">                &quot;price&quot;: 5</span>
+<span class="s1">            },</span>
+<span class="s1">        ],</span>
+<span class="s1">        &quot;payment_method_details&quot;: {</span>
+<span class="s1">            &quot;pis_purchase&quot;: {</span>
+<span class="s1">                &quot;creditor&quot;: {</span>
+<span class="s1">                    &quot;iban&quot;: &quot;LVXXPARX0000000000001&quot;,</span>
+<span class="s1">                    &quot;name&quot;: &quot;John Doe&quot;</span>
+<span class="s1">                }</span>
+<span class="s1">            }</span>
+<span class="s1">        }</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;client&quot;: {</span>
+<span class="s1">        &quot;email&quot;: &quot;test@test.com&quot;</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;payment_method_whitelist&quot;: [&quot;swedbank_lv_pis&quot;],</span>
+<span class="s1">    &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;`&quot;,</span>
+<span class="s1">    &quot;reference&quot;: &quot;Your order id&quot;</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<p>As previously mentioned only previously whitelisted IBAN and creditor name can specified in purchase initiation request. In case creditor IBAN or name is not whitelisted following error message is returned in a purchase initiation response:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;creditor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The provided creditor name or IBAN is not in the whitelist.&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="api-usage-in-native-apple-pay-google-paytm-scenario">API usage in native Apple Pay / Google Pay™ scenario<a class="headerlink" href="#api-usage-in-native-apple-pay-google-paytm-scenario" title="Permanent link">&para;</a></h2>
