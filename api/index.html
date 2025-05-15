@@ -2105,8 +2105,7 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 </code></pre></div>
 <h3 id="native-apple-pay-google-pay-payment-step-by-step-guide">Native Apple Pay / Google Pay payment step-by-step guide<a class="headerlink" href="#native-apple-pay-google-pay-payment-step-by-step-guide" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Initiate a payment by specifying either <code>klix_apple_pay</code> or <code>klix_google_pay</code> as a whitelisted payment method. </li>
-<li>Append a query parameter <code>s2s=true</code> to <code>checkout_url</code> field value returned in payment initiation response.</li>
+<li>Initiate a payment by specifying either <code>klix_apple_pay</code> or <code>klix_google_pay</code> as a whitelisted payment method.</li>
 <li>Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs.</li>
 </ol>
 <h3 id="native-apple-pay-google-pay-request-examples">Native Apple Pay / Google Pay request examples<a class="headerlink" href="#native-apple-pay-google-pay-request-examples" title="Permanent link">&para;</a></h3>
@@ -2115,12 +2114,13 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <h4 id="create-whitelisted-payment-method-purchase_1"><a href="#create-whitelisted-payment-method-purchase">Create whitelisted payment method purchase</a><a class="headerlink" href="#create-whitelisted-payment-method-purchase_1" title="Permanent link">&para;</a></h4>
 <p>Pass <code>klix_apple_pay</code> or <code>klix_google_pay</code> as purchase initiation request field <code>payment_method_whitelist</code> value.</p>
 <h4 id="post-base64-encoded-encrypted-payment-token-obtained-via-apple-pay-google-pay-sdks">Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs<a class="headerlink" href="#post-base64-encoded-encrypted-payment-token-obtained-via-apple-pay-google-pay-sdks" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://portal.klix.app/p/&lt;Purchase id returned in previous step&gt;/?s2s=true&#39;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://portal.klix.app/p/&lt;Purchase id returned in previous step&gt;/&#39;</span><span class="w"> </span><span class="se">\</span>
 --header<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
 --form<span class="w"> </span><span class="s1">&#39;pm=&quot;&lt;Payment method name&gt;&quot;&#39;</span><span class="w"> </span><span class="se">\</span>
+--form<span class="w"> </span><span class="s1">&#39;s2s=&quot;true&quot;&#39;</span>
 --form<span class="w"> </span><span class="s1">&#39;data=&quot;&lt;Base64 encoded token&gt;&quot;&#39;</span>
 </code></pre></div>
-<p>Do not forget to specify the desired payment method as a form field <code>pm</code> value, e.g. <code>klix_apple_pay</code> or <code>klix_google_pay</code>.
+<p>Do not forget to specify the desired payment method as a form field <code>pm</code> value, e.g. <code>klix_apple_pay</code> or <code>klix_google_pay</code> and form field <code>s2s</code> value <code>"true"</code>.
 Form field <code>data</code> value is Base64 encoded token.</p>
 <h5 id="apple-pay-token-example">Apple Pay token example<a class="headerlink" href="#apple-pay-token-example" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
