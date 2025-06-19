@@ -667,7 +667,7 @@
 <li>Create and navigate to a directory <code>app/code/</code> in your Magento root directory if does not exist already.</li>
 <li>Download Klix Magento plugin: <code>curl https://klixecom.blob.core.windows.net/modules/klix-magento.zip --output magento-v2.0+.zip</code></li>
 <li>Extract Klix Magento plugin archive contents to <code>app/code/</code> directory so that there's <code>app/code/SpellPayment/Magento2Module</code> directory structure after that: <code>unzip -q magento-v2.0+.zip &amp;&amp; rm magento-v2.0+.zip</code></li>
-<li>Navigate to Magento root directory and run <code>php bin/magento module:enable SpellPayment_ExpressCheckout --clear-static-content</code></li>
+<li>Navigate to Magento root directory and run <code>php bin/magento module:enable SpellPayment_Magento2Module --clear-static-content</code></li>
 <li>Run <code>php bin/magento setup:upgrade</code></li>
 <li>
 <p>Run <code>php bin/magento setup:static-content:deploy</code> (note that message "Manual static content deployment is not required in "default" and "developer" modes" can be ignored).
@@ -676,6 +676,18 @@
 <li>
 <p>Log in to your Magento store admin panel.
 <img alt="Log in to your Magento store admin panel." src="../images/ecommerce-platforms/magento/2_login.png#instruction-image" /></p>
+</li>
+<li>
+<p>Go to <code>STORES</code> -&gt; <code>Configuration</code>
+<img alt="Open stores and Configuration" src="../images/ecommerce-platforms/magento/3_stores_configuration.png#instruction-image" /></p>
+</li>
+<li>
+<p>Open <code>SALES</code> -&gt; <code>Payment methods</code>. Find <code>Citadele E-Commerce Gateway</code> and click on <code>Configure</code>.
+<img alt="Sales and payment methods" src="../images/ecommerce-platforms/magento/4_sales_payment_methods.png#instruction-image" /></p>
+</li>
+<li>
+<p>Enter Brand ID and Secret key provided by Klix contact person, set Enable API to <code>Yes</code> and click on <code>Save Config</code>.
+<img alt="Magento keys configuration" src="../images/ecommerce-platforms/magento/5_config.png#instruction-image" /></p>
 </li>
 </ol>
 <h3 id="mozello">Mozello<a class="headerlink" href="#mozello" title="Permanent link">&para;</a></h3>
