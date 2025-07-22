@@ -2105,7 +2105,8 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 </code></pre></div>
 <h3 id="native-apple-pay-google-pay-payment-step-by-step-guide">Native Apple Pay / Google Pay payment step-by-step guide<a class="headerlink" href="#native-apple-pay-google-pay-payment-step-by-step-guide" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Initiate a payment by specifying either <code>klix_apple_pay</code> or <code>klix_google_pay</code> as a whitelisted payment method.</li>
+<li>Initiate a payment by specifying either <code>klix_apple_pay</code> or <code>klix_google_pay</code> as a whitelisted payment method. </li>
+<li>Append a query parameter <code>s2s=true</code> to <code>checkout_url</code> field value returned in payment initiation response.</li>
 <li>Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs.</li>
 </ol>
 <h3 id="native-apple-pay-google-pay-request-examples">Native Apple Pay / Google Pay request examples<a class="headerlink" href="#native-apple-pay-google-pay-request-examples" title="Permanent link">&para;</a></h3>
@@ -2114,13 +2115,12 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <h4 id="create-whitelisted-payment-method-purchase_1"><a href="#create-whitelisted-payment-method-purchase">Create whitelisted payment method purchase</a><a class="headerlink" href="#create-whitelisted-payment-method-purchase_1" title="Permanent link">&para;</a></h4>
 <p>Pass <code>klix_apple_pay</code> or <code>klix_google_pay</code> as purchase initiation request field <code>payment_method_whitelist</code> value.</p>
 <h4 id="post-base64-encoded-encrypted-payment-token-obtained-via-apple-pay-google-pay-sdks">Post Base64 encoded encrypted payment token obtained via Apple Pay / Google Pay SDKs<a class="headerlink" href="#post-base64-encoded-encrypted-payment-token-obtained-via-apple-pay-google-pay-sdks" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://portal.klix.app/p/&lt;Purchase id returned in previous step&gt;/&#39;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;https://portal.klix.app/p/&lt;Purchase id returned in previous step&gt;/?s2s=true&#39;</span><span class="w"> </span><span class="se">\</span>
 --header<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
 --form<span class="w"> </span><span class="s1">&#39;pm=&quot;&lt;Payment method name&gt;&quot;&#39;</span><span class="w"> </span><span class="se">\</span>
---form<span class="w"> </span><span class="s1">&#39;s2s=&quot;true&quot;&#39;</span>
 --form<span class="w"> </span><span class="s1">&#39;data=&quot;&lt;Base64 encoded token&gt;&quot;&#39;</span>
 </code></pre></div>
-<p>Do not forget to specify the desired payment method as a form field <code>pm</code> value, e.g. <code>klix_apple_pay</code> or <code>klix_google_pay</code> and form field <code>s2s</code> value <code>"true"</code>.
+<p>Do not forget to specify the desired payment method as a form field <code>pm</code> value, e.g. <code>klix_apple_pay</code> or <code>klix_google_pay</code>.
 Form field <code>data</code> value is Base64 encoded token.</p>
 <h5 id="apple-pay-token-example">Apple Pay token example<a class="headerlink" href="#apple-pay-token-example" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -2171,24 +2171,12 @@ Form field <code>data</code> value is Base64 encoded token.</p>
 <div class="highlight"><pre><span></span><code>eyJhcGlWZXJzaW9uTWlub3IiOjAsImFwaVZlcnNpb24iOjIsInBheW1lbnRNZXRob2REYXRhIjp7ImRlc2NyaXB0aW9uIjoiVmlzYeKAhuKAouKAouKAouKAouKAhjExMTEiLCJ0b2tlbml6YXRpb25EYXRhIjp7InR5cGUiOiJQQVlNRU5UX0dBVEVXQVkiLCJ0b2tlbiI6IntcInNpZ25hdHVyZVwiOlwiTUVZQ0lRREhVcFI1eGx1MHdwMHEzSmRrWWFmd0Uwb3Rwc1JRMWxqRitGWEhQWEdkY0FJaEFOSUZielozRFZ1TnhBekRsbEkvQWtXL2xuTTJOZ3JBRWZyRitDdHkzOC84XCIsXCJpbnRlcm1lZGlhdGVTaWduaW5nS2V5XCI6e1wic2lnbmVkS2V5XCI6XCJ7XFxcImtleVZhbHVlXFxcIjpcXFwiTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFSjY2a2N4dU0wSDFPQkJ6enNManpTamxBNUhTaGpLN01xYUxOZWdnb2ZHdmNzSDRLaEt0ZkU0VzRTSVBYSFJTSkhlUXNxK29PL3ZqNHQ0b0J3YVBFSUFcXFxcdTAwM2RcXFxcdTAwM2RcXFwiLFxcXCJrZXlFeHBpcmF0aW9uXFxcIjpcXFwiMTcwODY5MTczMTI1OFxcXCJ9XCIsXCJzaWduYXR1cmVzXCI6W1wiTUVRQ0lCN1dDcThDUzVNK1htVlB3NGZIbjZNRC9DYk5ZeUViT1QvMCt0L1VxdkZHQWlCNXFRa2JmYW1kV3ptVVBjVWxaWk5wN2l6OEhJSUVrcUxvVWhhZUE1Qlh1UVxcdTAwM2RcXHUwMDNkXCJdfSxcInByb3RvY29sVmVyc2lvblwiOlwiRUN2MlwiLFwic2lnbmVkTWVzc2FnZVwiOlwie1xcXCJlbmNyeXB0ZWRNZXNzYWdlXFxcIjpcXFwiUHF3eTAyNFBJM2diQWQyK2YzSVJDZ05NNHMwOHlxZGtyWnU5NzUvRFczaHNHK1JwRzVOUkpZamZ1a1phcXBnWll6SEdxaktjVTlib3JOMkhiQ293eG1QbCsxbmRYVjZ4YTExLzNMUWcyYVUxazA5T2lwSHlFRWdVbzN1R0pwcm8xMTVpa3RkS0ZTVmY0QTFZOFlOTytYcUxKbThnTWU1UTBSbzRtTzZqWjdTVS9zVnhtUG5KelBOQUsvZE54MnpWNTdIMjlaTXVmMjhGNXhSazYrOFpvVjRlK3NnWWJEQ0J2Q0xvUVptSTNNKytoRlM2YWdNdEovWWtCRHBUQW5FK2ZCQmdmM1NUMzFXOTVJWFlzRFFmK2lIbUlEOHRrMS9WS2JmNWpTM1NKaVJlbFYzc0NTYy81YXE5TGlSL3NpS2UwYk5BNEFqSzVrSENlZTFWbE1kT084UzRmK3NWSGQ1dlNKQlczV3pQMERXaGEreElWM2YrSmFwUENYKytiT1VxdGd2WmFQMStxK1lnNk1DVGNQcUtyL08wTnNhdmRxSHFtM2dQVzdJS1h6YkM4ZTQ2ZFBUY1V3WEIrV2lycDBCUW1Wd05LVW1IUzFINWtnYWhKd2F5M2hqMzJQNUdyTlY4ZGplcjRuMUJJdzF1eWZPRjE3cmNYR3ZBOHUvQzRmTkhhRU0vaGsyUjd1TzdPUTNpWVd5bzhHcUpwMk1tRXFrM1JkUmg0c25sa2dGR0ZsemNudGtTR21wdjdXVlFDY2h4WDlkKzlWRXBJRWduXFxcIixcXFwiZXBoZW1lcmFsUHVibGljS2V5XFxcIjpcXFwiQlBMa2ZwWWFCVERlSWZrV0l5V3JIQUhFbUFNK1BBVjBkTlhnMjN4ZXArblNoOHRCNFVEYVl4czdRbXczcm5FczBxenVIWTNualNvT0JLN3Vld1NhTk1RXFxcXHUwMDNkXFxcIixcXFwidGFnXFxcIjpcXFwiRy8yQ254QkNqUkxhZVgyeTY2UVYwWWxuMk9ZL0dOaVYxekgvc0tuUW9hSVxcXFx1MDAzZFxcXCJ9XCJ9In0sInR5cGUiOiJDQVJEIiwiaW5mbyI6eyJjYXJkTmV0d29yayI6IlZJU0EiLCJjYXJkRGV0YWlscyI6IjExMTEifX19
 </code></pre></div>
 <h5 id="apple-pay-post-base64-encoded-encrypted-payment-response">Apple Pay post Base64 encoded encrypted payment response<a class="headerlink" href="#apple-pay-post-base64-encoded-encrypted-payment-response" title="Permanent link">&para;</a></h5>
-<p>In case payment was successfully processed single field <code>status</code> is returned in response.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;please wait for webhook&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>In case of failed payment response containing <code>error_response.result</code>: <code>"FAILURE"</code> is returned.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;error_response&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;gatewayCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACQUIRER_SYSTEM_ERROR&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;threeDsRedirectUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FAILURE&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
 <h5 id="google-pay-post-base64-encoded-encrypted-payment-response">Google Pay post Base64 encoded encrypted payment response<a class="headerlink" href="#google-pay-post-base64-encoded-encrypted-payment-response" title="Permanent link">&para;</a></h5>
-<p>In case of Google Pay payment depending on the buyer's device two different responses can be returned. In case payment was successfully processed single field <code>status</code> is returned in response.</p>
+<p>In case of Google Pay payment depending on the buyer's device two different responses can be returned. In case payment was processed single field <code>status</code> is returned in response.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;please wait for webhook&quot;</span>
 <span class="p">}</span>
@@ -2221,17 +2209,6 @@ Form field <code>data</code> value is Base64 encoded token.</p>
 <span class="w">            </span><span class="nt">&quot;retRefNr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;430605133628&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-</code></pre></div>
-<p>In case of failed payment response containing <code>error_response.result</code>: <code>"FAILURE"</code> is returned.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;error_response&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;gatewayCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACQUIRER_SYSTEM_ERROR&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;threeDsRedirectUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FAILURE&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
 </code></pre></div>
 
 
