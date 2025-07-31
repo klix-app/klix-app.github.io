@@ -429,6 +429,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#set-purchase-expiration-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set purchase expiration date
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1085,6 +1094,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#set-purchase-expiration-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set purchase expiration date
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1678,6 +1696,55 @@ Note that <code>&lt;Brand ID goes here&gt;</code> and <code>&lt;Secret key goes 
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Host: portal.klix.app&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept-encoding: gzip, deflate&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;cache-control: no-cache&#39;</span>
+</code></pre></div>
+<h4 id="set-purchase-expiration-date">Set purchase expiration date<a class="headerlink" href="#set-purchase-expiration-date" title="Permanent link">&para;</a></h4>
+<p>To define an expiration date for a purchase, you need to configure two parameters in the request:</p>
+<ol>
+<li>
+<p><code>due</code> - specifies the exact expiration time for the purchase.
+The value must be provided as a Unix timestamp.</p>
+</li>
+<li>
+<p><code>purchase.due_strict</code> - when set to true, the payment will not be accepted after the due timestamp is reached.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://portal.klix.app/api/v1/purchases/<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;Secret key goes here&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Cache-Control: no-cache&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Connection: keep-alive&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Host: portal.klix.app&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept-encoding: gzip, deflate&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;cache-control: no-cache&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">   &quot;success_callback&quot;: &quot;https://your.site/api/successfully-paid-callback-will-be-sent-to-this-end-point&quot;,</span>
+<span class="s1">   &quot;success_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-successfull-payment&quot;,</span>
+<span class="s1">   &quot;failure_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-of-failed-payment&quot;,</span>
+<span class="s1">   &quot;cancel_redirect&quot;: &quot;https://your.site/customer-will-be-redirected-here-in-case-customer-decides-to-go-back-to-your-store-during-payment&quot;,</span>
+<span class="s1">   &quot;purchase&quot;: {</span>
+<span class="s1">      &quot;due_strict&quot;: true,</span>
+<span class="s1">      &quot;language&quot;: &quot;lv&quot;,</span>
+<span class="s1">      &quot;products&quot;: [</span>
+<span class="s1">         {</span>
+<span class="s1">            &quot;price&quot;: 3000,</span>
+<span class="s1">            &quot;name&quot;: &quot;Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">         },</span>
+<span class="s1">         {</span>
+<span class="s1">            &quot;price&quot;: 100,</span>
+<span class="s1">            &quot;name&quot;: &quot;Screen protector for Xiaomi Mi Smart Band 5&quot;</span>
+<span class="s1">         }</span>
+<span class="s1">      ]</span>
+<span class="s1">   },</span>
+<span class="s1">   &quot;client&quot;: {</span>
+<span class="s1">      &quot;email&quot;: &quot;test@test.com&quot;</span>
+<span class="s1">   },</span>
+<span class="s1">   &quot;payment_method_whitelist&quot;: [&quot;klix&quot;],</span>
+<span class="s1">   &quot;brand_id&quot;: &quot;&lt;Brand ID goes here&gt;&quot;,</span>
+<span class="s1">   &quot;reference&quot;: &quot;Your order id&quot;,</span>
+<span class="s1">   &quot;due&quot;: 1356088289</span>
+<span class="s1">}&#39;</span>
 </code></pre></div>
 <h2 id="api-usage-in-recurring-payment-scenario">API usage in recurring payment scenario<a class="headerlink" href="#api-usage-in-recurring-payment-scenario" title="Permanent link">&para;</a></h2>
 <h3 id="recurring-payment-step-by-step-guide">Recurring payment step-by-step guide<a class="headerlink" href="#recurring-payment-step-by-step-guide" title="Permanent link">&para;</a></h3>
